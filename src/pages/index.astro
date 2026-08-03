@@ -1,17 +1,50 @@
 ---
-
+import Container from "../components/ui/Container.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="GrupoClavD | Rotulación e impresión digital"
+  description="Especialistas en rotulación, impresión digital, fachadas, luminosos y soluciones de comunicación visual."
+>
+  <main>
+    <section class="flex min-h-screen items-center bg-surface-muted py-24">
+      <Container>
+        <div class="max-w-3xl">
+          <p
+            class="mb-4 text-sm font-semibold tracking-widest text-brand-600 uppercase"
+          >
+            GrupoClavD
+          </p>
+
+          <h1
+            class="text-5xl leading-tight font-bold tracking-tight sm:text-6xl lg:text-7xl"
+          >
+            Convertimos espacios y marcas en algo visible.
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-foreground-muted">
+            Rotulación, impresión digital, fachadas, luminosos y soluciones
+            visuales para empresas.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a
+              href="/presupuesto"
+              class="rounded-full bg-brand-600 px-6 py-3 font-semibold text-white transition hover:bg-brand-700"
+            >
+              Solicitar presupuesto
+            </a>
+
+            <a
+              href="/servicios"
+              class="rounded-full border border-gray-300 bg-white px-6 py-3 font-semibold transition hover:border-gray-400"
+            >
+              Ver servicios
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
+</BaseLayout>
