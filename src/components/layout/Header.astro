@@ -1,0 +1,165 @@
+---
+import Container from "../ui/Container.astro";
+
+const pathname = Astro.url.pathname;
+
+const navItems = [
+  { name: "Inicio", href: "/" },
+  { name: "Servicios", href: "/servicios" },
+  { name: "Proyectos", href: "/proyectos" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contacto", href: "/contacto" },
+  { name: "Presupuesto", href: "/presupuesto" },
+];
+---
+
+<header
+  id="site-header"
+  class="sticky top-0 z-50 bg-white/95 shadow-sm backdrop-blur-xl"
+>
+  <div class="h-1 bg-(--gradient-brand)" aria-hidden="true"></div>
+
+  <Container>
+    <div class="flex h-24 items-center justify-between">
+      <a
+        href="/"
+        aria-label="Ir al inicio de GrupoClavD"
+        class="inline-flex shrink-0 flex-col"
+      >
+        <span
+          class="logo-text text-4xl font-black leading-none tracking-[0.12em]"
+        >
+          CLAVD
+        </span>
+
+        <span
+          class="mt-1 text-[0.55rem] font-semibold tracking-[0.42em] text-foreground-muted"
+        >
+          ROTULACIÓN Y MONTAJES
+        </span>
+      </a>
+
+      <nav class="hidden min-[900px]:block" aria-label="Navegación principal">
+        <ul class="flex items-center gap-1">
+          {
+            navItems.map((item) => {
+              const isActive = pathname === item.href;
+              const isBudget = item.href === "/presupuesto";
+
+              return (
+                <li>
+                  <a
+                    href={item.href}
+                    class:list={[
+                      "inline-flex items-center px-4 py-2 text-lg transition-all duration-200",
+
+                      isBudget
+                        ? "ml-2 rounded-lg border border-(--color-accent-500) font-semibold text-(--color-accent-500) hover:scale-105 hover:bg-(--color-accent-500) hover:text-white"
+                        : "hover:scale-105 hover:font-bold hover:text-(--color-accent-500)",
+
+                      !isBudget &&
+                        (isActive
+                          ? "scale-105 font-bold text-(--color-accent-500)"
+                          : "font-semibold"),
+                    ]}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+
+      <button
+        id="menu-button"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="flex flex-col gap-1.5 rounded-md p-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500) min-[900px]:hidden"
+      >
+        <span
+          id="line-1"
+          class="h-0.5 w-7 bg-(--color-foreground) transition-all duration-300"
+        ></span>
+
+        <span
+          id="line-2"
+          class="h-0.5 w-7 bg-(--color-foreground) transition-all duration-0"
+        ></span>
+
+        <span
+          id="line-3"
+          class="h-0.5 w-7 bg-(--color-foreground) transition-all duration-300"
+        ></span>
+      </button>
+
+      <nav
+        id="mobile-menu"
+        aria-label="Navegación móvil"
+        class="pointer-events-none absolute left-0 top-full w-full -translate-y-2 bg-white opacity-0 shadow-md transition-all duration-300 min-[900px]:hidden"
+      >
+        <ul class="flex flex-col p-4">
+          {
+            navItems.map((item) => {
+              const isActive = pathname === item.href;
+              const isBudget = item.href === "/presupuesto";
+
+              return (
+                <li>
+                  <a
+                    href={item.href}
+                    class:list={[
+                      "block px-4 py-3 font-semibold transition-all duration-200",
+
+                      isBudget
+                        ? "mt-2 rounded-lg border border-(--color-accent-500) text-center text-(--color-accent-500) hover:bg-(--color-accent-500) hover:text-white"
+                        : "hover:text-(--color-accent-500)",
+
+                      !isBudget && isActive && "text-(--color-accent-500)",
+                    ]}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+    </div>
+  </Container>
+</header>
+
+<script>
+  const menuButton = document.querySelector("#menu-button");
+  const mobileMenu = document.querySelector("#mobile-menu");
+
+  const line1 = document.querySelector("#line-1");
+  const line2 = document.querySelector("#line-2");
+  const line3 = document.querySelector("#line-3");
+
+  menuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("opacity-0");
+    mobileMenu?.classList.toggle("-translate-y-2");
+    mobileMenu?.classList.toggle("pointer-events-none");
+
+    const isOpen = !mobileMenu?.classList.contains("opacity-0");
+
+    menuButton?.setAttribute("aria-expanded", String(isOpen));
+    menuButton?.setAttribute(
+      "aria-label",
+      isOpen ? "Cerrar menú" : "Abrir menú",
+    );
+
+    line1?.classList.toggle("translate-y-2", isOpen);
+    line1?.classList.toggle("rotate-45", isOpen);
+
+    line2?.classList.toggle("opacity-0", isOpen);
+
+    line3?.classList.toggle("-translate-y-2", isOpen);
+    line3?.classList.toggle("-rotate-45", isOpen);
+  });
+</script>

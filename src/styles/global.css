@@ -3,16 +3,104 @@
 :root {
   --font-sans: "Inter", system-ui, sans-serif;
 
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-500: #2563eb;
-  --color-brand-600: #1d4ed8;
-  --color-brand-700: #1e40af;
+  /* ========= BRAND ========= */
+
+  /* Primary — azul principal */
+  --color-primary-50: #eef9ff;
+  --color-primary-100: #d9f2ff;
+  --color-primary-200: #bce8ff;
+  --color-primary-300: #8edaff;
+  --color-primary-400: #59c5f8;
+  --color-primary-500: #159ddd;
+  --color-primary-600: #008fcf;
+  --color-primary-700: #0873a7;
+  --color-primary-800: #0d6089;
+  --color-primary-900: #114f71;
+
+  /* Índigo — transición entre azul y morado */
+  --color-indigo-500: #4b78d6;
+  --color-indigo-600: #4369c0;
+  --color-indigo-700: #3858a3;
+
+  /* Secondary — morado */
+  --color-secondary-50: #f6f3fb;
+  --color-secondary-100: #eee8f7;
+  --color-secondary-200: #ded4ef;
+  --color-secondary-300: #c3b2df;
+  --color-secondary-400: #9e88c6;
+  --color-secondary-500: #7d6bad;
+  --color-secondary-600: #685694;
+  --color-secondary-700: #554579;
+  --color-secondary-800: #463963;
+  --color-secondary-900: #392f50;
+
+  /* Accent — magenta */
+  --color-accent-50: #fff0f8;
+  --color-accent-100: #ffe0f1;
+  --color-accent-200: #ffc1e2;
+  --color-accent-300: #ff91cb;
+  --color-accent-400: #f84dab;
+  --color-accent-500: #d60075;
+  --color-accent-600: #bd0068;
+  --color-accent-700: #9c0057;
+  --color-accent-800: #81064a;
+  --color-accent-900: #6b0a40;
+
+  /* ========= NEUTRALS ========= */
 
   --color-surface: #ffffff;
-  --color-surface-muted: #f5f7fa;
+  --color-surface-muted: #f7f8fa;
+  --color-surface-dark: #eef2f6;
+  --color-surface-inverse: #111827;
+
   --color-foreground: #111827;
   --color-foreground-muted: #5f6877;
+  --color-foreground-subtle: #87909e;
+  --color-foreground-inverse: #ffffff;
+
+  --color-border: #e4e7ec;
+  --color-border-strong: #cfd6df;
+
+  /* ========= FEEDBACK ========= */
+
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
+  --color-info: var(--color-primary-600);
+
+  /* ========= SHADOWS ========= */
+
+  --shadow-sm: 0 1px 2px rgb(17 24 39 / 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgb(17 24 39 / 0.08),
+    0 2px 4px -2px rgb(17 24 39 / 0.08);
+  --shadow-lg:
+    0 10px 15px -3px rgb(17 24 39 / 0.1),
+    0 4px 6px -4px rgb(17 24 39 / 0.1);
+
+  /* ========= RADIUS ========= */
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* ========= GRADIENTS ========= */
+
+  --gradient-brand: linear-gradient(
+    90deg,
+    var(--color-primary-500) 0%,
+    var(--color-indigo-500) 40%,
+    var(--color-secondary-500) 70%,
+    var(--color-accent-500) 100%
+  );
+
+  --gradient-brand-soft: linear-gradient(
+    135deg,
+    var(--color-primary-50) 0%,
+    var(--color-secondary-50) 55%,
+    var(--color-accent-50) 100%
+  );
 }
 
 html {
@@ -51,7 +139,72 @@ select {
   font: inherit;
 }
 
+button,
 a {
-  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
   text-decoration: none;
+}
+
+/* ========= COMPONENTS ========= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  min-height: 2.75rem;
+  padding: 0.7rem 1.25rem;
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  background: var(--gradient-brand);
+  color: var(--color-foreground-inverse);
+
+  font-weight: 600;
+  line-height: 1;
+
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(0);
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid rgb(21 157 221 / 0.3);
+  outline-offset: 3px;
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.logo-text {
+  width: fit-content;
+
+  background: var(--gradient-brand);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
