@@ -1,5 +1,5 @@
 ---
-import Container from "../components/ui/Container.astro";
+import Hero from "../components/sections/index/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -8,10 +8,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="Especialistas en rotulación, impresión digital, fachadas, luminosos y soluciones de comunicación visual."
 >
   <main>
-    <section class="flex min-h-screen items-center bg-surface-muted py-24">
-      <Container>
-        <div class="max-w-3xl"></div>
-      </Container>
-    </section>
+    <Hero />
   </main>
 </BaseLayout>

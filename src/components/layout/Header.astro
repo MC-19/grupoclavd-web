@@ -50,8 +50,9 @@ const navItems = [
                 <li>
                   <a
                     href={item.href}
+                    aria-current={isActive ? "page" : undefined}
                     class:list={[
-                      "inline-flex items-center px-4 py-2 text-lg transition-all duration-200",
+                      "inline-flex items-center px-4 py-2 text-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500)",
 
                       isBudget
                         ? "ml-2 rounded-lg border border-(--color-accent-500) font-semibold text-(--color-accent-500) hover:scale-105 hover:bg-(--color-accent-500) hover:text-white"
@@ -111,8 +112,9 @@ const navItems = [
                 <li>
                   <a
                     href={item.href}
+                    aria-current={isActive ? "page" : undefined}
                     class:list={[
-                      "block px-4 py-3 font-semibold transition-all duration-200",
+                      "block px-4 py-3 font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500)",
 
                       isBudget
                         ? "mt-2 rounded-lg border border-(--color-accent-500) text-center text-(--color-accent-500) hover:bg-(--color-accent-500) hover:text-white"
