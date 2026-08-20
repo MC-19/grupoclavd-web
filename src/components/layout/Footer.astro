@@ -1,0 +1,150 @@
+---
+import Container from "../ui/Container.astro";
+
+const services = [
+  { name: "Rotulación", href: "/servicios/rotulacion/" },
+  { name: "Impresión digital", href: "/servicios/impresion-digital/" },
+  { name: "Instalación y montaje", href: "/servicios/instalacion-montaje/" },
+  { name: "Señalética", href: "/servicios/senaletica/" },
+];
+
+const company = [
+  { name: "Proyectos", href: "/proyectos/" },
+  { name: "Nosotros", href: "/nosotros/" },
+  { name: "Blog", href: "/blog/" },
+  { name: "Contacto", href: "/contacto/" },
+];
+
+const solutions = [
+  { name: "Franquicias y cadenas", href: "/soluciones/franquicias-cadenas/" },
+  {
+    name: "Implantación de imagen corporativa",
+    href: "/soluciones/implantacion-imagen-corporativa/",
+  },
+];
+---
+
+<footer class="bg-(--color-foreground) text-white">
+  <Container>
+    <div
+      class="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr] lg:py-16"
+    >
+      <!-- Marca -->
+      <div class="max-w-sm">
+        <a
+          href="/"
+          aria-label="Ir al inicio de GrupoClavD"
+          class="inline-flex flex-col"
+        >
+          <span class="text-4xl font-black leading-none tracking-[0.12em]">
+            CLAVD
+          </span>
+
+          <span
+            class="mt-1 text-[0.55rem] font-semibold tracking-[0.42em] text-white/60"
+          >
+            ROTULACIÓN Y MONTAJES
+          </span>
+        </a>
+
+        <p class="mt-6 leading-relaxed text-white/60">
+          Rotulación, impresión digital e instalación para empresas en toda
+          España.
+        </p>
+
+        <a
+          href="/presupuesto/"
+          class="mt-6 inline-flex items-center rounded-xl bg-(--color-accent-500) px-5 py-3 font-semibold text-white transition hover:opacity-90"
+        >
+          Solicitar presupuesto
+        </a>
+      </div>
+
+      <!-- Servicios -->
+      <div>
+        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-white/50">
+          Servicios
+        </h2>
+
+        <ul class="mt-5 space-y-3">
+          {
+            services.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-white/70 transition hover:text-white"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Soluciones -->
+      <div>
+        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-white/50">
+          Soluciones
+        </h2>
+
+        <ul class="mt-5 space-y-3">
+          {
+            solutions.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-white/70 transition hover:text-white"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Empresa -->
+      <div>
+        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-white/50">
+          GrupoClavD
+        </h2>
+
+        <ul class="mt-5 space-y-3">
+          {
+            company.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-white/70 transition hover:text-white"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col gap-4 border-t border-white/10 py-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>
+        © {new Date().getFullYear()} GrupoClavD. Todos los derechos reservados.
+      </p>
+
+      <div class="flex flex-wrap gap-x-5 gap-y-2">
+        <a href="/aviso-legal/" class="transition hover:text-white">
+          Aviso legal
+        </a>
+
+        <a href="/privacidad/" class="transition hover:text-white">
+          Privacidad
+        </a>
+
+        <a href="/cookies/" class="transition hover:text-white"> Cookies </a>
+      </div>
+    </div>
+  </Container>
+</footer>

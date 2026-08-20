@@ -1,0 +1,326 @@
+---
+import Container from "../../ui/Container.astro";
+
+const highlights = [
+  "Proyectos en todo el territorio nacional",
+  "Coordinación de múltiples ubicaciones",
+  "Fabricación, logística e instalación",
+];
+---
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-24">
+  <Container>
+    <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <!-- Contenido -->
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Cobertura nacional
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Rotulación e instalación en toda España
+        </h2>
+
+        <p
+          class="mt-5 max-w-xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Hemos realizado proyectos de rotulación, imagen corporativa e
+          instalación en todo el territorio nacional para empresas con una o
+          múltiples ubicaciones.
+        </p>
+
+        <p
+          class="mt-4 max-w-xl leading-relaxed text-(--color-foreground-muted)"
+        >
+          Coordinamos la producción, logística y montaje en Península, Baleares,
+          Canarias, Ceuta y Melilla, manteniendo una ejecución homogénea en cada
+          establecimiento.
+        </p>
+
+        <ul class="mt-8 max-w-full space-y-4">
+          {
+            highlights.map((item) => (
+              <li class="flex items-start gap-3">
+                <span
+                  class="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-(--color-accent-500) text-sm font-bold text-white"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+
+                <span class="min-w-0 text-sm font-semibold leading-relaxed text-(--color-foreground) sm:text-base">
+                  {item}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <a
+          href="/contacto"
+          class="group mt-8 inline-flex items-center font-semibold text-(--color-accent-500)"
+        >
+          Cuéntanos tu proyecto
+
+          <span
+            class="ml-2 transition-transform duration-200 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
+        </a>
+      </div>
+
+      <!-- Mapa -->
+      <div
+        class="relative overflow-hidden rounded-2xl border border-(--color-border) bg-white p-6 shadow-sm sm:p-8 lg:p-10"
+      >
+        <!-- Decoración de fondo -->
+        <div
+          class="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-(--color-accent-500)/5 blur-3xl"
+          aria-hidden="true"
+        >
+        </div>
+
+        <div
+          class="pointer-events-none absolute -bottom-24 -left-20 size-64 rounded-full bg-(--color-primary-500)/5 blur-3xl"
+          aria-hidden="true"
+        >
+        </div>
+
+        <div class="relative">
+          <div class="mb-6 flex items-start justify-between gap-6">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-[0.18em] text-(--color-accent-500)"
+              >
+                Área de actuación
+              </p>
+
+              <p class="mt-1 text-lg font-bold text-(--color-foreground)">
+                Cobertura nacional
+              </p>
+            </div>
+
+            <span
+              class="shrink-0 rounded-full bg-(--color-surface-muted) px-3 py-1.5 text-xs font-bold text-(--color-foreground-muted)"
+            >
+              Toda España
+            </span>
+          </div>
+
+          <svg
+            viewBox="0 0 800 520"
+            class="h-auto w-full"
+            role="img"
+            aria-labelledby="spain-map-title spain-map-description"
+          >
+            <title id="spain-map-title">
+              Cobertura de GrupoClavD en España
+            </title>
+
+            <desc id="spain-map-description">
+              Representación de la cobertura nacional de GrupoClavD en
+              Península, Baleares, Canarias, Ceuta y Melilla.
+            </desc>
+
+            <defs>
+              <linearGradient
+                id="coverage-gradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" style="stop-color: var(--color-primary-500)"
+                ></stop>
+
+                <stop
+                  offset="55%"
+                  style="stop-color: var(--color-secondary-500)"></stop>
+
+                <stop offset="100%" style="stop-color: var(--color-accent-500)"
+                ></stop>
+              </linearGradient>
+
+              <filter
+                id="map-shadow"
+                x="-20%"
+                y="-20%"
+                width="140%"
+                height="140%"
+              >
+                <feDropShadow
+                  dx="0"
+                  dy="10"
+                  stdDeviation="10"
+                  flood-opacity="0.12"></feDropShadow>
+              </filter>
+            </defs>
+
+            <!-- Península -->
+            <path
+              d="
+                M170 108
+                L232 90
+                L295 98
+                L350 82
+                L410 92
+                L468 76
+                L535 90
+                L585 115
+                L624 150
+                L653 161
+                L637 195
+                L650 224
+                L625 253
+                L610 298
+                L582 332
+                L535 358
+                L485 365
+                L438 350
+                L392 370
+                L344 360
+                L300 378
+                L253 365
+                L218 340
+                L192 310
+                L178 272
+                L156 239
+                L164 202
+                L151 173
+                L162 142
+                Z
+              "
+              fill="url(#coverage-gradient)"
+              filter="url(#map-shadow)"></path>
+
+            <!-- Baleares -->
+            <g fill="url(#coverage-gradient)">
+              <ellipse
+                cx="704"
+                cy="235"
+                rx="23"
+                ry="9"
+                transform="rotate(-15 704 235)"></ellipse>
+
+              <ellipse
+                cx="748"
+                cy="217"
+                rx="11"
+                ry="5"
+                transform="rotate(-20 748 217)"></ellipse>
+
+              <ellipse
+                cx="729"
+                cy="259"
+                rx="8"
+                ry="4"
+                transform="rotate(15 729 259)"></ellipse>
+            </g>
+
+            <!-- Canarias -->
+            <g fill="url(#coverage-gradient)">
+              <ellipse
+                cx="205"
+                cy="449"
+                rx="12"
+                ry="6"
+                transform="rotate(-20 205 449)"></ellipse>
+
+              <ellipse cx="237" cy="438" rx="9" ry="5"></ellipse>
+
+              <ellipse
+                cx="270"
+                cy="451"
+                rx="13"
+                ry="6"
+                transform="rotate(20 270 451)"></ellipse>
+
+              <ellipse
+                cx="310"
+                cy="438"
+                rx="11"
+                ry="6"
+                transform="rotate(-20 310 438)"></ellipse>
+
+              <ellipse cx="345" cy="452" rx="8" ry="5"></ellipse>
+            </g>
+
+            <!-- Ceuta y Melilla -->
+            <g>
+              <circle cx="430" cy="413" r="7" fill="var(--color-accent-500)"
+              ></circle>
+
+              <circle cx="505" cy="420" r="7" fill="var(--color-accent-500)"
+              ></circle>
+            </g>
+
+            <!-- Labels -->
+            <g
+              fill="white"
+              font-family="Inter, system-ui, sans-serif"
+              text-anchor="middle"
+            >
+              <text x="402" y="221" font-size="30" font-weight="800">
+                Península
+              </text>
+
+              <text
+                x="402"
+                y="248"
+                font-size="15"
+                font-weight="600"
+                opacity="0.82"
+                class="map-detail"
+              >
+                Producción · logística · instalación
+              </text>
+            </g>
+
+            <g
+              fill="var(--color-foreground-muted)"
+              font-family="Inter, system-ui, sans-serif"
+              font-size="15"
+              font-weight="700"
+            >
+              <text x="676" y="290"> Baleares </text>
+
+              <text x="188" y="490"> Canarias </text>
+
+              <text x="407" y="447"> Ceuta </text>
+
+              <text x="490" y="454"> Melilla </text>
+            </g>
+          </svg>
+
+          <div
+            class="mt-4 flex flex-wrap gap-2 border-t border-(--color-border) pt-5"
+          >
+            {
+              ["Península", "Baleares", "Canarias", "Ceuta", "Melilla"].map(
+                (area) => (
+                  <span class="rounded-full bg-(--color-surface-muted) px-3 py-1.5 text-xs font-semibold text-(--color-foreground-muted)">
+                    {area}
+                  </span>
+                ),
+              )
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  @media (max-width: 639px) {
+    .map-detail {
+      display: none;
+    }
+  }
+</style>

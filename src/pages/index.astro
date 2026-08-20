@@ -1,13 +1,27 @@
 ---
+import CTA from "../components/sections/index/CTA.astro";
+import FaqSection from "../components/sections/index/FaqSection.astro";
+import Franquicias from "../components/sections/index/Franquicias.astro";
 import Hero from "../components/sections/index/Hero.astro";
+import Logistica from "../components/sections/index/Logistica.astro";
+import Proyectos from "../components/sections/index/Proyectos.astro";
+import Servicios from "../components/sections/index/Servicios.astro";
+import Ubicacion from "../components/sections/index/Ubicacion.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="GrupoClavD | Rotulación e impresión digital"
-  description="Especialistas en rotulación, impresión digital, fachadas, luminosos y soluciones de comunicación visual."
+  title="Empresa de Rotulación e Impresión Digital en España | GrupoClavD"
+  description="Rotulación, impresión digital gran formato e instalación para empresas. Fabricamos e instalamos rótulos, vinilos y señalética con cobertura en toda España."
 >
   <main>
     <Hero />
+    <Servicios />
+    <Logistica />
+    <Ubicacion />
+    <Proyectos />
+    <Franquicias />
+    <FaqSection />
+    <CTA />
   </main>
 </BaseLayout>

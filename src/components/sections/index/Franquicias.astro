@@ -1,0 +1,40 @@
+---
+import Container from "../../ui/Container.astro";
+
+const clients = ["Pikolinos", "MySoft", "Biomecanics", "Sprinter", "Circet"];
+---
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="text-center">
+      <p
+        class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+      >
+        Clientes
+      </p>
+
+      <h2
+        class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl"
+      >
+        Empresas que han confiado en GrupoClavD
+      </h2>
+
+      <p
+        class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)"
+      >
+        Trabajamos con empresas de distintos sectores en proyectos de
+        rotulación, producción gráfica e instalación.
+      </p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      {
+        clients.map((client) => (
+          <div class="flex min-h-28 items-center justify-center rounded-2xl border border-(--color-border) bg-white px-5 text-center font-bold text-(--color-foreground-muted)">
+            {client}
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

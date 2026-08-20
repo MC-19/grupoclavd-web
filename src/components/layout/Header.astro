@@ -3,9 +3,40 @@ import Container from "../ui/Container.astro";
 
 const pathname = Astro.url.pathname;
 
+const services = [
+  {
+    name: "Rotulación",
+    href: "/servicios/rotulacion/",
+  },
+  {
+    name: "Impresión digital",
+    href: "/servicios/impresion-digital/",
+  },
+  {
+    name: "Instalación y montaje",
+    href: "/servicios/instalacion-montaje/",
+  },
+  {
+    name: "Letras corpóreas",
+    href: "/servicios/rotulacion/letras-corporeas/",
+  },
+  {
+    name: "Rótulos luminosos y fachadas",
+    href: "/servicios/rotulacion/rotulos-luminosos-fachadas/",
+  },
+  {
+    name: "Rotulación de vehículos",
+    href: "/servicios/rotulacion/vehiculos/",
+  },
+  {
+    name: "Señalética",
+    href: "/servicios/rotulacion/senaletica/",
+  },
+];
+
 const navItems = [
   { name: "Inicio", href: "/" },
-  { name: "Servicios", href: "/servicios" },
+  { name: "Servicios", href: "/servicios", children: services },
   { name: "Proyectos", href: "/proyectos" },
   { name: "Blog", href: "/blog" },
   { name: "Contacto", href: "/contacto" },
@@ -43,16 +74,20 @@ const navItems = [
         <ul class="flex items-center gap-1">
           {
             navItems.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive =
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(`${item.href}/`));
+
               const isBudget = item.href === "/presupuesto";
+              const hasChildren = item.children?.length;
 
               return (
-                <li>
+                <li class="group relative">
                   <a
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}
                     class:list={[
-                      "inline-flex items-center px-4 py-2 text-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500)",
+                      "inline-flex items-center gap-1 px-4 py-2 text-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500)",
 
                       isBudget
                         ? "ml-2 rounded-lg border border-(--color-accent-500) font-semibold text-(--color-accent-500) hover:scale-105 hover:bg-(--color-accent-500) hover:text-white"
@@ -65,7 +100,40 @@ const navItems = [
                     ]}
                   >
                     {item.name}
+
+                    {hasChildren && (
+                      <span
+                        class="text-sm transition-transform duration-200 group-hover:rotate-180"
+                        aria-hidden="true"
+                      >
+                        ↓
+                      </span>
+                    )}
                   </a>
+
+                  {hasChildren && (
+                    <div class="pointer-events-none absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                      <div class="overflow-hidden rounded-2xl border border-(--color-border) bg-white p-2 shadow-xl">
+                        <a
+                          href="/servicios/"
+                          class="block rounded-xl px-4 py-3 font-bold text-(--color-foreground) transition hover:bg-(--color-surface-muted) hover:text-(--color-accent-500)"
+                        >
+                          Ver todos los servicios
+                        </a>
+
+                        <div class="my-1 border-t border-(--color-border)" />
+
+                        {item.children?.map((child) => (
+                          <a
+                            href={child.href}
+                            class="block rounded-xl px-4 py-2.5 font-medium text-(--color-foreground-muted) transition hover:bg-(--color-surface-muted) hover:text-(--color-accent-500)"
+                          >
+                            {child.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </li>
               );
             })
