@@ -1,0 +1,63 @@
+---
+import Container from "@/components/ui/Container.astro";
+---
+
+<section class="py-16 lg:py-24">
+  <Container>
+    <div
+      class="relative overflow-hidden rounded-3xl bg-(--color-foreground) px-6 py-12 sm:px-10 lg:px-16 lg:py-16"
+    >
+      <!-- Decoración -->
+      <div
+        class="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-(--color-accent-500)/20 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div
+        class="pointer-events-none absolute -bottom-24 left-1/3 size-64 rounded-full bg-(--color-primary-500)/15 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div
+        class="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
+      >
+        <div class="max-w-3xl">
+          <p
+            class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+          >
+            ¿Tienes un proyecto?
+          </p>
+
+          <h2
+            class="text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl"
+          >
+            Cuéntanos qué necesitas y te ayudamos a hacerlo realidad
+          </h2>
+
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
+            Rotulación, impresión digital, fabricación o instalación. Estudiamos
+            tu proyecto y te proponemos la solución más adecuada.
+          </p>
+        </div>
+
+        <div class="flex shrink-0 flex-wrap gap-3">
+          <a
+            href="/presupuesto/"
+            class="inline-flex items-center justify-center rounded-xl bg-(--color-accent-500) px-6 py-3.5 font-bold text-white transition hover:opacity-90"
+          >
+            Solicitar presupuesto
+          </a>
+
+          <a
+            href="/contacto/"
+            class="inline-flex items-center justify-center rounded-xl border border-white/25 px-6 py-3.5 font-bold text-white transition hover:bg-white/10"
+          >
+            Contactar
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

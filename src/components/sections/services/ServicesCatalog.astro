@@ -1,0 +1,165 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const services = [
+  {
+    title: "Fachadas y rótulos luminosos",
+    description:
+      "Soluciones de rotulación exterior para fachadas comerciales, establecimientos y espacios corporativos.",
+    href: "/servicios/rotulacion/rotulos-luminosos-fachadas/",
+    image: null,
+  },
+  {
+    title: "Letras corpóreas",
+    description:
+      "Fabricación e instalación de letras corpóreas para interiores, fachadas y espacios comerciales.",
+    href: "/servicios/rotulacion/letras-corporeas/",
+    image: null,
+  },
+  {
+    title: "Impresión digital gran formato",
+    description:
+      "Impresión de gran formato para lonas, vinilos, cartelería, soportes rígidos y proyectos de comunicación visual.",
+    href: "/servicios/impresion-digital/",
+    image: null,
+  },
+  {
+    title: "Rotulación de vehículos y flotas",
+    description:
+      "Rotulación de vehículos comerciales y flotas mediante vinilos y soluciones gráficas adaptadas a cada marca.",
+    href: "/servicios/rotulacion/vehiculos/",
+    image: null,
+  },
+  {
+    title: "Vinilos",
+    description:
+      "Vinilos de corte, impresión y soluciones gráficas para escaparates, interiores, superficies y campañas.",
+    href: "/servicios/rotulacion/vinilos/",
+    image: null,
+  },
+  {
+    title: "Señalética",
+    description:
+      "Sistemas de señalización interior y exterior adaptados a espacios comerciales, corporativos y profesionales.",
+    href: "/servicios/senaletica/",
+    image: null,
+  },
+  {
+    title: "Expositores y displays",
+    description:
+      "Diseño, producción y montaje de expositores, displays y elementos visuales para puntos de venta.",
+    href: "/servicios/plv-expositores/",
+    image: null,
+  },
+  {
+    title: "Escaparates",
+    description:
+      "Rotulación, gráfica promocional y soluciones visuales para escaparates y campañas comerciales.",
+    href: "/servicios/rotulacion/escaparates/",
+    image: null,
+  },
+  {
+    title: "Decoración de interiores",
+    description:
+      "Aplicaciones gráficas y elementos de imagen corporativa para transformar espacios interiores.",
+    href: "/servicios/decoracion-interiores/",
+    image: null,
+  },
+  {
+    title: "Vallas publicitarias",
+    description:
+      "Producción e instalación de gráfica y soportes para campañas de publicidad exterior.",
+    href: "/servicios/instalacion-montaje/vallas/",
+    image: null,
+  },
+];
+---
+
+<section class="py-12 lg:py-16">
+  <Container>
+    <!-- Cabecera de la página -->
+    <div class="max-w-4xl">
+      <p
+        class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+      >
+        Servicios
+      </p>
+
+      <h1
+        class="max-w-4xl text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl"
+      >
+        Servicios de rotulación, impresión digital e instalación
+      </h1>
+
+      <p
+        class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)"
+      >
+        Fabricamos, producimos e instalamos soluciones de imagen corporativa
+        para empresas, comercios, franquicias y cadenas en toda España.
+      </p>
+
+      <div class="mt-7 flex flex-wrap gap-4">
+        <a
+          href="/presupuesto/"
+          class="inline-flex items-center justify-center rounded-xl bg-(--color-accent-500) px-6 py-3 font-semibold text-white transition hover:opacity-90"
+        >
+          Solicitar presupuesto
+        </a>
+
+        <a
+          href="/proyectos/"
+          class="inline-flex items-center justify-center rounded-xl border border-(--color-border-strong) px-6 py-3 font-semibold text-(--color-foreground) transition hover:bg-(--color-surface-muted)"
+        >
+          Ver proyectos
+        </a>
+      </div>
+    </div>
+
+    <!-- Catálogo -->
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((service) => (
+          <a
+            href={service.href}
+            class="group flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-border) bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+          >
+            <div class="aspect-16/10 overflow-hidden bg-(--color-surface-muted)">
+              {service.image ? (
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  loading="lazy"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div class="flex h-full items-center justify-center text-sm font-semibold text-(--color-foreground-muted)">
+                  Imagen del servicio
+                </div>
+              )}
+            </div>
+
+            <div class="flex flex-1 flex-col p-6">
+              <h2 class="text-xl font-bold text-(--color-foreground) transition group-hover:text-(--color-accent-500)">
+                {service.title}
+              </h2>
+
+              <p class="mt-3 leading-relaxed text-(--color-foreground-muted)">
+                {service.description}
+              </p>
+
+              <span class="mt-auto inline-flex items-center pt-5 font-semibold text-(--color-accent-500)">
+                Ver servicio
+                <span
+                  class="ml-2 transition-transform duration-200 group-hover:translate-x-1"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</section>

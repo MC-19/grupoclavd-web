@@ -1,0 +1,70 @@
+---
+import Container from "../../ui/Container.astro";
+
+const services = [
+  {
+    title: "Rotulación",
+    description:
+      "Rótulos, letras corpóreas, fachadas, luminosos, vinilos, señalética y soluciones de imagen corporativa para empresas.",
+    href: "/servicios/rotulacion/",
+  },
+  {
+    title: "Impresión digital gran formato",
+    description:
+      "Lonas, cartelería, vinilos impresos, soportes rígidos, gráfica para escaparates y elementos publicitarios.",
+    href: "/servicios/impresion-digital/",
+  },
+  {
+    title: "Instalación y montaje",
+    description:
+      "Instalación de rótulos, vinilos, señalética, fachadas y elementos publicitarios en todo el territorio nacional.",
+    href: "/servicios/instalacion-montaje/",
+  },
+];
+---
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-24">
+  <Container>
+    <div class="max-w-2xl">
+      <p
+        class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+      >
+        Servicios
+      </p>
+
+      <h2
+        class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+      >
+        Soluciones de rotulación e impresión para empresas
+      </h2>
+
+      <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">
+        Fabricamos, producimos e instalamos soluciones de imagen corporativa
+        adaptadas a proyectos de cualquier escala.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {
+        services.map((service) => (
+          <article class="group flex h-full flex-col rounded-2xl border border-(--color-border) bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-2xl font-bold text-(--color-foreground)">
+              {service.title}
+            </h3>
+
+            <p class="mt-4 leading-relaxed text-(--color-foreground-muted)">
+              {service.description}
+            </p>
+
+            <a
+              href={service.href}
+              class="mt-auto inline-flex pt-6 font-semibold text-(--color-accent-500)"
+            >
+              Ver servicio →
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</section>
