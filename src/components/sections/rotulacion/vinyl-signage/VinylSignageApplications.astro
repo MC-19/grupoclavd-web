@@ -1,0 +1,73 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const applications = [
+  {
+    title: "Cristales",
+    description:
+      "Gráfica para identificar, comunicar o integrar visualmente superficies acristaladas.",
+  },
+  {
+    title: "Escaparates",
+    description:
+      "Aplicaciones para presentar la marca, promociones o campañas dentro del espacio comercial.",
+  },
+  {
+    title: "Paredes",
+    description:
+      "Elementos gráficos que ayudan a personalizar superficies e incorporar identidad visual.",
+  },
+  {
+    title: "Interiores",
+    description:
+      "Soluciones para identificar, decorar o comunicar en zonas interiores de uso comercial o corporativo.",
+  },
+  {
+    title: "Zonas promocionales",
+    description:
+      "Gráfica orientada a destacar mensajes, productos o campañas en puntos concretos del espacio.",
+  },
+  {
+    title: "Espacios corporativos",
+    description:
+      "Aplicaciones que refuerzan la presencia de la marca y mantienen una imagen visual coherente.",
+  },
+];
+---
+
+<section class="bg-(--color-foreground) py-16 text-white lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)"
+        >
+          Dónde se utilizan
+        </p>
+
+        <h2 class="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+          Aplicaciones en espacios comerciales
+        </h2>
+
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
+          Los vinilos permiten incorporar identidad, información y mensajes
+          promocionales en diferentes superficies y zonas de un espacio.
+        </p>
+      </div>
+
+      <div class="grid gap-x-8 sm:grid-cols-2">
+        {
+          applications.map((application) => (
+            <article class="border-t border-white/20 py-5">
+              <h3 class="text-lg font-bold">{application.title}</h3>
+
+              <p class="mt-2 leading-relaxed text-white/70">
+                {application.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

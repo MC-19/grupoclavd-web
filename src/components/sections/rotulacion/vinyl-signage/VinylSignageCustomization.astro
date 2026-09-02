@@ -1,0 +1,80 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const designPoints = [
+  {
+    title: "Superficie y dimensiones",
+    description:
+      "La gráfica se ajusta al espacio disponible y a las proporciones de la superficie donde se ubicará.",
+  },
+  {
+    title: "Identidad visual",
+    description:
+      "Los elementos se organizan para mantener la coherencia con la imagen y el lenguaje visual de la empresa.",
+  },
+  {
+    title: "Composición y proporción",
+    description:
+      "El diseño se distribuye buscando equilibrio entre textos, imágenes y otros elementos gráficos.",
+  },
+  {
+    title: "Lectura e integración",
+    description:
+      "La información se plantea para resultar clara y formar parte del espacio sin perder su función visual.",
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div
+      class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
+    >
+      <div
+        class="flex aspect-4/3 items-center justify-center overflow-hidden rounded-2xl bg-(--color-surface-muted) px-6 text-center text-sm font-semibold text-(--color-foreground-muted)"
+        role="img"
+        aria-label="Espacio reservado para una imagen del diseño de vinilo adaptado a un espacio"
+      >
+        Imagen de diseño adaptado al espacio
+      </div>
+
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Diseño personalizado
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Diseño adaptado a cada espacio
+        </h2>
+
+        <p
+          class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Adaptamos la composición a la superficie, las dimensiones disponibles
+          y la identidad de la empresa para que la gráfica conserve claridad y
+          se integre visualmente en su entorno.
+        </p>
+
+        <div class="mt-8 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+          {
+            designPoints.map((point) => (
+              <div class="border-t border-(--color-border) pt-5">
+                <h3 class="text-lg font-bold text-(--color-foreground)">
+                  {point.title}
+                </h3>
+
+                <p class="mt-2 leading-relaxed text-(--color-foreground-muted)">
+                  {point.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

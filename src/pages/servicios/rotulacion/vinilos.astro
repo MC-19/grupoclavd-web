@@ -1,0 +1,21 @@
+---
+import VinylSignageApplications from "@/components/sections/rotulacion/vinyl-signage/VinylSignageApplications.astro";
+import VinylSignageCTA from "@/components/sections/rotulacion/vinyl-signage/VinylSignageCTA.astro";
+import VinylSignageCustomization from "@/components/sections/rotulacion/vinyl-signage/VinylSignageCustomization.astro";
+import VinylSignageHero from "@/components/sections/rotulacion/vinyl-signage/VinylSignageHero.astro";
+import VinylSignageInstallation from "@/components/sections/rotulacion/vinyl-signage/VinylSignageInstallation.astro";
+import VinylSignageSolutions from "@/components/sections/rotulacion/vinyl-signage/VinylSignageSolutions.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Vinilos para empresas | GrupoClavD"
+  description="Vinilos para empresas, escaparates, cristales e interiores. Diseñamos, producimos e instalamos soluciones gráficas adaptadas a cada espacio."
+>
+  <VinylSignageHero />
+  <VinylSignageSolutions />
+  <VinylSignageCustomization />
+  <VinylSignageApplications />
+  <VinylSignageInstallation />
+  <VinylSignageCTA />
+</BaseLayout>

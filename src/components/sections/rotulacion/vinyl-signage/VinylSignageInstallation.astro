@@ -1,0 +1,65 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const installationPoints = [
+  {
+    title: "Adaptación a la superficie",
+    description:
+      "La colocación sigue las dimensiones y características visibles de la zona definida para la gráfica.",
+  },
+  {
+    title: "Posición y alineación",
+    description:
+      "Cada elemento se sitúa de acuerdo con la composición para mantener su proporción y facilitar la lectura.",
+  },
+  {
+    title: "Continuidad visual",
+    description:
+      "La aplicación conserva la relación entre las distintas partes del diseño y su integración en el espacio.",
+  },
+];
+---
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Colocación final
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Aplicación e instalación de vinilos
+        </h2>
+
+        <p
+          class="mt-5 max-w-xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Instalamos la gráfica respetando su composición, alineación y relación
+          con la superficie para mantener la lectura y el acabado visual del
+          conjunto.
+        </p>
+      </div>
+
+      <div class="border-t border-(--color-border)">
+        {
+          installationPoints.map((point) => (
+            <article class="border-b border-(--color-border) py-6">
+              <h3 class="text-xl font-bold text-(--color-foreground)">
+                {point.title}
+              </h3>
+
+              <p class="mt-3 max-w-xl leading-relaxed text-(--color-foreground-muted)">
+                {point.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>
