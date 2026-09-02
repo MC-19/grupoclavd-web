@@ -1,0 +1,93 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const features = [
+  {
+    title: "Materiales",
+    description:
+      "Trabajamos con materiales adaptados al uso exterior y a las características de cada proyecto, como aluminio, metacrilato, PVC y otros soportes técnicos.",
+  },
+  {
+    title: "Iluminación",
+    description:
+      "Integramos sistemas de iluminación LED frontal, indirecta o interior según el tipo de rótulo y el efecto visual que se quiera conseguir.",
+  },
+  {
+    title: "Acabados",
+    description:
+      "Adaptamos colores, texturas y terminaciones para mantener la coherencia con la identidad visual de la marca.",
+  },
+  {
+    title: "Medidas y soportes",
+    description:
+      "Fabricamos cada elemento según las dimensiones disponibles, el tipo de fachada y el sistema de fijación necesario.",
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div
+      class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16"
+    >
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Fabricación a medida
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Rótulos adaptados a cada fachada y marca
+        </h2>
+
+        <p
+          class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Cada proyecto se fabrica teniendo en cuenta la imagen de marca, las
+          dimensiones disponibles, las condiciones de instalación y el resultado
+          visual que se quiere conseguir.
+        </p>
+
+        <div class="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+          {
+            features.map((feature) => (
+              <div>
+                <div class="flex items-start gap-3">
+                  <span
+                    class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-(--color-accent-500) text-sm font-bold text-white"
+                    aria-hidden="true"
+                  >
+                    ✓
+                  </span>
+
+                  <div>
+                    <h3 class="text-lg font-bold text-(--color-foreground)">
+                      {feature.title}
+                    </h3>
+
+                    <p class="mt-2 leading-relaxed text-(--color-foreground-muted)">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div
+        class="aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)"
+      >
+        <div
+          class="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-(--color-foreground-muted)"
+        >
+          Imagen de fabricación de rótulo a medida
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

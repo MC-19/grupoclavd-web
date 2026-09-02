@@ -1,0 +1,65 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const points = [
+  {
+    title: "Montaje en fachadas y exteriores",
+    description:
+      "Instalamos rótulos, letras, banderolas y elementos de fachada adaptándonos a las características de cada ubicación.",
+  },
+  {
+    title: "Coordinación de acceso y fijación",
+    description:
+      "Planificamos los medios necesarios para la instalación, incluyendo sistemas de fijación y acceso cuando el proyecto lo requiere.",
+  },
+  {
+    title: "Proyectos en una o varias ubicaciones",
+    description:
+      "Realizamos instalaciones puntuales y también coordinamos actuaciones en múltiples establecimientos.",
+  },
+];
+---
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Instalación profesional
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Instalación de rótulos en fachadas y establecimientos
+        </h2>
+
+        <p
+          class="mt-5 max-w-xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Coordinamos el montaje final para que cada rótulo quede correctamente
+          instalado, teniendo en cuenta el tipo de fachada, el sistema de
+          fijación y las condiciones de acceso de cada ubicación.
+        </p>
+      </div>
+
+      <div class="border-t border-(--color-border)">
+        {
+          points.map((point) => (
+            <article class="border-b border-(--color-border) py-6">
+              <h3 class="text-xl font-bold text-(--color-foreground)">
+                {point.title}
+              </h3>
+
+              <p class="mt-3 max-w-xl leading-relaxed text-(--color-foreground-muted)">
+                {point.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

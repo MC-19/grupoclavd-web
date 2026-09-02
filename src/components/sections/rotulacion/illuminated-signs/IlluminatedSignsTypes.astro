@@ -1,0 +1,87 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const solutions = [
+  {
+    title: "Rótulos luminosos",
+    description:
+      "Rótulos con iluminación integrada para mejorar la visibilidad de la marca en fachadas, accesos y espacios comerciales.",
+  },
+  {
+    title: "Letras corpóreas iluminadas",
+    description:
+      "Letras corpóreas con iluminación frontal, indirecta o integrada para fachadas comerciales y espacios corporativos.",
+  },
+  {
+    title: "Cajas de luz",
+    description:
+      "Soluciones luminosas para fachadas, escaparates y puntos de venta con diferentes formatos, acabados y sistemas de iluminación.",
+  },
+  {
+    title: "Banderolas",
+    description:
+      "Rótulos perpendiculares a fachada diseñados para mejorar la visibilidad del establecimiento desde distintos puntos de paso.",
+  },
+  {
+    title: "Revestimientos de fachada",
+    description:
+      "Elementos gráficos y revestimientos para transformar la imagen exterior de locales, comercios y espacios corporativos.",
+  },
+  {
+    title: "Rótulos no luminosos",
+    description:
+      "Rótulos, placas y elementos de identificación sin iluminación para fachadas, accesos y espacios exteriores.",
+  },
+];
+---
+
+<section
+  id="soluciones-rotulos"
+  class="bg-(--color-surface-muted) py-16 lg:py-20"
+>
+  <Container>
+    <div class="max-w-3xl">
+      <p
+        class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+      >
+        Soluciones para fachadas
+      </p>
+
+      <h2
+        class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+      >
+        Tipos de rótulos luminosos y soluciones para fachadas
+      </h2>
+
+      <p
+        class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)"
+      >
+        Fabricamos soluciones adaptadas a la identidad visual de cada empresa,
+        al espacio disponible y a las necesidades de visibilidad de cada
+        establecimiento.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        solutions.map((solution) => (
+          <article class="flex h-full flex-col rounded-2xl border border-(--color-border) bg-white p-6">
+            <div class="mb-5 aspect-16/10 overflow-hidden rounded-xl bg-(--color-surface-muted)">
+              <div class="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-(--color-foreground-muted)">
+                Imagen de {solution.title.toLowerCase()}
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-(--color-foreground)">
+              {solution.title}
+            </h3>
+
+            <p class="mt-3 leading-relaxed text-(--color-foreground-muted)">
+              {solution.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</section>
