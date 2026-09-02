@@ -1,0 +1,70 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const applications = [
+  "Fachadas y accesos",
+  "Interiores corporativos",
+  "Recepciones",
+  "Comercios y establecimientos",
+];
+---
+
+<section class="bg-(--color-foreground) py-16 text-white lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)"
+        >
+          Visibilidad y presencia de marca
+        </p>
+
+        <h2 class="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+          Iluminación y aplicaciones de las letras corpóreas
+        </h2>
+
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
+          La iluminación puede incorporarse cuando el espacio y la presencia
+          visual buscada lo requieren. Su conveniencia depende de dónde se
+          instalarán las letras y de cómo debe percibirse la marca.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2">
+        <article class="rounded-2xl border border-white/15 bg-white/5 p-6">
+          <h3 class="text-xl font-bold">Cuándo incorporar iluminación</h3>
+          <p class="mt-3 leading-relaxed text-white/70">
+            Puede ser adecuada cuando se busca reforzar la visibilidad de las
+            letras o hacer que la iluminación forme parte de la presencia de
+            la marca en el espacio.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-white/15 bg-white/5 p-6">
+          <h3 class="text-xl font-bold">Cuándo prescindir de ella</h3>
+          <p class="mt-3 leading-relaxed text-white/70">
+            Cuando el entorno ya aporta la visibilidad necesaria, las letras
+            pueden mantener su volumen y función identificativa sin incorporar
+            iluminación.
+          </p>
+        </article>
+
+        <div class="sm:col-span-2">
+          <h3 class="text-sm font-bold uppercase tracking-[0.15em] text-white/50">
+            Aplicaciones habituales
+          </h3>
+
+          <ul class="mt-4 flex flex-wrap gap-3">
+            {
+              applications.map((application) => (
+                <li class="rounded-full border border-white/15 px-4 py-2 font-semibold text-white/80">
+                  {application}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

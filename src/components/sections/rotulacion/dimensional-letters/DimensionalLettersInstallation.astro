@@ -1,0 +1,65 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const installationPoints = [
+  {
+    title: "Composición en el espacio",
+    description:
+      "La ubicación del conjunto se plantea para que las letras mantengan la composición prevista y se integren correctamente en la superficie disponible.",
+  },
+  {
+    title: "Composición y alineación",
+    description:
+      "Durante la colocación se respeta la posición, separación y alineación de cada elemento para conservar la lectura y proporción del conjunto.",
+  },
+  {
+    title: "Integración del conjunto",
+    description:
+      "Coordinamos el montaje para que letras, logotipo y espacio formen un resultado visual coherente en su ubicación final.",
+  },
+];
+---
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Montaje final
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Instalación de letras corpóreas
+        </h2>
+
+        <p
+          class="mt-5 max-w-xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Instalamos cada conjunto respetando la composición, separación y
+          alineación de sus elementos, y cuidando su integración con el espacio
+          para mantener la presencia visual prevista.
+        </p>
+      </div>
+
+      <div class="border-t border-(--color-border)">
+        {
+          installationPoints.map((point) => (
+            <article class="border-b border-(--color-border) py-6">
+              <h3 class="text-xl font-bold text-(--color-foreground)">
+                {point.title}
+              </h3>
+
+              <p class="mt-3 max-w-xl leading-relaxed text-(--color-foreground-muted)">
+                {point.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

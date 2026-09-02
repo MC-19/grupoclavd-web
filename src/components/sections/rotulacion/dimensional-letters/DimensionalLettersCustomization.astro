@@ -1,0 +1,80 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const customizationPoints = [
+  {
+    title: "Identidad de marca",
+    description:
+      "La forma, el color y la presencia visual se plantean para mantener la coherencia con la identidad de cada empresa.",
+  },
+  {
+    title: "Medidas y proporciones",
+    description:
+      "Las dimensiones se adaptan al espacio disponible y a la composición que necesita cada proyecto.",
+  },
+  {
+    title: "Ubicación",
+    description:
+      "La solución se define teniendo en cuenta si las letras se destinan a una fachada, un interior o un espacio comercial.",
+  },
+  {
+    title: "Acabado visual",
+    description:
+      "El acabado se selecciona según la imagen buscada y el conjunto en el que se integrarán las letras.",
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div
+      class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
+    >
+      <div
+        class="flex aspect-4/3 items-center justify-center overflow-hidden rounded-2xl bg-(--color-surface-muted) px-6 text-center text-sm font-semibold text-(--color-foreground-muted)"
+        role="img"
+        aria-label="Espacio reservado para una imagen de personalización de letras corpóreas"
+      >
+        Imagen de acabados y personalización
+      </div>
+
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Fabricación personalizada
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Diseño y personalización de letras corpóreas
+        </h2>
+
+        <p
+          class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Planteamos cada conjunto según la identidad de la marca, las
+          dimensiones disponibles, el espacio donde se ubicará y el resultado
+          visual que requiere el proyecto.
+        </p>
+
+        <div class="mt-8 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+          {
+            customizationPoints.map((point) => (
+              <div class="border-t border-(--color-border) pt-5">
+                <h3 class="text-lg font-bold text-(--color-foreground)">
+                  {point.title}
+                </h3>
+
+                <p class="mt-2 leading-relaxed text-(--color-foreground-muted)">
+                  {point.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
