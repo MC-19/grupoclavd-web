@@ -46,7 +46,12 @@ export const mainNavigation: readonly NavigationItem[] = [
 ];
 
 export const footerNavigation = {
-  services: serviceNavigation.slice(0, 3).concat(serviceNavigation[6]),
+  services: [
+    { name: "Rotulación", href: paths.signage },
+    { name: "Impresión digital", href: paths.digitalPrinting },
+    { name: "Instalación y montaje", href: paths.installation },
+    { name: "Señalética", href: paths.wayfinding },
+  ],
   solutions: [
     { name: "Franquicias y cadenas", href: paths.franchises },
     {
