@@ -1,0 +1,80 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const designPoints = [
+  {
+    title: "Forma del vehículo",
+    description:
+      "La composición se plantea teniendo en cuenta el formato y las superficies disponibles en cada vehículo.",
+  },
+  {
+    title: "Identidad visual",
+    description:
+      "Colores, logotipo y elementos gráficos se organizan para mantener la coherencia con la imagen de la empresa.",
+  },
+  {
+    title: "Medidas y proporciones",
+    description:
+      "El tamaño de cada elemento se adapta al espacio disponible y a su relación con el resto de la composición.",
+  },
+  {
+    title: "Lectura del diseño",
+    description:
+      "La información se distribuye para que la marca y los datos principales se distingan con claridad dentro del conjunto.",
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div
+      class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
+    >
+      <div
+        class="flex aspect-4/3 items-center justify-center overflow-hidden rounded-2xl bg-(--color-surface-muted) px-6 text-center text-sm font-semibold text-(--color-foreground-muted)"
+        role="img"
+        aria-label="Espacio reservado para una imagen del diseño de rotulación adaptado a un vehículo"
+      >
+        Imagen de diseño adaptado al vehículo
+      </div>
+
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Diseño personalizado
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Diseño adaptado al vehículo y a la marca
+        </h2>
+
+        <p
+          class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Cada propuesta se compone para integrar la identidad de la empresa en
+          la forma del vehículo, manteniendo el equilibrio entre presencia de
+          marca, proporción y claridad.
+        </p>
+
+        <div class="mt-8 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+          {
+            designPoints.map((point) => (
+              <div class="border-t border-(--color-border) pt-5">
+                <h3 class="text-lg font-bold text-(--color-foreground)">
+                  {point.title}
+                </h3>
+
+                <p class="mt-2 leading-relaxed text-(--color-foreground-muted)">
+                  {point.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

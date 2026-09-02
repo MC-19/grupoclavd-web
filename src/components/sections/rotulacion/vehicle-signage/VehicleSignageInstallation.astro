@@ -1,0 +1,65 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const applicationPoints = [
+  {
+    title: "Adaptación a formas y superficies",
+    description:
+      "La gráfica se coloca siguiendo las formas del vehículo y la distribución definida para cada una de sus zonas.",
+  },
+  {
+    title: "Posición y alineación",
+    description:
+      "Logotipos, textos y elementos visuales se alinean para respetar la composición y facilitar la lectura del conjunto.",
+  },
+  {
+    title: "Continuidad visual",
+    description:
+      "La aplicación busca mantener una relación coherente entre los distintos elementos gráficos presentes en el vehículo.",
+  },
+];
+---
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Aplicación final
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Aplicación de la rotulación sobre el vehículo
+        </h2>
+
+        <p
+          class="mt-5 max-w-xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Aplicamos el diseño respetando la posición, proporción y alineación de
+          sus elementos, adaptando la composición a las formas del vehículo para
+          conservar el acabado visual previsto.
+        </p>
+      </div>
+
+      <div class="border-t border-(--color-border)">
+        {
+          applicationPoints.map((point) => (
+            <article class="border-b border-(--color-border) py-6">
+              <h3 class="text-xl font-bold text-(--color-foreground)">
+                {point.title}
+              </h3>
+
+              <p class="mt-3 max-w-xl leading-relaxed text-(--color-foreground-muted)">
+                {point.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

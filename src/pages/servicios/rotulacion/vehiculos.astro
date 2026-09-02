@@ -1,0 +1,21 @@
+---
+import VehicleSignageCTA from "@/components/sections/rotulacion/vehicle-signage/VehicleSignageCTA.astro";
+import VehicleSignageCustomization from "@/components/sections/rotulacion/vehicle-signage/VehicleSignageCustomization.astro";
+import VehicleSignageFleets from "@/components/sections/rotulacion/vehicle-signage/VehicleSignageFleets.astro";
+import VehicleSignageHero from "@/components/sections/rotulacion/vehicle-signage/VehicleSignageHero.astro";
+import VehicleSignageInstallation from "@/components/sections/rotulacion/vehicle-signage/VehicleSignageInstallation.astro";
+import VehicleSignageSolutions from "@/components/sections/rotulacion/vehicle-signage/VehicleSignageSolutions.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Rotulación de vehículos para empresas | GrupoClavD"
+  description="Rotulación de vehículos comerciales y flotas para empresas. Diseñamos y aplicamos soluciones adaptadas a la identidad de cada marca."
+>
+  <VehicleSignageHero />
+  <VehicleSignageSolutions />
+  <VehicleSignageCustomization />
+  <VehicleSignageFleets />
+  <VehicleSignageInstallation />
+  <VehicleSignageCTA />
+</BaseLayout>

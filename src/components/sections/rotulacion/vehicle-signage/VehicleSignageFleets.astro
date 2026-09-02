@@ -1,0 +1,69 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const fleetScopes = [
+  {
+    title: "Un vehículo comercial",
+    description:
+      "La gráfica se adapta a una unidad concreta para identificarla de acuerdo con la imagen de la empresa.",
+  },
+  {
+    title: "Varios vehículos",
+    description:
+      "La composición mantiene criterios visuales comunes cuando debe aplicarse a diferentes vehículos de la empresa.",
+  },
+  {
+    title: "Rotulación de flotas",
+    description:
+      "La identidad se organiza para conservar una imagen reconocible y homogénea entre las distintas unidades de la flota.",
+  },
+];
+---
+
+<section class="bg-(--color-foreground) py-16 text-white lg:py-20">
+  <Container>
+    <div class="max-w-3xl">
+      <p
+        class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)"
+      >
+        Imagen coordinada
+      </p>
+
+      <h2 class="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+        Rotulación de flotas y vehículos comerciales
+      </h2>
+
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
+        Una empresa puede necesitar rotular una sola unidad, varios vehículos o
+        una flota. En cada caso, el objetivo es que la identidad se mantenga
+        coherente aunque cambien el formato y las proporciones del vehículo.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {
+        fleetScopes.map((scope) => (
+          <article class="border-t border-white/20 pt-6">
+            <h3 class="text-xl font-bold">{scope.title}</h3>
+
+            <p class="mt-3 leading-relaxed text-white/70">
+              {scope.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-6">
+      <span class="rounded-full border border-white/15 px-4 py-2 font-semibold text-white/80">
+        Furgonetas
+      </span>
+      <span class="rounded-full border border-white/15 px-4 py-2 font-semibold text-white/80">
+        Turismos comerciales
+      </span>
+      <span class="rounded-full border border-white/15 px-4 py-2 font-semibold text-white/80">
+        Flotas de empresa
+      </span>
+    </div>
+  </Container>
+</section>
