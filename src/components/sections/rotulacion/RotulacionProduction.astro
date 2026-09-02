@@ -1,0 +1,95 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const features = [
+  {
+    title: "Producción propia",
+    description:
+      "Fabricamos y preparamos los elementos de rotulación adaptándonos a las necesidades de cada proyecto.",
+  },
+  {
+    title: "Instalación profesional",
+    description:
+      "Realizamos el montaje de rótulos, vinilos y elementos gráficos en fachadas, establecimientos y espacios comerciales.",
+  },
+  {
+    title: "Gestión integral",
+    description:
+      "Coordinamos producción, logística e instalación para ofrecer un único punto de gestión durante todo el proyecto.",
+  },
+  {
+    title: "Cobertura nacional",
+    description:
+      "Ejecutamos proyectos de rotulación e implantaciones en diferentes ubicaciones de todo el territorio nacional.",
+  },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div
+      class="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16"
+    >
+      <!-- Imagen -->
+      <div
+        class="aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)"
+      >
+        <div
+          class="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-(--color-foreground-muted)"
+        >
+          Imagen de fabricación o instalación de rotulación
+        </div>
+      </div>
+
+      <!-- Contenido -->
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Producción e instalación
+        </p>
+
+        <h2
+          class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl"
+        >
+          Fabricación e instalación de rotulación
+        </h2>
+
+        <p
+          class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Gestionamos proyectos de rotulación desde la fabricación hasta su
+          instalación final, coordinando producción, logística y montaje para
+          conseguir una ejecución homogénea en cada ubicación.
+        </p>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2">
+          {
+            features.map((feature) => (
+              <div>
+                <div class="flex items-start gap-3">
+                  <span
+                    class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-(--color-accent-500) text-sm font-bold text-white"
+                    aria-hidden="true"
+                  >
+                    ✓
+                  </span>
+
+                  <div>
+                    <h3 class="text-lg font-bold text-(--color-foreground)">
+                      {feature.title}
+                    </h3>
+
+                    <p class="mt-2 leading-relaxed text-(--color-foreground-muted)">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
