@@ -1,0 +1,60 @@
+---
+import Container from "@/components/ui/Container.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import { paths } from "@/data/navigation";
+import { Image } from "astro:assets";
+
+import heroRotulacion from "@/assets/images/Rotulacion/CTA_rotulacion.png";
+---
+
+<section class="py-12 lg:py-16">
+  <Container>
+    <div
+      class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16"
+    >
+      <div>
+        <p
+          class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
+        >
+          Rotulación
+        </p>
+
+        <h1
+          class="text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl"
+        >
+          Rotulación para empresas
+        </h1>
+
+        <p
+          class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)"
+        >
+          Diseñamos, fabricamos e instalamos soluciones de rotulación para
+          empresas, comercios, franquicias y cadenas, desde fachadas y rótulos
+          luminosos hasta vinilos, vehículos y señalética.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-4">
+          <ButtonLink href={paths.quote}>
+            Solicitar presupuesto
+          </ButtonLink>
+
+          <ButtonLink
+            href="#tipos-rotulacion"
+            variant="secondary"
+          >
+            Ver tipos de rotulación
+          </ButtonLink>
+        </div>
+      </div>
+
+      <div class="aspect-4/3 overflow-hidden rounded-2xl">
+        <Image
+          src={heroRotulacion}
+          alt="Proyecto de rotulación para empresa realizado por GrupoClavD"
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </Container>
+</section>

@@ -1,5 +1,7 @@
 ---
 import Container from "../../ui/Container.astro";
+import ButtonLink from "../../ui/ButtonLink.astro";
+import { paths } from "../../../data/navigation";
 ---
 
 <section class="py-16 lg:py-20">
@@ -30,19 +32,13 @@ import Container from "../../ui/Container.astro";
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
-          <a
-            href="/presupuesto"
-            class="inline-flex items-center justify-center rounded-lg bg-(--color-accent-500) px-6 py-3 font-semibold text-white transition hover:opacity-90"
-          >
+          <ButtonLink href={paths.quote}>
             Solicitar presupuesto
-          </a>
+          </ButtonLink>
 
-          <a
-            href="/proyectos"
-            class="inline-flex items-center justify-center rounded-lg border border-(--color-border-strong) px-6 py-3 font-semibold text-(--color-foreground) transition hover:bg-(--color-surface-muted)"
-          >
+          <ButtonLink href={paths.projects} variant="secondary">
             Ver proyectos
-          </a>
+          </ButtonLink>
         </div>
       </div>
 

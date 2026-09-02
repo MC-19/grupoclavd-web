@@ -1,27 +1,8 @@
 ---
 import Container from "../ui/Container.astro";
+import { footerNavigation, paths } from "../../data/navigation";
 
-const services = [
-  { name: "Rotulación", href: "/servicios/rotulacion/" },
-  { name: "Impresión digital", href: "/servicios/impresion-digital/" },
-  { name: "Instalación y montaje", href: "/servicios/instalacion-montaje/" },
-  { name: "Señalética", href: "/servicios/senaletica/" },
-];
-
-const company = [
-  { name: "Proyectos", href: "/proyectos/" },
-  { name: "Nosotros", href: "/nosotros/" },
-  { name: "Blog", href: "/blog/" },
-  { name: "Contacto", href: "/contacto/" },
-];
-
-const solutions = [
-  { name: "Franquicias y cadenas", href: "/soluciones/franquicias-cadenas/" },
-  {
-    name: "Implantación de imagen corporativa",
-    href: "/soluciones/implantacion-imagen-corporativa/",
-  },
-];
+const { company, services, solutions } = footerNavigation;
 ---
 
 <footer class="bg-(--color-foreground) text-white">
@@ -32,7 +13,7 @@ const solutions = [
       <!-- Marca -->
       <div class="max-w-sm">
         <a
-          href="/"
+          href={paths.home}
           aria-label="Ir al inicio de GrupoClavD"
           class="inline-flex flex-col"
         >
@@ -53,7 +34,7 @@ const solutions = [
         </p>
 
         <a
-          href="/presupuesto/"
+          href={paths.quote}
           class="mt-6 inline-flex items-center rounded-xl bg-(--color-accent-500) px-5 py-3 font-semibold text-white transition hover:opacity-90"
         >
           Solicitar presupuesto
@@ -135,15 +116,15 @@ const solutions = [
       </p>
 
       <div class="flex flex-wrap gap-x-5 gap-y-2">
-        <a href="/aviso-legal/" class="transition hover:text-white">
+        <a href={paths.legal} class="transition hover:text-white">
           Aviso legal
         </a>
 
-        <a href="/privacidad/" class="transition hover:text-white">
+        <a href={paths.privacy} class="transition hover:text-white">
           Privacidad
         </a>
 
-        <a href="/cookies/" class="transition hover:text-white"> Cookies </a>
+        <a href={paths.cookies} class="transition hover:text-white"> Cookies </a>
       </div>
     </div>
   </Container>

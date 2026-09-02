@@ -1,44 +1,47 @@
-# Astro Starter Kit: Minimal
+# GrupoClavD Web
+
+Sitio corporativo de GrupoClavD construido con Astro, TypeScript y Tailwind CSS.
+
+## Desarrollo
+
+Requiere Node.js 22.12 o posterior.
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura
 
 ```text
 /
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+├── public/          Recursos públicos
+├── src/assets/      Imágenes procesadas por Astro
+├── src/components/  Componentes de interfaz y secciones
+├── src/data/        Navegación y datos compartidos
+├── src/layouts/     Layouts globales
+├── src/pages/       Rutas del sitio
+└── src/styles/      Estilos globales
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Las rutas compartidas deben declararse en `src/data/navigation.ts` para evitar diferencias entre el header, el footer y el contenido.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Comprobaciones
 
-Any static assets, like images, can be placed in the `public/` directory.
+Antes de entregar cambios:
 
-## 🧞 Commands
+```sh
+npm run validate
+```
 
-All commands are run from the root of the project, from a terminal:
+Este comando ejecuta el análisis estático de Astro y genera la compilación de producción.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run dev -- --host`   | Starts local dev server at `localhost:4321`      |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Comandos
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Comando | Acción |
+| :-- | :-- |
+| `npm run dev` | Inicia el servidor local |
+| `npm run check` | Comprueba Astro y TypeScript |
+| `npm run build` | Genera el sitio en `dist/` |
+| `npm run validate` | Ejecuta check y build |
+| `npm run preview` | Previsualiza la compilación |

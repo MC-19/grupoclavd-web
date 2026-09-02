@@ -148,6 +148,29 @@ a {
   text-decoration: none;
 }
 
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 3px solid rgb(21 157 221 / 0.45);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-foreground);
+  color: var(--color-foreground-inverse);
+  font-weight: 700;
+  transform: translateY(calc(-100% - 1rem));
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 /* ========= COMPONENTS ========= */
 
 .btn-primary {
@@ -212,5 +235,20 @@ a {
 @media (max-width: 639px) {
   .map-detail {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

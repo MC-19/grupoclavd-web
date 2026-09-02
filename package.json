@@ -7,7 +7,9 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "check": "astro check",
     "build": "astro build",
+    "validate": "npm run check && npm run build",
     "preview": "astro preview",
     "astro": "astro"
   },
