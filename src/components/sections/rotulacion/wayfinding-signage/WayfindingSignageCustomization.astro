@@ -1,0 +1,34 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const designPoints = [
+  { title: "Jerarquía y legibilidad", description: "Los mensajes se ordenan para distinguir primero la información más importante." },
+  { title: "Ubicación y proporción", description: "Cada elemento se plantea según el lugar donde se consultará y el espacio disponible." },
+  { title: "Identidad visual", description: "La gráfica mantiene una relación coherente con el lenguaje visual de la empresa." },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Diseño en contexto</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Señalética adaptada a cada espacio</h2>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">
+          El diseño relaciona el contenido de cada señal con su entorno: qué debe leerse, desde dónde y cómo encaja con el resto de la identidad visual.
+        </p>
+        <div class="mt-8 grid gap-6 sm:grid-cols-3 lg:grid-cols-1">
+          {designPoints.map((point) => (
+            <div class="border-l-2 border-(--color-accent-500) pl-5">
+              <h3 class="text-lg font-bold text-(--color-foreground)">{point.title}</h3>
+              <p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="flex aspect-4/3 items-center justify-center rounded-2xl bg-(--color-surface-muted) px-6 text-center text-sm font-semibold text-(--color-foreground-muted)" role="img" aria-label="Espacio reservado para una imagen de señalética integrada en un entorno empresarial">
+        Imagen de señalética integrada en el espacio
+      </div>
+    </div>
+  </Container>
+</section>

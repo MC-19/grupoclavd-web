@@ -1,0 +1,30 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const objectives = [
+  { title: "Identidad de marca", description: "Presentar de forma reconocible la imagen del establecimiento desde su fachada comercial." },
+  { title: "Promociones y campañas", description: "Dar espacio a mensajes vinculados con una acción comercial o una campaña concreta." },
+  { title: "Información comercial", description: "Mostrar mensajes que ayuden a entender qué ofrece el negocio o qué acción está comunicando." },
+  { title: "Composición gráfica", description: "Integrar elementos visuales con el escaparate y el interior visible del establecimiento." },
+];
+---
+
+<section id="objetivos-escaparate" class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="max-w-3xl">
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Qué puede comunicar</p>
+      <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Objetivos de la rotulación de escaparates</h2>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">
+        El escaparate es un punto de contacto con el público. Su gráfica puede presentar la marca, destacar una acción o aportar información comercial sin depender de un único tipo de material.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2">
+      {objectives.map((objective) => (
+        <article class="rounded-2xl bg-white p-6 shadow-sm sm:p-8">
+          <h3 class="text-xl font-bold text-(--color-foreground)">{objective.title}</h3>
+          <p class="mt-3 leading-relaxed text-(--color-foreground-muted)">{objective.description}</p>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>

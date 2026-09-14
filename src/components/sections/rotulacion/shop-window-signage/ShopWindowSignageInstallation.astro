@@ -1,0 +1,31 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const points = [
+  { title: "Adaptación al escaparate", description: "La colocación sigue la zona definida del cristal u otra superficie prevista para la gráfica." },
+  { title: "Posición y alineación", description: "Los mensajes y elementos visuales mantienen la composición y proporción definidas para el conjunto." },
+  { title: "Integración visual", description: "La aplicación se relaciona con el interior visible y con la imagen exterior del establecimiento." },
+];
+---
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Aplicación final</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Instalación de la gráfica en escaparates</h2>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-(--color-foreground-muted)">
+          Aplicamos la gráfica respetando la distribución del diseño y su relación con el escaparate para conservar la lectura y el acabado visual previstos.
+        </p>
+      </div>
+      <div class="border-t border-(--color-border)">
+        {points.map((point) => (
+          <article class="border-b border-(--color-border) py-6">
+            <h3 class="text-xl font-bold text-(--color-foreground)">{point.title}</h3>
+            <p class="mt-3 max-w-xl leading-relaxed text-(--color-foreground-muted)">{point.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

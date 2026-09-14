@@ -1,0 +1,31 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const messages = [
+  { title: "Campañas y promociones", description: "Destacar una acción comercial concreta con un mensaje reconocible en el escaparate." },
+  { title: "Lanzamientos y novedades", description: "Dar visibilidad a lo que el establecimiento quiere presentar en ese momento." },
+  { title: "Comunicación de marca", description: "Mantener presente la identidad del negocio junto al resto de mensajes comerciales." },
+];
+---
+
+<section class="bg-(--color-foreground) py-16 text-white lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)">Comunicación comercial</p>
+        <h2 class="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">Un escaparate al servicio de cada mensaje</h2>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
+          La gráfica puede acompañar una campaña, una promoción o la comunicación habitual de la marca. El mensaje cambia según el objetivo comercial; el escaparate sigue siendo el soporte.
+        </p>
+      </div>
+      <div class="space-y-6">
+        {messages.map((message) => (
+          <article class="border-l-2 border-(--color-accent-400) pl-6">
+            <h3 class="text-xl font-bold">{message.title}</h3>
+            <p class="mt-2 leading-relaxed text-white/70">{message.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

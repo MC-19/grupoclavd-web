@@ -1,0 +1,35 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const considerations = [
+  { title: "Superficie y proporción", description: "La composición se ajusta al espacio disponible y a las dimensiones visibles del escaparate." },
+  { title: "Lectura desde el exterior", description: "Los mensajes principales se organizan para distinguirse con claridad al observar el establecimiento." },
+  { title: "Relación con el interior", description: "La gráfica se plantea teniendo en cuenta los elementos del local que también forman parte de la vista." },
+  { title: "Coherencia de marca", description: "Los elementos visuales mantienen una relación clara con la identidad del negocio." },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div class="flex aspect-4/3 items-center justify-center rounded-2xl bg-(--color-surface-muted) px-6 text-center text-sm font-semibold text-(--color-foreground-muted)" role="img" aria-label="Espacio reservado para una imagen de un diseño gráfico integrado en un escaparate">
+        Imagen de diseño adaptado al escaparate
+      </div>
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Diseño en contexto</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Diseño adaptado al escaparate</h2>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">
+          Planteamos la gráfica según lo que debe verse desde fuera, la superficie disponible y el interior del establecimiento, manteniendo el mensaje legible y la marca reconocible.
+        </p>
+        <div class="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+          {considerations.map((item) => (
+            <div class="border-t border-(--color-border) pt-5">
+              <h3 class="text-lg font-bold text-(--color-foreground)">{item.title}</h3>
+              <p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
