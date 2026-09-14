@@ -1,0 +1,54 @@
+---
+import ProjectCard from "@/components/sections/projects/ProjectCard.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Container from "@/components/ui/Container.astro";
+import { featuredProjects, otherProjects } from "@/data/projects";
+import { paths } from "@/data/navigation";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Proyectos de rotulación e impresión digital | GrupoClavD"
+  description="Una selección visual de proyectos de rotulación, gráfica e instalación de GrupoClavD en fachadas, interiores, espacios comerciales y vehículos."
+  image={featuredProjects[0].cover}
+>
+  <section class="py-12 lg:py-16">
+    <Container>
+      <div class="max-w-4xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Trabajos realizados</p>
+        <h1 class="text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Proyectos de GrupoClavD</h1>
+        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)">Una selección de trabajos fotografiados en fachadas, interiores, espacios comerciales y vehículos. Descubre las imágenes de cada intervención y las soluciones visuales que aparecen en ellas.</p>
+        <div class="mt-7 flex flex-wrap gap-4">
+          <ButtonLink href="#proyectos-destacados" variant="secondary">Ver proyectos</ButtonLink>
+          <ButtonLink href={paths.quote}>Solicitar presupuesto</ButtonLink>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section id="proyectos-destacados" class="bg-(--color-surface-muted) py-16 lg:py-20">
+    <Container>
+      <div class="max-w-3xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Galerías</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Proyectos para explorar</h2>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Estas series reúnen distintas vistas de un mismo espacio o trabajo, desde detalles de colocación hasta imágenes del resultado.</p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {featuredProjects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-16 lg:py-20">
+    <Container>
+      <div class="max-w-3xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Más trabajos</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Otras soluciones en imágenes</h2>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Una muestra de letras, gráfica interior y rotulación de vehículos documentada con fotografías.</p>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {otherProjects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

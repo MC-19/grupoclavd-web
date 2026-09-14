@@ -1,0 +1,71 @@
+---
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Container from "@/components/ui/Container.astro";
+import { featuredProjects, type Project } from "@/data/projects";
+import { paths } from "@/data/navigation";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+interface Props { project: Project }
+const { project } = Astro.props;
+
+export function getStaticPaths() {
+  return featuredProjects.flatMap((item) => item.slug ? [{ params: { slug: item.slug }, props: { project: item } }] : []);
+}
+---
+
+<BaseLayout
+  title={`${project.title} | Proyectos GrupoClavD`}
+  description={project.summary}
+  image={project.cover}
+>
+  <section class="py-12 lg:py-16">
+    <Container>
+      <a href={paths.projects} class="inline-flex font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:underline">← Volver a proyectos</a>
+      <div class="mt-8 max-w-4xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{project.category}</p>
+        <h1 class="text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">{project.title}</h1>
+        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)">{project.summary}</p>
+      </div>
+      <div class="mt-10 aspect-16/9 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
+        <img src={project.cover} alt={project.coverAlt} class="h-full w-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
+      </div>
+    </Container>
+  </section>
+
+  <section class="bg-(--color-surface-muted) py-16 lg:py-20">
+    <Container>
+      <div class="max-w-3xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Galería</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">El trabajo en imágenes</h2>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {project.gallery?.map((image) => (
+          <figure class="overflow-hidden rounded-2xl border border-(--color-border) bg-white">
+            <div class="aspect-4/3 overflow-hidden"><img src={image.src} alt={image.alt} class="h-full w-full object-cover" loading="lazy" decoding="async" /></div>
+            <figcaption class="p-5 font-medium text-(--color-foreground-muted)">{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-16 lg:py-20">
+    <Container>
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div>
+          <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Sigue explorando</p>
+          <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Servicios relacionados</h2>
+          <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Consulta las áreas de servicio relacionadas con las soluciones visibles en estas imágenes.</p>
+        </div>
+        <div>
+          {project.services?.map((service) => (
+            <a href={service.href} class="flex items-center justify-between gap-4 border-t border-(--color-border) py-5 text-lg font-bold text-(--color-foreground) transition hover:text-(--color-accent-500)">
+              <span>{service.label}</span><span aria-hidden="true">→</span>
+            </a>
+          ))}
+          <div class="mt-7"><ButtonLink href={paths.quote}>Solicitar presupuesto</ButtonLink></div>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
