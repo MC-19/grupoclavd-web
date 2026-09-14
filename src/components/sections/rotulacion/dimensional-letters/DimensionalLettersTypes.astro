@@ -4,31 +4,43 @@ import Container from "@/components/ui/Container.astro";
 const letterTypes = [
   {
     title: "Letras corpóreas para fachadas",
+    image: "/ImagenesWebClav/Fotos%20Nuevas/letras-corporeas-mimma-gallery-fachada.jpeg",
+    imageAlt: "Letras corpóreas instaladas en la fachada de MIMMA Gallery",
     description:
       "Soluciones de identificación exterior adaptadas a la imagen del establecimiento y a las características de su fachada.",
   },
   {
     title: "Letras corpóreas para interiores",
+    image: "/ImagenesWebClav/Fotos%20Que%20si/letras-corporeas-cettu-interior.jpg",
+    imageAlt: "Letras corpóreas colocadas en un espacio comercial interior",
     description:
       "Elementos con volumen para reforzar la presencia de marca en espacios interiores y zonas de atención.",
   },
   {
     title: "Letras corpóreas luminosas",
+    image: "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche.jpeg",
+    imageAlt: "Letras corpóreas iluminadas de MIMMA Gallery por la noche",
     description:
       "Letras con iluminación para destacar la identidad visual y favorecer su presencia en distintos entornos.",
   },
   {
     title: "Letras corpóreas sin iluminación",
+    image: "/ImagenesWebClav/Fotos%20Que%20si/letras-corporeas-cettu-interior.jpg",
+    imageAlt: "Letras corpóreas sin iluminación en una pared interior",
     description:
       "Una solución de rotulación con volumen para proyectos que no requieren incorporar iluminación.",
   },
   {
     title: "Logotipos corpóreos",
+    image: "/ImagenesWebClav/Fotos%20Que%20si/logotipos-corporativos-onda-cero-interior.jpg",
+    imageAlt: "Logotipos y elementos de marca colocados en un interior",
     description:
       "Adaptación de logotipos y otros elementos de identidad visual a formatos con relieve y presencia física.",
   },
   {
     title: "Composiciones para espacios comerciales",
+    image: "/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos.jpg",
+    imageAlt: "Composición de rótulo y gráfica de marca en un establecimiento",
     description:
       "Soluciones que integran letras y elementos de identidad para presentar la marca de forma coherente dentro del espacio.",
   },
@@ -65,12 +77,8 @@ const letterTypes = [
       {
         letterTypes.map((letterType) => (
           <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-border) bg-white">
-            <div
-              class="flex aspect-16/10 items-center justify-center bg-(--color-surface-muted) px-6 text-center text-sm font-semibold text-(--color-foreground-muted)"
-              role="img"
-              aria-label={`Espacio reservado para una imagen de ${letterType.title.toLowerCase()}`}
-            >
-              Imagen de {letterType.title.toLowerCase()}
+            <div class="aspect-16/10 overflow-hidden">
+              <img src={letterType.image} alt={letterType.imageAlt} class="h-full w-full object-cover" loading="lazy" decoding="async" />
             </div>
 
             <div class="flex flex-1 flex-col p-6">

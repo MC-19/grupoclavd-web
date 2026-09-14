@@ -4,11 +4,15 @@ import Container from "@/components/ui/Container.astro";
 const solutions = [
   {
     title: "Vinilos de corte",
+    image: "/ImagenesWebClav/Fotos%20Nuevas/grafica-heineken-pared-interior.jpeg",
+    imageAlt: "Gráfica de marca aplicada a una pared interior",
     description:
       "Gráfica recortada para aplicar logotipos, textos y formas que ayuden a identificar o comunicar dentro de un espacio.",
   },
   {
     title: "Vinilos impresos",
+    image: "/ImagenesWebClav/Fotos%20Que%20si/grafica-mural-corte-ingles-interior.jpg",
+    imageAlt: "Gráfica mural impresa en un espacio interior",
     description:
       "Gráfica impresa para reproducir diseños, imágenes y composiciones visuales adaptadas a cada campaña o proyecto.",
   },
@@ -45,12 +49,8 @@ const solutions = [
       {
         solutions.map((solution) => (
           <article class="overflow-hidden rounded-2xl border border-(--color-border) bg-white">
-            <div
-              class="flex aspect-16/9 items-center justify-center bg-(--color-surface-muted) px-6 text-center text-sm font-semibold text-(--color-foreground-muted)"
-              role="img"
-              aria-label={`Espacio reservado para una imagen de ${solution.title.toLowerCase()}`}
-            >
-              Imagen de {solution.title.toLowerCase()}
+            <div class="aspect-16/9 overflow-hidden">
+              <img src={solution.image} alt={solution.imageAlt} class="h-full w-full object-cover" loading="lazy" decoding="async" />
             </div>
 
             <div class="p-6 sm:p-7">

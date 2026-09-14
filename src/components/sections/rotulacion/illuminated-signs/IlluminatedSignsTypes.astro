@@ -4,31 +4,43 @@ import Container from "@/components/ui/Container.astro";
 const solutions = [
   {
     title: "Rótulos luminosos",
+    image: "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche.jpeg",
+    imageAlt: "Rótulo de MIMMA Gallery iluminado en la fachada",
     description:
       "Rótulos con iluminación integrada para mejorar la visibilidad de la marca en fachadas, accesos y espacios comerciales.",
   },
   {
     title: "Letras corpóreas iluminadas",
+    image: "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche.jpeg",
+    imageAlt: "Letras iluminadas de MIMMA Gallery por la noche",
     description:
       "Letras corpóreas con iluminación frontal, indirecta o integrada para fachadas comerciales y espacios corporativos.",
   },
   {
     title: "Cajas de luz",
+    image: "/ImagenesWebClav/Fotos%20Que%20si/escaparate-pikolinos-centro-comercial.jpg",
+    imageAlt: "Rótulo frontal iluminado sobre un escaparate comercial",
     description:
       "Soluciones luminosas para fachadas, escaparates y puntos de venta con diferentes formatos, acabados y sistemas de iluminación.",
   },
   {
     title: "Banderolas",
+    image: null,
+    imageAlt: "",
     description:
       "Rótulos perpendiculares a fachada diseñados para mejorar la visibilidad del establecimiento desde distintos puntos de paso.",
   },
   {
     title: "Revestimientos de fachada",
+    image: "/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos.jpg",
+    imageAlt: "Fachada comercial con rótulo e identidad gráfica",
     description:
       "Elementos gráficos y revestimientos para transformar la imagen exterior de locales, comercios y espacios corporativos.",
   },
   {
     title: "Rótulos no luminosos",
+    image: "/ImagenesWebClav/Fotos%20Nuevas/senaletica-exterior-thrifty-aparcamiento.jpeg",
+    imageAlt: "Rótulo exterior de identificación sin iluminación",
     description:
       "Rótulos, placas y elementos de identificación sin iluminación para fachadas, accesos y espacios exteriores.",
   },
@@ -67,9 +79,13 @@ const solutions = [
         solutions.map((solution) => (
           <article class="flex h-full flex-col rounded-2xl border border-(--color-border) bg-white p-6">
             <div class="mb-5 aspect-16/10 overflow-hidden rounded-xl bg-(--color-surface-muted)">
-              <div class="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-(--color-foreground-muted)">
-                Imagen de {solution.title.toLowerCase()}
-              </div>
+              {solution.image ? (
+                <img src={solution.image} alt={solution.imageAlt} class="h-full w-full object-cover" loading="lazy" decoding="async" />
+              ) : (
+                <div class="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-(--color-foreground-muted)">
+                  Imagen de {solution.title.toLowerCase()}
+                </div>
+              )}
             </div>
 
             <h3 class="text-xl font-bold text-(--color-foreground)">
