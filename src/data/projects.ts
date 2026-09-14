@@ -6,10 +6,13 @@ export interface ProjectImage {
   caption: string;
 }
 
+export type ProjectFilter = "rotulacion" | "impresion-digital" | "instalacion-montaje";
+
 export interface Project {
   slug?: string;
   title: string;
   category: string;
+  filters: ProjectFilter[];
   summary: string;
   cover: string;
   coverAlt: string;
@@ -30,6 +33,7 @@ export const featuredProjects: Project[] = [
     slug: "rotulo-somium",
     title: "Rótulo de Somium en fachada",
     category: "Rotulación exterior · Instalación",
+    filters: ["rotulacion", "instalacion-montaje"],
     summary: "Una secuencia fotográfica del rótulo de Somium, desde su colocación hasta las vistas del resultado en la fachada.",
     cover: `${june}Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.21_1dd350d1.jpg`,
     coverAlt: "Rótulo de Somium visible en una fachada de lamas oscuras",
@@ -48,6 +52,7 @@ export const featuredProjects: Project[] = [
     slug: "grafica-goldwell-mia",
     title: "Gráfica GOLDWELL en un espacio de estilismo",
     category: "Gráfica interior · Instalación",
+    filters: ["impresion-digital", "instalacion-montaje"],
     summary: "Vistas del local rotulado como Mia Estilistas y de una gráfica GOLDWELL durante su colocación y una vez integrada en el interior.",
     cover: `${blog2}465c05a5-c468-49fa-9eaf-c5192e419c2d.jpeg`,
     coverAlt: "Gráfica GOLDWELL instalada sobre una pared interior",
@@ -66,6 +71,7 @@ export const featuredProjects: Project[] = [
     slug: "fachada-labus-bar",
     title: "Imagen de fachada de Labus Bar",
     category: "Rotulación de fachada",
+    filters: ["rotulacion", "instalacion-montaje"],
     summary: "Una serie de imágenes muestra la intervención en la fachada de Labus Bar y el aspecto final de su gráfica exterior.",
     cover: `${blog1}6.jpeg`,
     coverAlt: "Fachada de Labus Bar con su nueva gráfica exterior",
@@ -84,6 +90,7 @@ export const featuredProjects: Project[] = [
     slug: "espacio-tag-heuer",
     title: "Gráfica TAG Heuer en un espacio comercial",
     category: "Gráfica para interiores",
+    filters: ["impresion-digital"],
     summary: "Diferentes vistas de un espacio comercial con gráfica de TAG Heuer integrada en paredes y zonas de exposición.",
     cover: `${june}Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_28ac576e.jpg`,
     coverAlt: "Espacio comercial con gráfica de TAG Heuer en paredes y expositores",
@@ -102,6 +109,7 @@ export const otherProjects: Project[] = [
   {
     title: "Letras de MIMMA Gallery",
     category: "Letras corpóreas · Fachada",
+    filters: ["rotulacion"],
     summary: "Letras de MIMMA Gallery visibles sobre una fachada comercial.",
     cover: `${newPhotos}letras-corporeas-mimma-gallery-fachada.jpeg`,
     coverAlt: "Letras de MIMMA Gallery instaladas en una fachada",
@@ -109,6 +117,7 @@ export const otherProjects: Project[] = [
   {
     title: "Letras de Alcampo en fachada",
     category: "Rotulación exterior · Instalación",
+    filters: ["rotulacion", "instalacion-montaje"],
     summary: "Una vista del montaje de las letras en una fachada comercial.",
     cover: `${newPhotos}instalacion-letras-alcampo-fachada.jpeg`,
     coverAlt: "Colocación de letras de Alcampo en una fachada",
@@ -116,6 +125,7 @@ export const otherProjects: Project[] = [
   {
     title: "Gráfica de MySoft en interior",
     category: "Gráfica interior",
+    filters: ["impresion-digital", "instalacion-montaje"],
     summary: "Vista de una pieza gráfica de MySoft en un espacio interior.",
     cover: `${photos}20240529_113559.jpg`,
     coverAlt: "Gráfica de MySoft en un espacio interior",
@@ -123,6 +133,7 @@ export const otherProjects: Project[] = [
   {
     title: "Rotulación de una furgoneta",
     category: "Vehículos",
+    filters: ["rotulacion"],
     summary: "Furgoneta con gráfica de marca aplicada en los laterales.",
     cover: `${newPhotos}rotulacion-furgoneta-ribera-valldigna.jpeg`,
     coverAlt: "Furgoneta con gráfica de colores aplicada en el lateral",
