@@ -1,0 +1,20 @@
+---
+import type { BlogArticle } from "@/data/blog";
+
+interface Props {
+  article: BlogArticle;
+  prominent?: boolean;
+}
+
+const { article, prominent = false } = Astro.props;
+---
+
+<article class="flex h-full flex-col rounded-2xl border border-(--color-border-strong) bg-white p-6 sm:p-8">
+  {article.image && article.imageAlt && <img src={article.image} alt={article.imageAlt} loading="lazy" class="mb-6 aspect-[16/9] w-full rounded-xl object-cover" />}
+  <p class="text-sm font-bold uppercase tracking-[0.16em] text-(--color-accent-500)">{article.category}</p>
+  <h3 class:list={["mt-3 font-black leading-tight text-(--color-foreground)", prominent ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"]}>
+    <a href={`/blog/${article.slug}/`} class="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500) hover:underline hover:underline-offset-4">{article.title}</a>
+  </h3>
+  <p class="mt-4 flex-1 leading-relaxed text-(--color-foreground-muted)">{article.description}</p>
+  <a href={`/blog/${article.slug}/`} aria-label={`Leer artículo: ${article.title}`} class="mt-6 self-start font-semibold text-(--color-foreground) underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500)">Leer artículo <span aria-hidden="true">→</span></a>
+</article>
