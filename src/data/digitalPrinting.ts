@@ -1,8 +1,8 @@
 import { paths } from "@/data/navigation";
 
-type Item = { title: string; description: string; href?: string };
+type Item = { title: string; description: string; href?: string; image?: string; imageAlt?: string };
 
-export type DigitalPrintingPage = {
+type CommonPage = {
   title: string;
   description: string;
   eyebrow: string;
@@ -13,10 +13,17 @@ export type DigitalPrintingPage = {
   imageFirst?: boolean;
   solutions: { eyebrow: string; title: string; intro: string; items: Item[] };
   customization: { eyebrow: string; title: string; intro: string; image?: string; imageAlt?: string; points: Item[] };
+};
+
+export type DigitalPrintingHubPage = Omit<CommonPage, "customization"> & {
+  customization: CommonPage["customization"] & { image: string; imageAlt: string };
+  installation: { eyebrow: string; title: string; intro: string };
+};
+
+export type DigitalPrintingDetailPage = CommonPage & {
   applications: { eyebrow: string; title: string; intro: string; items: Item[] };
   installation: { eyebrow: string; title: string; intro: string; points: Item[] };
   cta: { title: string; text: string };
-  parent?: boolean;
 };
 
 export const digitalPrintingPages = {
@@ -33,10 +40,10 @@ export const digitalPrintingPages = {
       title: "Soluciones de impresión digital",
       intro: "Del formato de gran visibilidad a la gráfica que acompaña la experiencia dentro de un local. Elige la solución que mejor responde a tu proyecto.",
       items: [
-        { title: "Lonas publicitarias", description: "Gráfica de gran formato para campañas, fachadas y espacios donde el mensaje necesita presencia.", href: paths.digitalPrintingBanners },
-        { title: "Soportes rígidos", description: "Cartelería, señalización y elementos gráficos para puntos de venta y espacios corporativos.", href: paths.digitalPrintingRigidSupports },
-        { title: "Textiles y banderas", description: "Gráfica textil y banderas para comunicación visual en eventos, promociones y espacios comerciales.", href: paths.digitalPrintingTextiles },
-        { title: "Vinilos", description: "Gráfica aplicada a cristales, escaparates e interiores. Consulta la página específica de vinilos en Rotulación.", href: paths.vinyls },
+        { title: "Lonas publicitarias", description: "Gráfica de gran formato para campañas, fachadas y espacios donde el mensaje necesita presencia.", href: paths.digitalPrintingBanners, image: "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior.jpg", imageAlt: "Lona publicitaria de Cepsa en un soporte exterior" },
+        { title: "Soportes rígidos", description: "Cartelería, señalización y elementos gráficos para puntos de venta y espacios corporativos.", href: paths.digitalPrintingRigidSupports, image: "/ImagenesWebClav/Fotos%20Que%20si/expositor-biomecanics-punto-venta.jpg", imageAlt: "Expositor gráfico de Biomecanics en un punto de venta" },
+        { title: "Textiles y banderas", description: "Gráfica textil y banderas para comunicación visual en eventos, promociones y espacios comerciales.", href: paths.digitalPrintingTextiles, image: "/ImagenesWebClav/Logos-Cosa-Varias/banderas-textil-exterior.jpg", imageAlt: "Tres banderas verticales con gráfica de marcas en exterior" },
+        { title: "Vinilos", description: "Gráfica aplicada a cristales, escaparates e interiores. Consulta la página específica de vinilos en Rotulación.", href: paths.vinyls, image: "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina.jpeg", imageAlt: "Gráfica de vinilo aplicada sobre cristales de una oficina" },
       ],
     },
     customization: {
@@ -52,28 +59,11 @@ export const digitalPrintingPages = {
         { title: "Uso final", description: "Una campaña temporal y una gráfica de espacio cumplen funciones diferentes." },
       ],
     },
-    applications: {
-      eyebrow: "Dónde se utiliza",
-      title: "Gráfica que se integra en cada espacio",
-      intro: "La impresión digital da forma a mensajes de marca, orientación y promoción en distintos momentos de contacto con el público.",
-      items: [
-        { title: "Campañas y promociones", description: "Piezas pensadas para dar visibilidad a un mensaje durante una acción comercial." },
-        { title: "Puntos de venta", description: "Gráfica que acompaña productos, recorridos y zonas de atención." },
-        { title: "Eventos y espacios corporativos", description: "Elementos visuales para comunicar la identidad de una empresa en contextos temporales o permanentes." },
-      ],
-    },
     installation: {
       eyebrow: "Del archivo al espacio",
       title: "Producción e instalación coordinadas",
       intro: "Podemos acompañar la gráfica desde su preparación hasta su colocación cuando el proyecto lo requiere, cuidando la coherencia del conjunto.",
-      points: [
-        { title: "Preparación", description: "Revisamos qué debe comunicar cada pieza y el espacio al que va destinada." },
-        { title: "Producción gráfica", description: "Organizamos las piezas impresas para que respondan al formato y uso definidos." },
-        { title: "Colocación", description: "Coordinamos su integración en el espacio cuando forma parte del encargo." },
-      ],
     },
-    cta: { title: "¿Necesitas producir gráfica para tu empresa?", text: "Cuéntanos qué quieres comunicar, dónde se utilizará y qué piezas necesitas. Te ayudamos a definir una solución adecuada." },
-    parent: true,
   },
   banners: {
     title: "Lonas publicitarias para empresas | GrupoClavD",
@@ -229,4 +219,9 @@ export const digitalPrintingPages = {
     },
     cta: { title: "¿Necesitas banderas o gráfica textil para tu empresa?", text: "Cuéntanos dónde quieres utilizarlas y qué debe comunicar tu marca. Te ayudaremos a dar forma a las piezas." },
   },
-} satisfies Record<string, DigitalPrintingPage>;
+} satisfies {
+  main: DigitalPrintingHubPage;
+  banners: DigitalPrintingDetailPage;
+  rigid: DigitalPrintingDetailPage;
+  textiles: DigitalPrintingDetailPage;
+};

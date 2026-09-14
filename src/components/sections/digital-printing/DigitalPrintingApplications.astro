@@ -1,0 +1,27 @@
+---
+import Container from "@/components/ui/Container.astro";
+import type { DigitalPrintingDetailPage } from "@/data/digitalPrinting";
+
+interface Props { page: DigitalPrintingDetailPage }
+const { page } = Astro.props;
+---
+
+<section class="bg-(--color-foreground) py-16 text-white lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)">{page.applications.eyebrow}</p>
+        <h2 class="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">{page.applications.title}</h2>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-white/70">{page.applications.intro}</p>
+      </div>
+      <div>
+        {page.applications.items.map((item) => (
+          <article class="border-t border-white/20 py-5">
+            <h3 class="text-lg font-bold">{item.title}</h3>
+            <p class="mt-2 leading-relaxed text-white/70">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

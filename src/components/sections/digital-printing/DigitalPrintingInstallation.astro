@@ -1,0 +1,29 @@
+---
+import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
+import type { DigitalPrintingDetailPage } from "@/data/digitalPrinting";
+
+interface Props { page: DigitalPrintingDetailPage }
+const { page } = Astro.props;
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{page.installation.eyebrow}</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">{page.installation.title}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{page.installation.intro}</p>
+        <a href={paths.digitalPrinting} class="mt-6 inline-flex font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:underline">Ver todas las soluciones de impresión digital →</a>
+      </div>
+      <div>
+        {page.installation.points.map((point, index) => (
+          <article class="grid gap-3 border-t border-(--color-border) py-5 sm:grid-cols-[2rem_1fr] sm:gap-6">
+            <span aria-hidden="true" class="font-bold text-(--color-accent-500)">{String(index + 1).padStart(2, "0")}</span>
+            <div><h3 class="text-xl font-bold text-(--color-foreground)">{point.title}</h3><p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{point.description}</p></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

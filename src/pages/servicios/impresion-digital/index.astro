@@ -1,5 +1,7 @@
 ---
-import DigitalPrintingLanding from "@/components/sections/digital-printing/DigitalPrintingLanding.astro";
+import DigitalPrintingHero from "@/components/sections/digital-printing/DigitalPrintingHero.astro";
+import DigitalPrintingSolutions from "@/components/sections/digital-printing/DigitalPrintingSolutions.astro";
+import DigitalPrintingHubProduction from "@/components/sections/digital-printing/DigitalPrintingHubProduction.astro";
 import { digitalPrintingPages } from "@/data/digitalPrinting";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -7,5 +9,7 @@ const page = digitalPrintingPages.main;
 ---
 
 <BaseLayout title={page.title} description={page.description}>
-  <DigitalPrintingLanding page={page} />
+  <DigitalPrintingHero page={page} />
+  <DigitalPrintingSolutions page={page} variant="hub" />
+  <DigitalPrintingHubProduction page={page} />
 </BaseLayout>

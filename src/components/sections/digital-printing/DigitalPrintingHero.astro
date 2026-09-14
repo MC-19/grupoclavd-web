@@ -1,0 +1,28 @@
+---
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
+import type { DigitalPrintingHubPage, DigitalPrintingDetailPage } from "@/data/digitalPrinting";
+
+interface Props { page: DigitalPrintingHubPage | DigitalPrintingDetailPage }
+const { page } = Astro.props;
+---
+
+<section class="py-12 lg:py-16">
+  <Container>
+    <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div class:list={[page.imageFirst && "lg:order-2"]}>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{page.eyebrow}</p>
+        <h1 class="text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">{page.h1}</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">{page.intro}</p>
+        <div class="mt-7 flex flex-wrap gap-4">
+          <ButtonLink href={paths.quote}>Solicitar presupuesto</ButtonLink>
+          <ButtonLink href="#soluciones-impresion-digital" variant="secondary">Ver soluciones</ButtonLink>
+        </div>
+      </div>
+      <div class:list={["aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)", page.imageFirst && "lg:order-1"]}>
+        <img src={page.image} alt={page.imageAlt} class="h-full w-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
+      </div>
+    </div>
+  </Container>
+</section>

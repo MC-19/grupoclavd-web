@@ -1,5 +1,10 @@
 ---
-import DigitalPrintingLanding from "@/components/sections/digital-printing/DigitalPrintingLanding.astro";
+import DigitalPrintingHero from "@/components/sections/digital-printing/DigitalPrintingHero.astro";
+import DigitalPrintingSolutions from "@/components/sections/digital-printing/DigitalPrintingSolutions.astro";
+import DigitalPrintingCustomization from "@/components/sections/digital-printing/DigitalPrintingCustomization.astro";
+import DigitalPrintingApplications from "@/components/sections/digital-printing/DigitalPrintingApplications.astro";
+import DigitalPrintingInstallation from "@/components/sections/digital-printing/DigitalPrintingInstallation.astro";
+import DigitalPrintingCTA from "@/components/sections/digital-printing/DigitalPrintingCTA.astro";
 import { digitalPrintingPages } from "@/data/digitalPrinting";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -7,5 +12,10 @@ const page = digitalPrintingPages.textiles;
 ---
 
 <BaseLayout title={page.title} description={page.description}>
-  <DigitalPrintingLanding page={page} />
+  <DigitalPrintingHero page={page} />
+  <DigitalPrintingSolutions page={page} variant="list" />
+  <DigitalPrintingCustomization page={page} />
+  <DigitalPrintingApplications page={page} />
+  <DigitalPrintingInstallation page={page} />
+  <DigitalPrintingCTA page={page} />
 </BaseLayout>
