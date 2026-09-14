@@ -16,5 +16,5 @@ const { article, prominent = false } = Astro.props;
     <a href={`/blog/${article.slug}/`} class="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500) hover:underline hover:underline-offset-4">{article.title}</a>
   </h3>
   <p class="mt-4 flex-1 leading-relaxed text-(--color-foreground-muted)">{article.description}</p>
-  <a href={`/blog/${article.slug}/`} aria-label={`Leer artículo: ${article.title}`} class="mt-6 self-start font-semibold text-(--color-foreground) underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500)">Leer artículo <span aria-hidden="true">→</span></a>
+  <a href={`/blog/${article.slug}/`} aria-label={`Leer artículo: ${article.title}`} class="group mt-6 inline-flex self-start items-center font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--color-accent-500)">Leer artículo <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span></a>
 </article>

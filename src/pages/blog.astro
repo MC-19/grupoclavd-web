@@ -25,7 +25,7 @@ const moreArticles = blogArticles.filter((article) => !article.featured);
   <section class="bg-(--color-surface-muted) py-12 lg:py-16" aria-labelledby="articulos-destacados">
     <Container>
       <h2 id="articulos-destacados" class="text-2xl font-black text-(--color-foreground) sm:text-3xl">Artículos destacados</h2>
-      <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="mt-8 grid max-w-5xl gap-6 md:grid-cols-2">
         {featured.map((article) => <ArticleCard article={article} prominent />)}
       </div>
     </Container>
@@ -34,7 +34,7 @@ const moreArticles = blogArticles.filter((article) => !article.featured);
   <section class="py-12 lg:py-16" aria-labelledby="mas-articulos">
     <Container>
       <h2 id="mas-articulos" class="text-2xl font-black text-(--color-foreground) sm:text-3xl">Más guías</h2>
-      <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="mt-8 grid max-w-5xl gap-6 md:grid-cols-2">
         {moreArticles.map((article) => <ArticleCard article={article} />)}
       </div>
     </Container>
