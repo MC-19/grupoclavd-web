@@ -1,0 +1,121 @@
+---
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
+import type { DigitalPrintingPage } from "@/data/digitalPrinting";
+
+interface Props { page: DigitalPrintingPage }
+
+const { page } = Astro.props;
+const solutionId = "soluciones-impresion-digital";
+---
+
+<section class="py-12 lg:py-16">
+  <Container>
+    <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div class:list={[page.imageFirst && "lg:order-2"]}>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{page.eyebrow}</p>
+        <h1 class="text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">{page.h1}</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">{page.intro}</p>
+        <div class="mt-7 flex flex-wrap gap-4">
+          <ButtonLink href={paths.quote}>Solicitar presupuesto</ButtonLink>
+          <ButtonLink href={`#${solutionId}`} variant="secondary">Ver soluciones</ButtonLink>
+        </div>
+      </div>
+      <div class:list={["aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)", page.imageFirst && "lg:order-1"]}>
+        <img src={page.image} alt={page.imageAlt} class="h-full w-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<section id={solutionId} class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="max-w-3xl">
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{page.solutions.eyebrow}</p>
+      <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">{page.solutions.title}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{page.solutions.intro}</p>
+    </div>
+    <div class:list={["mt-10 grid gap-6", page.parent ? "md:grid-cols-2" : "md:grid-cols-3"]}>
+      {page.solutions.items.map((item, index) => (
+        <article class="flex h-full flex-col rounded-2xl border border-(--color-border) bg-white p-6 sm:p-7">
+          <span aria-hidden="true" class="text-sm font-bold tracking-[0.2em] text-(--color-accent-500)">{String(index + 1).padStart(2, "0")}</span>
+          <h3 class="mt-4 text-2xl font-bold text-(--color-foreground)">{item.title}</h3>
+          <p class="mt-3 flex-1 leading-relaxed text-(--color-foreground-muted)">{item.description}</p>
+          {item.href && <a href={item.href} class="mt-6 inline-flex w-fit items-center gap-2 font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:underline" aria-label={`Ver ${item.title}`}>Ver solución <span aria-hidden="true">→</span></a>}
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{page.customization.eyebrow}</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">{page.customization.title}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{page.customization.intro}</p>
+        {page.customization.image && <div class="mt-8 aspect-16/10 overflow-hidden rounded-2xl bg-(--color-surface-muted)"><img src={page.customization.image} alt={page.customization.imageAlt ?? ""} class="h-full w-full object-cover" loading="lazy" decoding="async" /></div>}
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {page.customization.points.map((point) => (
+          <article class="rounded-2xl border border-(--color-border) p-6">
+            <h3 class="text-xl font-bold text-(--color-foreground)">{point.title}</h3>
+            <p class="mt-3 leading-relaxed text-(--color-foreground-muted)">{point.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
+
+<section class="bg-(--color-foreground) py-16 text-white lg:py-20">
+  <Container>
+    <div class="max-w-3xl">
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)">{page.applications.eyebrow}</p>
+      <h2 class="text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">{page.applications.title}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-white/75">{page.applications.intro}</p>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {page.applications.items.map((item) => (
+        <article class="rounded-2xl border border-white/20 bg-white/5 p-6 sm:p-7">
+          <h3 class="text-xl font-bold">{item.title}</h3>
+          <p class="mt-3 leading-relaxed text-white/75">{item.description}</p>
+        </article>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{page.installation.eyebrow}</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">{page.installation.title}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{page.installation.intro}</p>
+        {!page.parent && <a href={paths.digitalPrinting} class="mt-6 inline-flex font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:underline">Ver todas las soluciones de impresión digital →</a>}
+      </div>
+      <div>
+        {page.installation.points.map((point, index) => (
+          <article class="grid gap-3 border-t border-(--color-border) py-5 sm:grid-cols-[2rem_1fr] sm:gap-6">
+            <span aria-hidden="true" class="font-bold text-(--color-accent-500)">{String(index + 1).padStart(2, "0")}</span>
+            <div><h3 class="text-xl font-bold text-(--color-foreground)">{point.title}</h3><p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{point.description}</p></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="max-w-3xl">
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Cuéntanos tu proyecto</p>
+      <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">{page.cta.title}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{page.cta.text}</p>
+      <div class="mt-7"><ButtonLink href={paths.quote}>Solicitar presupuesto</ButtonLink></div>
+    </div>
+  </Container>
+</section>

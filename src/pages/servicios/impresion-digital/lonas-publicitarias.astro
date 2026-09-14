@@ -1,0 +1,11 @@
+---
+import DigitalPrintingLanding from "@/components/sections/digital-printing/DigitalPrintingLanding.astro";
+import { digitalPrintingPages } from "@/data/digitalPrinting";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const page = digitalPrintingPages.banners;
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <DigitalPrintingLanding page={page} />
+</BaseLayout>
