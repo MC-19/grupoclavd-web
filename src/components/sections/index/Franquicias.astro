@@ -1,7 +1,20 @@
 ---
 import Container from "../../ui/Container.astro";
 
-const clients = ["Pikolinos", "MySoft", "Biomecanics", "Sprinter", "Circet"];
+const clients = [
+  { name: "Ecosilvo", logo: "/brands/ecosilvo.png", alt: "Ecosilvo" },
+  { name: "Alcampo", logo: "/brands/alcampo.png", alt: "Alcampo", dark: true },
+  { name: "Primor", logo: "/brands/primor.png", alt: "Primor", dark: true },
+  { name: "Orenes", logo: "/brands/orenes.svg", alt: "Orenes" },
+  { name: "Serigrafic", logo: "/brands/serigrafic.svg", alt: "Serigrafic" },
+  { name: "JD Sports", logo: "/brands/jd-sports.png", alt: "JD Sports", dark: true },
+  { name: "Sprinter", logo: "/brands/sprinter.png", alt: "Sprinter" },
+  { name: "El Corte Inglés", logo: "/brands/el-corte-ingles.svg", alt: "El Corte Inglés" },
+  { name: "Pikolinos", logo: "/brands/pikolinos.svg", alt: "Pikolinos" },
+  { name: "MySoft", logo: "/brands/mysoft.png", alt: "MySoft" },
+  { name: "Biomecanics", logo: "/brands/biomecanics.svg", alt: "Biomecanics" },
+  { name: "Circet", logo: "/brands/circet.png", alt: "Circet", dark: true },
+];
 ---
 
 <section class="bg-(--color-surface-muted) py-16 lg:py-20">
@@ -27,14 +40,90 @@ const clients = ["Pikolinos", "MySoft", "Biomecanics", "Sprinter", "Circet"];
       </p>
     </div>
 
-    <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-      {
-        clients.map((client) => (
-          <div class="flex min-h-28 items-center justify-center rounded-2xl border border-(--color-border) bg-white px-5 text-center font-bold text-(--color-foreground-muted)">
-            {client}
-          </div>
-        ))
-      }
+    <div class="client-viewport mt-10" aria-label="Empresas clientes">
+      <div class="client-track">
+        <ul class="client-group">
+          {
+            clients.map((client) => (
+              <li class:list={["client-logo", { "client-logo--dark": client.dark }]}>
+                <img src={client.logo} alt={client.alt} class="max-h-14 max-w-40 object-contain" loading="lazy" decoding="async" />
+              </li>
+            ))
+          }
+        </ul>
+        <ul class="client-group client-copy" aria-hidden="true">
+          {
+            clients.map((client) => (
+              <li class:list={["client-logo", { "client-logo--dark": client.dark }]}>
+                <img src={client.logo} alt="" class="max-h-14 max-w-40 object-contain" loading="lazy" decoding="async" />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </Container>
 </section>
+
+<style>
+  .client-viewport {
+    overflow: hidden;
+  }
+
+  .client-track {
+    display: flex;
+    width: max-content;
+    animation: clients-scroll 65s linear infinite;
+    will-change: transform;
+  }
+
+  .client-group {
+    display: flex;
+    flex: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0 1rem 0 0;
+    list-style: none;
+  }
+
+  .client-logo {
+    display: flex;
+    flex: 0 0 192px;
+    width: 192px;
+    height: 96px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    background: white;
+    padding: 1rem;
+  }
+
+  .client-logo--dark {
+    background: #22242a;
+  }
+
+  @keyframes clients-scroll {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .client-track {
+      display: block;
+      width: auto;
+      animation: none;
+      will-change: auto;
+    }
+
+    .client-group {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-right: 0;
+    }
+
+    .client-copy {
+      display: none;
+    }
+  }
+</style>
