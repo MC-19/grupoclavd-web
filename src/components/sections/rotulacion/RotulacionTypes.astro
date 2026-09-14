@@ -9,6 +9,7 @@ const services = [
       "Diseño, fabricación e instalación de rótulos y elementos luminosos para fachadas comerciales y corporativas.",
     href: paths.illuminatedSigns,
     image: "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche.jpeg",
+    imageAlt: "Rótulo iluminado de MIMMA Gallery en una fachada",
   },
   {
     title: "Letras corpóreas",
@@ -16,6 +17,7 @@ const services = [
       "Letras corpóreas para fachadas, interiores, comercios y espacios corporativos, adaptadas a la imagen de cada marca.",
     href: paths.dimensionalLetters,
     image: "/ImagenesWebClav/Fotos%20Nuevas/letras-corporeas-mimma-gallery-fachada.jpeg",
+    imageAlt: "Letras corpóreas de MIMMA Gallery instaladas en una fachada",
   },
   {
     title: "Rotulación de vehículos y flotas",
@@ -23,6 +25,7 @@ const services = [
       "Rotulación mediante vinilos para vehículos comerciales y flotas, desde actuaciones individuales hasta implantaciones de mayor escala.",
     href: paths.vehicles,
     image: "/ImagenesWebClav/Fotos%20Nuevas/rotulacion-furgoneta-ribera-valldigna.jpeg",
+    imageAlt: "Furgoneta con gráfica de colores aplicada en el lateral",
   },
   {
     title: "Vinilos",
@@ -30,6 +33,7 @@ const services = [
       "Vinilos de corte e impresión para escaparates, paredes, cristales, superficies comerciales y campañas promocionales.",
     href: paths.vinyls,
     image: "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina.jpeg",
+    imageAlt: "Gráfica de vinilo azul aplicada sobre cristales de una oficina",
   },
   {
     title: "Señalética",
@@ -37,6 +41,7 @@ const services = [
       "Soluciones de señalización interior y exterior para empresas, establecimientos y espacios corporativos.",
     href: paths.wayfinding,
     image: "/ImagenesWebClav/Fotos%20Nuevas/senaletica-exterior-thrifty-aparcamiento.jpeg",
+    imageAlt: "Señal de identificación Thrifty en un aparcamiento",
   },
   {
     title: "Escaparates",
@@ -44,6 +49,7 @@ const services = [
       "Rotulación y gráfica promocional para escaparates, campañas comerciales y puntos de venta.",
     href: paths.shopWindows,
     image: "/ImagenesWebClav/Fotos%20Que%20si/escaparate-pikolinos-centro-comercial.jpg",
+    imageAlt: "Escaparate de Pikolinos con gráfica comercial",
   },
 ];
 ---
@@ -86,8 +92,9 @@ const services = [
               {service.image ? (
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={service.imageAlt}
                   loading="lazy"
+                  decoding="async"
                   class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
               ) : (
