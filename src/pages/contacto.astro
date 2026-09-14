@@ -1,0 +1,33 @@
+---
+import ContactForm from "@/components/forms/ContactForm.astro";
+import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contacto | GrupoClavD"
+  description="Contacta con GrupoClavD para consultas sobre rotulación, impresión digital e instalación para empresas."
+>
+  <section class="py-12 lg:py-16">
+    <Container>
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Contacto</p>
+        <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Hablemos</h1>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Si tienes una consulta sobre nuestros servicios, un proyecto o cualquier otra cuestión, escríbenos y nos pondremos en contacto contigo.</p>
+      </div>
+
+      <div class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(260px,1fr)] lg:gap-14">
+        <div>
+          <h2 class="mb-6 text-2xl font-black text-(--color-foreground)">Envíanos tu consulta</h2>
+          <ContactForm />
+        </div>
+        <aside class="self-start rounded-2xl bg-(--color-surface-muted) p-6 sm:p-8" aria-labelledby="quote-heading">
+          <h2 id="quote-heading" class="text-xl font-black text-(--color-foreground)">¿Quieres solicitar un presupuesto?</h2>
+          <p class="mt-4 leading-relaxed text-(--color-foreground-muted)">Si necesitas valorar un trabajo concreto, cuéntanos tu proyecto desde la sección de presupuesto.</p>
+          <a href={paths.quote} class="mt-5 inline-flex min-h-11 items-center font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)">Ir a Presupuesto <span class="ml-2" aria-hidden="true">→</span></a>
+        </aside>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
