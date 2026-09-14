@@ -1,0 +1,33 @@
+---
+import Container from "@/components/ui/Container.astro";
+
+const points = [
+  { title: "Preparación", description: "Revisamos qué elementos se instalarán y el espacio donde deben quedar integrados." },
+  { title: "Coordinación", description: "Organizamos las actuaciones para mantener coherencia entre las piezas y su ubicación." },
+  { title: "Logística", description: "Coordinamos la llegada de los elementos al lugar previsto para el montaje." },
+  { title: "Instalación", description: "Colocamos cada elemento teniendo en cuenta su función visual dentro del conjunto." },
+];
+---
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div class="aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
+        <img src="/ImagenesWebClav/Imagenes%20Junio-2025/instalacion-rotulo-somium-vall-residences.jpg" alt="Colocación de un rótulo identificativo en una fachada" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+      </div>
+      <div>
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Gestión y ejecución</p>
+        <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Del proyecto a su instalación en el espacio</h2>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">La instalación conecta las piezas producidas con el lugar donde deben funcionar. Coordinamos su preparación y montaje para que el resultado responda al proyecto visual de la empresa.</p>
+        <div class="mt-8 grid gap-x-10 gap-y-7 sm:grid-cols-2">
+          {points.map((point) => (
+            <div class="border-t border-(--color-border) pt-5">
+              <h3 class="text-lg font-bold text-(--color-foreground)">{point.title}</h3>
+              <p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

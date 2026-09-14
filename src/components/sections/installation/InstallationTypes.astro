@@ -1,0 +1,59 @@
+---
+import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
+
+const services = [
+  {
+    title: "Rótulos y fachadas",
+    description: "Montaje de elementos de rotulación que identifican y dan presencia a establecimientos y fachadas comerciales.",
+    href: paths.illuminatedSigns,
+    image: "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche.jpeg",
+    imageAlt: "Rótulo iluminado de MIMMA Gallery en una fachada",
+  },
+  {
+    title: "Vinilos y gráfica",
+    description: "Aplicación de gráfica en cristales, escaparates e interiores para integrar mensajes e identidad visual en el espacio.",
+    href: paths.vinyls,
+    image: "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina.jpeg",
+    imageAlt: "Gráfica de vinilo aplicada sobre cristales de una oficina",
+  },
+  {
+    title: "Señalética",
+    description: "Colocación de elementos de señalización para identificar zonas y facilitar la lectura de espacios comerciales o corporativos.",
+    href: paths.wayfinding,
+    image: "/ImagenesWebClav/Fotos%20Nuevas/senaletica-exterior-thrifty-aparcamiento.jpeg",
+    imageAlt: "Señal de identificación Thrifty en un aparcamiento",
+  },
+  {
+    title: "Elementos para puntos de venta",
+    description: "Integración de cartelería, displays y expositores en espacios donde deben comunicar o destacar productos.",
+    href: paths.digitalPrintingRigidSupports,
+    image: "/ImagenesWebClav/Fotos%20Que%20si/expositor-biomecanics-punto-venta.jpg",
+    imageAlt: "Expositor de Biomecanics en un punto de venta",
+  },
+];
+---
+
+<section id="que-instalamos" class="bg-(--color-surface-muted) py-16 lg:py-20">
+  <Container>
+    <div class="max-w-3xl">
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Soluciones en el espacio</p>
+      <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Qué instalamos</h2>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">Trabajamos con piezas de rotulación y gráfica que cumplen funciones distintas. Conoce cada servicio para ver qué solución encaja con tu espacio.</p>
+    </div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {services.map((service) => (
+        <a href={service.href} class="group flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-border) bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <div class="aspect-16/10 overflow-hidden bg-white">
+            <img src={service.image} alt={service.imageAlt} class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="text-xl font-bold text-(--color-foreground) transition group-hover:text-(--color-accent-500)">{service.title}</h3>
+            <p class="mt-3 leading-relaxed text-(--color-foreground-muted)">{service.description}</p>
+            <span class="mt-auto inline-flex items-center pt-5 font-semibold text-(--color-accent-500)">Ver servicio <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Container>
+</section>
