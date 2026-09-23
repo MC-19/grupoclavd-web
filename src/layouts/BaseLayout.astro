@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/layout/Footer.astro";
 import Header from "../components/layout/Header.astro";
+import { company } from "../data/company";
 import "../styles/global.css";
 
 interface Props {
@@ -9,10 +10,27 @@ interface Props {
   image?: string;
 }
 
-const { title, description, image = "/og-image.png" } = Astro.props;
+const { title, description, image } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL(image, Astro.site);
+const socialImageURL = image ? new URL(image, Astro.site) : undefined;
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "GrupoClavD",
+  legalName: company.legalName,
+  url: company.domain,
+  email: company.email,
+  telephone: company.phoneHref,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "C/ Capitán Gaspar Ortiz 88",
+    postalCode: "03201",
+    addressLocality: "Elche",
+    addressRegion: "Alicante",
+    addressCountry: "ES",
+  },
+};
 ---
 
 <!doctype html>
@@ -30,9 +48,6 @@ const socialImageURL = new URL(image, Astro.site);
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Open Graph -->
@@ -46,16 +61,18 @@ const socialImageURL = new URL(image, Astro.site);
 
     <meta property="og:url" content={canonicalURL.toString()} />
 
-    <meta property="og:image" content={socialImageURL.toString()} />
+    {socialImageURL && <meta property="og:image" content={socialImageURL.toString()} />}
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content={socialImageURL ? "summary_large_image" : "summary"} />
 
     <meta name="twitter:title" content={title} />
 
     <meta name="twitter:description" content={description} />
 
-    <meta name="twitter:image" content={socialImageURL.toString()} />
+    {socialImageURL && <meta name="twitter:image" content={socialImageURL.toString()} />}
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
   </head>
 
   <body>

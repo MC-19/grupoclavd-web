@@ -1,0 +1,11 @@
+---
+import { company } from "@/data/company";
+import LegalLayout from "@/layouts/LegalLayout.astro";
+---
+
+<LegalLayout title="Política de cookies | GrupoClavD" description="Información sobre el uso actual de cookies y tecnologías similares en el sitio web de GrupoClavD." eyebrow="Información legal" heading="Política de cookies" intro="Aquí explicamos qué cookies y tecnologías similares utiliza actualmente el código de este sitio web.">
+  <section><h2>Uso actual de cookies</h2><p>El código de GrupoClavD no instala actualmente cookies propias de analítica, publicidad, seguimiento o personalización. Tampoco integra Google Analytics, Google Tag Manager, Meta Pixel, Hotjar, vídeos incrustados, mapas ni una plataforma de gestión del consentimiento.</p><p>Por este motivo, el sitio no muestra un banner de cookies. Añadir uno sin que existan cookies no esenciales no aportaría una elección real a la persona usuaria.</p></section>
+  <section><h2>Servicios externos</h2><p>El formulario de contacto utiliza Web3Forms. La conexión con este proveedor solo se inicia cuando la persona usuaria envía voluntariamente el formulario. Esta política no atribuye cookies concretas a Web3Forms porque no se han verificado cookies instaladas por esa interacción.</p><p>El sitio está desplegado en Vercel. El comportamiento técnico de la plataforma en producción puede depender de la configuración efectiva del proyecto y de servicios opcionales habilitados en su panel. GrupoClavD no afirma que Vercel instale cookies concretas mientras ese comportamiento no haya sido verificado en el despliegue publicado.</p></section>
+  <section><h2>Cambios futuros</h2><p>Si en el futuro se incorporan herramientas que utilicen cookies no esenciales, esta política se actualizará y se implementará el mecanismo de consentimiento que corresponda antes de activarlas.</p></section>
+  <section><h2>Contacto</h2><p>Si tienes dudas sobre esta información, puedes escribir a <a href={`mailto:${company.email}`}>{company.email}</a>.</p></section>
+</LegalLayout>

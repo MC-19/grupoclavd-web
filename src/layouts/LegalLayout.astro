@@ -1,0 +1,40 @@
+---
+import Container from "@/components/ui/Container.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  eyebrow: string;
+  heading: string;
+  intro: string;
+}
+
+const { title, description, eyebrow, heading, intro } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="py-12 lg:py-16">
+    <Container>
+      <div class="mx-auto max-w-3xl">
+        <header>
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{eyebrow}</p>
+          <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl">{heading}</h1>
+          <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{intro}</p>
+        </header>
+        <div class="legal-content mt-12 space-y-10">
+          <slot />
+        </div>
+      </div>
+    </Container>
+  </article>
+</BaseLayout>
+
+<style>
+  .legal-content :global(h2) { font-size: 1.5rem; font-weight: 900; line-height: 1.25; color: var(--color-foreground); }
+  .legal-content :global(h3) { margin-top: 1.25rem; font-size: 1.125rem; font-weight: 800; color: var(--color-foreground); }
+  .legal-content :global(p), .legal-content :global(li) { margin-top: 0.75rem; line-height: 1.75; color: var(--color-foreground-muted); }
+  .legal-content :global(ul) { margin-top: 0.75rem; list-style: disc; padding-left: 1.5rem; }
+  .legal-content :global(a) { color: var(--color-accent-500); text-decoration: underline; text-underline-offset: 0.25rem; }
+  .legal-content :global(address) { margin-top: 0.75rem; font-style: normal; line-height: 1.75; color: var(--color-foreground-muted); }
+</style>

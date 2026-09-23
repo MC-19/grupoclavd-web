@@ -1,0 +1,14 @@
+---
+import { company } from "@/data/company";
+import LegalLayout from "@/layouts/LegalLayout.astro";
+---
+
+<LegalLayout title="Aviso legal | GrupoClavD" description="Información legal sobre el titular, acceso y uso del sitio web de GrupoClavD." eyebrow="Información legal" heading="Aviso legal" intro="Este aviso regula el acceso y uso del sitio web de GrupoClavD.">
+  <section><h2>Identificación del titular</h2><address><strong>{company.legalName}</strong><br />CIF: {company.taxId}<br />Domicilio: {company.address}<br />Email: <a href={`mailto:${company.email}`}>{company.email}</a><br />Teléfono: <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a><br />Sitio web: <a href={company.domain}>{company.domain}</a></address></section>
+  <section><h2>Objeto del sitio</h2><p>Este sitio presenta los servicios, proyectos y contenidos de GrupoClavD relacionados con rotulación, impresión digital e instalación y facilita vías de contacto con la empresa. La información publicada tiene carácter general y no constituye por sí sola una oferta contractual ni una valoración definitiva de un proyecto.</p></section>
+  <section><h2>Condiciones de uso</h2><p>La persona usuaria se compromete a utilizar el sitio de forma lícita, diligente y respetuosa, sin realizar acciones que puedan dañar su funcionamiento, comprometer su seguridad o afectar a derechos de terceros.</p><p>GrupoClavD puede actualizar, modificar o retirar contenidos del sitio cuando resulte necesario.</p></section>
+  <section><h2>Propiedad intelectual e industrial</h2><p>Los textos, elementos gráficos, fotografías, marcas y demás contenidos del sitio pertenecen a GrupoClavD o se utilizan con autorización, salvo que se indique lo contrario. No se permite su reproducción, distribución, transformación o explotación sin la autorización correspondiente, excepto en los casos permitidos por la ley.</p><p>Las marcas de terceros que aparecen en trabajos o proyectos pertenecen a sus respectivos titulares y se muestran únicamente para identificar visualmente los trabajos documentados.</p></section>
+  <section><h2>Responsabilidad</h2><p>Trabajamos para mantener la información actualizada y el sitio disponible, pero no podemos garantizar la ausencia absoluta de errores o interrupciones. GrupoClavD no responde del uso que se realice de la información publicada ni de daños derivados de actuaciones ajenas a su control.</p></section>
+  <section><h2>Enlaces externos</h2><p>Los enlaces a sitios de terceros se facilitan para ampliar información o permitir el funcionamiento de determinados servicios. GrupoClavD no controla sus contenidos, disponibilidad ni políticas y no asume responsabilidad por ellos.</p></section>
+  <section><h2>Legislación aplicable y contacto</h2><p>Este sitio se rige por la normativa española aplicable. Para cualquier consulta relacionada con estas condiciones puedes escribir a <a href={`mailto:${company.email}`}>{company.email}</a>.</p></section>
+</LegalLayout>

@@ -1,0 +1,19 @@
+---
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Página no encontrada | GrupoClavD" description="La página solicitada no está disponible.">
+  <section class="py-20 lg:py-28">
+    <Container>
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">404</p>
+        <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Esta página no existe</h1>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">Puede que el enlace haya cambiado o que la página ya no esté disponible.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4"><ButtonLink href={paths.home}>Volver al inicio</ButtonLink><ButtonLink href={paths.services} variant="secondary">Ver servicios</ButtonLink></div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

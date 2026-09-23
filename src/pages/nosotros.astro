@@ -1,0 +1,63 @@
+---
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const workAreas = [
+  { title: "Rotulación", text: "Soluciones para fachadas, interiores, vehículos, escaparates y espacios comerciales." },
+  { title: "Impresión digital", text: "Producción gráfica para lonas, soportes rígidos, textiles y otras aplicaciones visuales." },
+  { title: "Instalación y montaje", text: "Coordinación de los elementos y su colocación en el espacio previsto." },
+];
+
+const approach = [
+  { title: "Una necesidad concreta", text: "Partimos del espacio, la identidad y el objetivo de cada empresa." },
+  { title: "Producción coordinada", text: "Preparamos las piezas y elementos gráficos que forman parte del proyecto." },
+  { title: "Ejecución en el espacio", text: "Coordinamos logística e instalación para integrar el resultado en su ubicación final." },
+];
+---
+
+<BaseLayout title="Soluciones de imagen para empresas | GrupoClavD" description="GrupoClavD desarrolla soluciones de rotulación, impresión digital e instalación para empresas, comercios, franquicias y cadenas en toda España.">
+  <section class="py-12 lg:py-16">
+    <Container>
+      <div class="max-w-4xl">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">GrupoClavD</p>
+        <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Soluciones de imagen para empresas</h1>
+        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)">Trabajamos en rotulación, impresión digital e instalación para llevar la imagen de cada empresa a fachadas, interiores, vehículos y espacios comerciales.</p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="bg-(--color-surface-muted) py-16 lg:py-20" aria-labelledby="que-hacemos">
+    <Container>
+      <h2 id="que-hacemos" class="text-3xl font-black text-(--color-foreground) sm:text-4xl">Qué hacemos</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {workAreas.map((area) => <article class="rounded-2xl border border-(--color-border-strong) bg-white p-7"><h3 class="text-xl font-black text-(--color-foreground)">{area.title}</h3><p class="mt-4 leading-relaxed text-(--color-foreground-muted)">{area.text}</p></article>)}
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-16 lg:py-20" aria-labelledby="como-trabajamos">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(300px,1fr)]">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Cómo trabajamos</p>
+          <h2 id="como-trabajamos" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">Del proyecto a su ubicación final</h2>
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">Producción, logística e instalación se coordinan para mantener una imagen coherente durante la ejecución.</p>
+        </div>
+        <ol class="divide-y divide-(--color-border-strong) border-y border-(--color-border-strong)">
+          {approach.map((item, index) => <li class="py-5"><p class="text-sm font-bold text-(--color-accent-500)">0{index + 1}</p><h3 class="mt-1 font-black text-(--color-foreground)">{item.title}</h3><p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{item.text}</p></li>)}
+        </ol>
+      </div>
+    </Container>
+  </section>
+
+  <section class="bg-(--color-foreground) py-16 text-white lg:py-20" aria-labelledby="cobertura-clientes">
+    <Container class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div><p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)">Cobertura y proyectos</p><h2 id="cobertura-clientes" class="mt-3 text-3xl font-black sm:text-4xl">Una ubicación o múltiples establecimientos</h2></div>
+      <p class="text-lg leading-relaxed text-white/70">Trabajamos con empresas, comercios, franquicias y cadenas, coordinando proyectos puntuales y actuaciones en múltiples ubicaciones en toda España.</p>
+    </Container>
+  </section>
+
+  <section class="py-16 lg:py-20"><Container><div class="flex flex-col gap-6 rounded-2xl bg-(--color-surface-muted) p-8 sm:flex-row sm:items-center sm:justify-between"><div><h2 class="text-2xl font-black text-(--color-foreground)">Cuéntanos qué necesitas</h2><p class="mt-3 text-(--color-foreground-muted)">Hablemos de tu espacio, tu imagen y el alcance del proyecto.</p></div><ButtonLink href={paths.contact} class="shrink-0">Contactar</ButtonLink></div></Container></section>
+</BaseLayout>

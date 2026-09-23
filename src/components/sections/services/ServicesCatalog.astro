@@ -1,75 +1,76 @@
 ---
 import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
 
 const services = [
   {
     title: "Fachadas y rótulos luminosos",
     description:
       "Soluciones de rotulación exterior para fachadas comerciales, establecimientos y espacios corporativos.",
-    href: "/servicios/rotulacion/rotulos-luminosos-fachadas/",
+    href: paths.illuminatedSigns,
     image: "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche.jpeg",
   },
   {
     title: "Letras corpóreas",
     description:
       "Fabricación e instalación de letras corpóreas para interiores, fachadas y espacios comerciales.",
-    href: "/servicios/rotulacion/letras-corporeas/",
+    href: paths.dimensionalLetters,
     image: "/ImagenesWebClav/Fotos%20Nuevas/letras-corporeas-mimma-gallery-fachada.jpeg",
   },
   {
     title: "Impresión digital gran formato",
     description:
       "Impresión de gran formato para lonas, vinilos, cartelería, soportes rígidos y proyectos de comunicación visual.",
-    href: "/servicios/impresion-digital/",
+    href: paths.digitalPrinting,
     image: "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior.jpg",
   },
   {
     title: "Rotulación de vehículos y flotas",
     description:
       "Rotulación de vehículos comerciales y flotas mediante vinilos y soluciones gráficas adaptadas a cada marca.",
-    href: "/servicios/rotulacion/vehiculos/",
+    href: paths.vehicles,
     image: "/ImagenesWebClav/Fotos%20Nuevas/rotulacion-furgoneta-ribera-valldigna.jpeg",
   },
   {
     title: "Vinilos",
     description:
       "Vinilos de corte, impresión y soluciones gráficas para escaparates, interiores, superficies y campañas.",
-    href: "/servicios/rotulacion/vinilos/",
+    href: paths.vinyls,
     image: "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina.jpeg",
   },
   {
     title: "Señalética",
     description:
       "Sistemas de señalización interior y exterior adaptados a espacios comerciales, corporativos y profesionales.",
-    href: "/servicios/senaletica/",
+    href: paths.wayfinding,
     image: "/ImagenesWebClav/Fotos%20Nuevas/senaletica-exterior-thrifty-aparcamiento.jpeg",
   },
   {
     title: "Expositores y displays",
     description:
       "Diseño, producción y montaje de expositores, displays y elementos visuales para puntos de venta.",
-    href: "/servicios/plv-expositores/",
+    href: paths.digitalPrintingRigidSupports,
     image: "/ImagenesWebClav/Fotos%20Que%20si/expositor-biomecanics-punto-venta.jpg",
   },
   {
     title: "Escaparates",
     description:
       "Rotulación, gráfica promocional y soluciones visuales para escaparates y campañas comerciales.",
-    href: "/servicios/rotulacion/escaparates/",
+    href: paths.shopWindows,
     image: "/ImagenesWebClav/Fotos%20Que%20si/escaparate-pikolinos-centro-comercial.jpg",
   },
   {
     title: "Decoración de interiores",
     description:
       "Aplicaciones gráficas y elementos de imagen corporativa para transformar espacios interiores.",
-    href: "/servicios/decoracion-interiores/",
+    href: paths.corporateIdentity,
     image: "/ImagenesWebClav/Fotos%20Que%20si/grafica-decorativa-oficina-interior.jpg",
   },
   {
     title: "Vallas publicitarias",
     description:
       "Producción e instalación de gráfica y soportes para campañas de publicidad exterior.",
-    href: "/servicios/instalacion-montaje/vallas/",
+    href: paths.digitalPrintingBanners,
     image: "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior.jpg",
   },
 ];
@@ -100,14 +101,14 @@ const services = [
 
       <div class="mt-7 flex flex-wrap gap-4">
         <a
-          href="/presupuesto/"
+          href={paths.quote}
           class="inline-flex items-center justify-center rounded-xl bg-(--color-accent-500) px-6 py-3 font-semibold text-white transition hover:opacity-90"
         >
           Solicitar presupuesto
         </a>
 
         <a
-          href="/proyectos/"
+          href={paths.projects}
           class="inline-flex items-center justify-center rounded-xl border border-(--color-border-strong) px-6 py-3 font-semibold text-(--color-foreground) transition hover:bg-(--color-surface-muted)"
         >
           Ver proyectos

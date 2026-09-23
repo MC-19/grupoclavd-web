@@ -1,6 +1,7 @@
 ---
 import ContactForm from "@/components/forms/ContactForm.astro";
 import Container from "@/components/ui/Container.astro";
+import { company } from "@/data/company";
 import { paths } from "@/data/navigation";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
@@ -22,10 +23,20 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           <h2 class="mb-6 text-2xl font-black text-(--color-foreground)">Envíanos tu consulta</h2>
           <ContactForm />
         </div>
-        <aside class="self-start rounded-2xl bg-(--color-surface-muted) p-6 sm:p-8" aria-labelledby="quote-heading">
-          <h2 id="quote-heading" class="text-xl font-black text-(--color-foreground)">¿Quieres solicitar un presupuesto?</h2>
-          <p class="mt-4 leading-relaxed text-(--color-foreground-muted)">Si necesitas valorar un trabajo concreto, cuéntanos tu proyecto desde la sección de presupuesto.</p>
-          <a href={paths.quote} class="mt-5 inline-flex min-h-11 items-center font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)">Ir a Presupuesto <span class="ml-2" aria-hidden="true">→</span></a>
+        <aside class="self-start rounded-2xl bg-(--color-surface-muted) p-6 sm:p-8">
+          <section aria-labelledby="direct-contact-heading">
+            <h2 id="direct-contact-heading" class="text-xl font-black text-(--color-foreground)">Contacto directo</h2>
+            <address class="mt-4 space-y-3 not-italic text-(--color-foreground-muted)">
+              <p><span class="block text-sm font-bold text-(--color-foreground)">Email</span><a href={`mailto:${company.email}`} class="underline underline-offset-4 hover:text-(--color-accent-500)">{company.email}</a></p>
+              <p><span class="block text-sm font-bold text-(--color-foreground)">Teléfono</span><a href={`tel:${company.phoneHref}`} class="underline underline-offset-4 hover:text-(--color-accent-500)">{company.phoneDisplay}</a></p>
+              <p><a href={`https://wa.me/${company.phoneHref.replace("+", "")}`} class="inline-flex min-h-11 items-center font-semibold text-(--color-accent-500) underline-offset-4 hover:underline">Escribir por WhatsApp <span class="ml-2" aria-hidden="true">→</span></a></p>
+            </address>
+          </section>
+          <section class="mt-7 border-t border-(--color-border-strong) pt-7" aria-labelledby="quote-heading">
+            <h2 id="quote-heading" class="text-xl font-black text-(--color-foreground)">¿Quieres solicitar un presupuesto?</h2>
+            <p class="mt-4 leading-relaxed text-(--color-foreground-muted)">Si necesitas valorar un trabajo concreto, cuéntanos tu proyecto desde la sección de presupuesto.</p>
+            <a href={paths.quote} class="mt-5 inline-flex min-h-11 items-center font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)">Ir a Presupuesto <span class="ml-2" aria-hidden="true">→</span></a>
+          </section>
         </aside>
       </div>
     </Container>
