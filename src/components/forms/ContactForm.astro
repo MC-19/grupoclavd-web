@@ -46,11 +46,11 @@ const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-borde
       <input id="contact-privacy" name="Consentimiento" type="checkbox" value="Acepto el tratamiento de mis datos para responder a esta consulta" required class="mt-1 size-5 shrink-0 accent-(--color-accent-500) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)" />
       <span>Acepto que GrupoClavD utilice los datos facilitados para responder a mi consulta. <span aria-hidden="true">*</span></span>
     </label>
-    <p class="mt-2 pl-8 text-sm text-(--color-foreground-muted)">La política de privacidad completa está pendiente de publicación.</p>
+    <p class="mt-2 pl-8 text-sm text-(--color-foreground-muted)">Información completa sobre privacidad pendiente de publicación.</p>
   </div>
 
   <div>
-    <button id="contact-submit" type="submit" disabled={!ready} class="inline-flex min-h-11 items-center justify-center rounded-xl bg-(--color-foreground) px-6 py-3 font-semibold text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500) disabled:cursor-not-allowed disabled:opacity-50">Enviar mensaje</button>
+    <button id="contact-submit" type="submit" data-configured={String(ready)} disabled={!ready} class="inline-flex min-h-11 items-center justify-center rounded-xl bg-(--color-foreground) px-6 py-3 font-semibold text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500) disabled:cursor-not-allowed disabled:opacity-50">Enviar mensaje</button>
     <p id="contact-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" class="mt-4 text-sm font-semibold text-(--color-foreground)">
       {!ready && "El formulario estará disponible cuando se configure el servicio de envío."}
     </p>
@@ -64,7 +64,7 @@ const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-borde
 
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (!button || !status || button.disabled || !form.reportValidity()) return;
+    if (!button || !status || button.dataset.configured !== "true" || button.disabled || !form.reportValidity()) return;
 
     button.disabled = true;
     button.textContent = "Enviando...";
@@ -92,7 +92,7 @@ const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-borde
       status.textContent = "No hemos podido enviar el mensaje. Revisa tus datos e inténtalo de nuevo.";
       status.focus();
     } finally {
-      button.disabled = false;
+      button.disabled = button.dataset.configured !== "true";
       button.textContent = "Enviar mensaje";
     }
   });
