@@ -20,19 +20,15 @@ const pathname = Astro.url.pathname;
       <a
         href={paths.home}
         aria-label="Ir al inicio de GrupoClavD"
-        class="inline-flex shrink-0 flex-col"
+        class="inline-flex shrink-0"
       >
-        <span
-          class="logo-text text-4xl font-black leading-none tracking-[0.12em]"
-        >
-          CLAVD
-        </span>
-
-        <span
-          class="mt-1 text-[0.55rem] font-semibold tracking-[0.42em] text-(--color-foreground-muted)"
-        >
-          ROTULACIÓN Y MONTAJES
-        </span>
+        <img
+          src="/images/grupoclavd-logo.avif"
+          alt=""
+          width="196"
+          height="100"
+          class="h-auto w-40 sm:w-44"
+        />
       </a>
 
       <nav class="hidden min-[900px]:block" aria-label="Navegación principal">

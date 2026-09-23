@@ -221,17 +221,6 @@ a {
   transform: none;
 }
 
-.logo-text {
-  width: fit-content;
-
-  background: var(--gradient-brand);
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
 @media (max-width: 639px) {
   .map-detail {
     display: none;
