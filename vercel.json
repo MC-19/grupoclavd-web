@@ -1,0 +1,40 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/servicios/cambios-y-diseños-de-escaparates",
+      "destination": "/servicios/rotulacion/escaparates/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/decoracion-de-interiores(/)?",
+      "destination": "/soluciones/implantacion-imagen-corporativa/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/expositores-y-displays(/)?",
+      "destination": "/servicios/impresion-digital/soportes-rigidos/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/fachada-y-luminoso(/)?",
+      "destination": "/servicios/rotulacion/rotulos-luminosos-fachadas/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/impresion(/)?",
+      "destination": "/servicios/impresion-digital/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/letras-corporeas(/)?",
+      "destination": "/servicios/rotulacion/letras-corporeas/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/colocacion-de-vallas-y-vinilos-publicitarios(/)?",
+      "destination": "/servicios/impresion-digital/lonas-publicitarias/",
+      "permanent": true
+    }
+  ]
+}
