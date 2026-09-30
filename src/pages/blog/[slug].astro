@@ -14,9 +14,63 @@ interface Props {
 }
 
 const { article } = Astro.props;
+const articleURL = new URL(Astro.url.pathname, Astro.site).toString();
+const relatedArticles = (article.relatedArticleSlugs ?? [])
+  .map((slug) => blogArticles.find((candidate) => candidate.slug === slug))
+  .filter((candidate): candidate is BlogArticle => Boolean(candidate));
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: article.title,
+  description: article.description,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": articleURL,
+  },
+  author: {
+    "@type": "Organization",
+    name: "GrupoClavD",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "GrupoClavD",
+  },
+  ...(article.image ? { image: new URL(article.image, Astro.site).toString() } : {}),
+  ...(article.publishedAt ? { datePublished: article.publishedAt } : {}),
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: new URL(paths.home, Astro.site).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: new URL(paths.blog, Astro.site).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: article.title,
+      item: articleURL,
+    },
+  ],
+};
 ---
 
-<BaseLayout title={article.seoTitle} description={article.description} image={article.image}>
+<BaseLayout
+  title={article.seoTitle}
+  description={article.description}
+  image={article.image}
+  type="article"
+  schemas={[articleSchema, breadcrumbSchema]}
+>
   <article class="py-12 lg:py-16">
     <Container>
       <div class="mx-auto max-w-3xl">
@@ -40,7 +94,23 @@ const { article } = Astro.props;
           ))}
         </div>
 
-        <aside class="mt-14 border-t border-(--color-border-strong) pt-8" aria-labelledby="servicios-relacionados">
+        {relatedArticles.length > 0 && (
+          <aside class="mt-14 border-t border-(--color-border-strong) pt-8" aria-labelledby="articulos-relacionados">
+            <h2 id="articulos-relacionados" class="text-xl font-black text-(--color-foreground)">También puede interesarte</h2>
+            <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+              {relatedArticles.map((relatedArticle) => (
+                <li>
+                  <a href={`${paths.blog}${relatedArticle.slug}/`} class="flex h-full items-center justify-between gap-4 rounded-xl border border-(--color-border) px-4 py-3 font-semibold text-(--color-foreground) transition hover:border-(--color-border-strong) hover:bg-(--color-surface-muted) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)">
+                    <span>{relatedArticle.title}</span>
+                    <span class="shrink-0 text-(--color-accent-500)" aria-hidden="true">→</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        )}
+
+        <aside class:list={["border-t border-(--color-border-strong) pt-8", relatedArticles.length > 0 ? "mt-10" : "mt-14"]} aria-labelledby="servicios-relacionados">
           <h2 id="servicios-relacionados" class="text-xl font-black text-(--color-foreground)">Servicios relacionados</h2>
           <ul class="mt-4 flex flex-wrap gap-3">
             {article.relatedServices.map((service) => <li><a href={service.href} class="inline-flex min-h-11 items-center rounded-xl border border-(--color-border-strong) px-4 py-2 font-semibold text-(--color-foreground) transition hover:bg-(--color-surface-muted) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)">{service.label} <span class="ml-2" aria-hidden="true">→</span></a></li>)}

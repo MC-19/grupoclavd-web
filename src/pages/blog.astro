@@ -16,8 +16,8 @@ const moreArticles = blogArticles.filter((article) => !article.featured);
     <Container>
       <div class="max-w-3xl">
         <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Blog</p>
-        <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Ideas y consejos sobre rotulación e impresión</h1>
-        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Guías prácticas sobre rotulación, impresión digital e instalación para empresas y espacios comerciales.</p>
+        <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Blog de rotulación e impresión digital</h1>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Guías prácticas para planificar proyectos de rotulación, impresión digital, imagen corporativa e instalación en empresas y espacios comerciales.</p>
       </div>
     </Container>
   </section>
@@ -25,7 +25,7 @@ const moreArticles = blogArticles.filter((article) => !article.featured);
   <section class="bg-(--color-surface-muted) py-12 lg:py-16" aria-labelledby="articulos-destacados">
     <Container>
       <h2 id="articulos-destacados" class="text-2xl font-black text-(--color-foreground) sm:text-3xl">Artículos destacados</h2>
-      <div class="mt-8 grid max-w-5xl gap-6 md:grid-cols-2">
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {featured.map((article) => <ArticleCard article={article} prominent />)}
       </div>
     </Container>
@@ -34,7 +34,7 @@ const moreArticles = blogArticles.filter((article) => !article.featured);
   <section class="py-12 lg:py-16" aria-labelledby="mas-articulos">
     <Container>
       <h2 id="mas-articulos" class="text-2xl font-black text-(--color-foreground) sm:text-3xl">Más guías</h2>
-      <div class="mt-8 grid max-w-5xl gap-6 md:grid-cols-2">
+      <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {moreArticles.map((article) => <ArticleCard article={article} />)}
       </div>
     </Container>

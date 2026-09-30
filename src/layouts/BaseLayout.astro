@@ -9,9 +9,17 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  type?: "website" | "article";
+  schemas?: Record<string, unknown>[];
 }
 
-const { title, description, image = "/og-image.png" } = Astro.props;
+const {
+  title,
+  description,
+  image = "/og-image.png",
+  type = "website",
+  schemas = [],
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL(image, Astro.site);
@@ -54,7 +62,7 @@ const organizationSchema = {
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:site_name" content="GrupoClavD" />
     <meta property="og:locale" content="es_ES" />
 
@@ -80,6 +88,13 @@ const organizationSchema = {
       type="application/ld+json"
       set:html={JSON.stringify(organizationSchema)}
     />
+    {schemas.map((schema) => (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify(schema)}
+      />
+    ))}
     <Analytics />
   </head>
 
