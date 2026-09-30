@@ -1,11 +1,19 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, extname, join } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const projectRoot = process.cwd();
 const distRoot = join(projectRoot, "dist");
 const publicRoot = join(projectRoot, "public");
+const manifestFile = join(projectRoot, "src/data/imageVariants.json");
 const htmlFiles = [];
+
+function canonicalUrl(url) {
+  return decodeURIComponent(url)
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/");
+}
 
 function walk(directory) {
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
@@ -25,17 +33,45 @@ walk(distRoot);
 const sources = new Set();
 for (const file of htmlFiles) {
   const html = readFileSync(file, "utf8");
-  for (const match of html.matchAll(/<img[^>]+src="([^"]+)"/g)) {
-    const url = match[1].split(/[?#]/)[0];
+  const declaredSources = [...html.matchAll(/data-image-source="([^"]+)"/g)];
+  const imageSources = declaredSources.length
+    ? declaredSources
+    : [...html.matchAll(/<img[^>]+src="([^"]+)"/g)];
+  for (const match of imageSources) {
+    const url = canonicalUrl(match[1].split(/[?#]/)[0]);
     if (url.startsWith("/ImagenesWebClav/") || url === "/images/banderola-comercial-fachada.jpg" || url.startsWith("/images/work/")) {
-      sources.add(decodeURIComponent(url));
+      sources.add(url);
     }
   }
 }
 
+function dimensions(file) {
+  const result = spawnSync("magick", [
+    file,
+    "-auto-orient",
+    "-format",
+    "%w %h",
+    "info:",
+  ], { encoding: "utf8" });
+
+  if (result.status !== 0) {
+    process.stderr.write(result.stderr ?? "");
+    process.exit(result.status ?? 1);
+  }
+
+  const [width, height] = result.stdout.trim().split(/\s+/).map(Number);
+  if (!Number.isFinite(width) || !Number.isFinite(height)) {
+    console.error(`No se pudieron leer las dimensiones de ${file}`);
+    process.exit(1);
+  }
+  return { width, height };
+}
+
 let generated = 0;
+const manifest = {};
 for (const url of sources) {
-  const input = join(publicRoot, url);
+  const decodedUrl = decodeURIComponent(url);
+  const input = join(publicRoot, decodedUrl);
   if (!existsSync(input)) {
     console.warn(`No se encuentra: ${url}`);
     continue;
@@ -43,27 +79,40 @@ for (const url of sources) {
 
   const extension = extname(input);
   const base = input.slice(0, -extension.length);
-  const variants = [
-    { width: 640, output: `${base}-640.webp` },
-    { width: 1280, output: `${base}-1280.webp` },
-  ];
+  const urlBase = url.slice(0, -extname(url).length);
+  const original = dimensions(input);
+  const targets = original.width <= 640 ? [640] : [640, 1280];
+  const variants = [];
 
-  for (const variant of variants) {
-    mkdirSync(dirname(variant.output), { recursive: true });
+  for (const target of targets) {
+    const output = `${base}-${target}.webp`;
+    mkdirSync(dirname(output), { recursive: true });
     const result = spawnSync("magick", [
       input,
       "-auto-orient",
       "-strip",
       "-resize",
-      `${variant.width}x${variant.width}>`,
+      `${target}x>`,
       "-quality",
       "80",
-      variant.output,
+      output,
     ], { stdio: "inherit" });
 
     if (result.status !== 0) process.exit(result.status ?? 1);
+    const variantDimensions = dimensions(output);
+    if (!variants.some((variant) => variant.width === variantDimensions.width)) {
+      variants.push({
+        src: `${urlBase}-${target}.webp`,
+        width: variantDimensions.width,
+        height: variantDimensions.height,
+      });
+    }
     generated += 1;
   }
+
+  manifest[url] = { ...original, variants };
 }
 
-console.log(`Generadas ${generated} variantes WebP para ${sources.size} imágenes utilizadas.`);
+mkdirSync(dirname(manifestFile), { recursive: true });
+writeFileSync(manifestFile, `${JSON.stringify(manifest, null, 2)}\n`);
+console.log(`Generadas ${generated} variantes WebP para ${sources.size} imágenes utilizadas y actualizado el manifiesto.`);

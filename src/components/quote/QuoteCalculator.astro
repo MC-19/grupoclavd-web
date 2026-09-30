@@ -56,9 +56,9 @@ const fieldClass =
       <ul id="quote-items" class="mt-6 hidden divide-y divide-white/10" aria-live="polite"></ul>
 
       <div class="mt-7 border-t border-white/15 pt-6">
-        <div class="flex items-end justify-between gap-4">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4" aria-live="polite">
           <div>
-            <p class="text-sm font-semibold text-white/60">Total estimado calculable</p>
+            <p id="quote-total-label" class="text-sm font-semibold text-white/60">Total estimado calculable</p>
             <p id="quote-consult-count" class="mt-1 hidden text-xs text-(--color-accent-300)"></p>
           </div>
           <p id="quote-total" class="text-3xl font-black">0,00 €</p>
@@ -120,6 +120,7 @@ const fieldClass =
   const itemsList = document.querySelector<HTMLUListElement>("#quote-items");
   const count = document.querySelector<HTMLElement>("#quote-count");
   const consultCount = document.querySelector<HTMLElement>("#quote-consult-count");
+  const totalLabel = document.querySelector<HTMLElement>("#quote-total-label");
   const total = document.querySelector<HTMLElement>("#quote-total");
   const requestButton = document.querySelector<HTMLButtonElement>("#quote-request");
 
@@ -238,7 +239,7 @@ const fieldClass =
   }
 
   function renderSummary() {
-    if (!itemsList || !emptyState || !count || !consultCount || !total || !requestButton) return;
+    if (!itemsList || !emptyState || !count || !consultCount || !totalLabel || !total || !requestButton) return;
     itemsList.replaceChildren();
     const consultItems = quoteItems.filter((item) => item.total === null);
     const calculatedTotal = sumCalculatedTotals(quoteItems.map((item) => item.total));
@@ -276,12 +277,23 @@ const fieldClass =
     }
 
     const hasItems = quoteItems.length > 0;
+    const calculatedItems = quoteItems.length - consultItems.length;
+    const allPending = hasItems && calculatedItems === 0;
+    const hasPending = consultItems.length > 0;
     emptyState.classList.toggle("hidden", hasItems);
     itemsList.classList.toggle("hidden", !hasItems);
     count.textContent = `${quoteItems.length} ${quoteItems.length === 1 ? "concepto" : "conceptos"}`;
-    total.textContent = currency.format(calculatedTotal);
-    consultCount.textContent = consultItems.length ? `${consultItems.length} ${consultItems.length === 1 ? "concepto pendiente" : "conceptos pendientes"} de valoración` : "";
-    consultCount.classList.toggle("hidden", consultItems.length === 0);
+    totalLabel.textContent = allPending
+      ? "Estado de la estimación"
+      : hasPending
+        ? "Subtotal estimado calculable"
+        : "Total estimado calculable";
+    total.textContent = allPending ? "Pendiente de valoración" : currency.format(calculatedTotal);
+    total.className = allPending ? "text-xl font-black leading-tight sm:max-w-52 sm:text-right sm:text-2xl" : "text-3xl font-black sm:text-right";
+    consultCount.textContent = hasPending && !allPending
+      ? `${consultItems.length} ${consultItems.length === 1 ? "concepto pendiente" : "conceptos pendientes"} por valorar`
+      : "";
+    consultCount.classList.toggle("hidden", !hasPending || allPending);
     requestButton.disabled = !hasItems;
   }
 
@@ -307,10 +319,17 @@ const fieldClass =
   requestButton?.addEventListener("click", () => {
     if (!root || quoteItems.length === 0) return;
     const calculatedTotal = sumCalculatedTotals(quoteItems.map((item) => item.total));
+    const pendingCount = quoteItems.filter((item) => item.total === null).length;
+    const calculatedCount = quoteItems.length - pendingCount;
     const lines = quoteItems.map((item, index) => `${index + 1}. ${item.name}\n   ${item.detail}\n   ${item.total === null ? "Consultar precio" : currency.format(item.total)}`);
+    const estimateSummary = calculatedCount === 0
+      ? "Estado: Pendiente de valoración."
+      : pendingCount > 0
+        ? `Subtotal estimado de conceptos calculables: ${currency.format(calculatedTotal)}\nQuedan ${pendingCount} ${pendingCount === 1 ? "concepto pendiente" : "conceptos pendientes"} por valorar.`
+        : `Total estimado de conceptos calculables: ${currency.format(calculatedTotal)}`;
     const payload = {
       subject: "Solicitud de presupuesto personalizado",
-      message: `Hola, quiero solicitar un presupuesto personalizado a partir de esta estimación:\n\n${lines.join("\n\n")}\n\nTotal estimado de conceptos calculables: ${currency.format(calculatedTotal)}\n\nEntiendo que es un precio orientativo y que el importe final se confirmará tras revisar el proyecto.`,
+      message: `Hola, quiero solicitar un presupuesto personalizado a partir de esta estimación:\n\n${lines.join("\n\n")}\n\n${estimateSummary}\n\nEntiendo que es un precio orientativo y que el importe final se confirmará tras revisar el proyecto.`,
     };
     let contactUrl = `${root.dataset.contactUrl}?presupuesto=1`;
     try {

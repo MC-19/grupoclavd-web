@@ -1,0 +1,818 @@
+{
+  "/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos.jpg": {
+    "width": 4000,
+    "height": 3000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.21_1dd350d1.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.21_1dd350d1-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.21_1dd350d1-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog2/465c05a5-c468-49fa-9eaf-c5192e419c2d.jpeg": {
+    "width": 2040,
+    "height": 1530,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog2/465c05a5-c468-49fa-9eaf-c5192e419c2d-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Blog2/465c05a5-c468-49fa-9eaf-c5192e419c2d-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog1/6.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog1/6-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Blog1/6-1280.webp",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/work/produccion-rotulo-taller.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/images/work/produccion-rotulo-taller-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/work/produccion-rotulo-taller-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_28ac576e.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_28ac576e-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_28ac576e-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_551c2ae8.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_551c2ae8-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_551c2ae8-1280.webp",
+        "width": 1280,
+        "height": 1707
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_904f722c.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_904f722c-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_904f722c-1280.webp",
+        "width": 1280,
+        "height": 1707
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_bf576be1.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_bf576be1-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_bf576be1-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog1/1.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog1/1-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Blog1/1-1280.webp",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog1/2.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog1/2-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Blog1/2-1280.webp",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog1/4.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog1/4-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Blog1/4-1280.webp",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog1/5.jpeg": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog1/5-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Blog1/5-1280.webp",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog2/0187bb78-ab30-4d42-ad17-293526eea32d.jpeg": {
+    "width": 2040,
+    "height": 1530,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog2/0187bb78-ab30-4d42-ad17-293526eea32d-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Blog2/0187bb78-ab30-4d42-ad17-293526eea32d-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog2/1a02e50e-76d4-4ae9-b502-f02129ab1ac6.jpeg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog2/1a02e50e-76d4-4ae9-b502-f02129ab1ac6-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Blog2/1a02e50e-76d4-4ae9-b502-f02129ab1ac6-1280.webp",
+        "width": 1280,
+        "height": 1707
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog2/7939c0a6-d27a-455e-8c16-cd48bb887305.jpeg": {
+    "width": 2040,
+    "height": 1530,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog2/7939c0a6-d27a-455e-8c16-cd48bb887305-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Blog2/7939c0a6-d27a-455e-8c16-cd48bb887305-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Blog2/938001dc-28bc-4da1-860a-f9638f4bfd52.jpeg": {
+    "width": 2040,
+    "height": 1530,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Blog2/938001dc-28bc-4da1-860a-f9638f4bfd52-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Blog2/938001dc-28bc-4da1-860a-f9638f4bfd52-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/letras-corporeas-mimma-gallery-fachada.jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/letras-corporeas-mimma-gallery-fachada-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/letras-corporeas-mimma-gallery-fachada-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/instalacion-letras-alcampo-fachada.jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/instalacion-letras-alcampo-fachada-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/instalacion-letras-alcampo-fachada-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/20240529_113559.jpg": {
+    "width": 4000,
+    "height": 3000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/20240529_113559-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/20240529_113559-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/rotulacion-furgoneta-ribera-valldigna.jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/rotulacion-furgoneta-ribera-valldigna-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/rotulacion-furgoneta-ribera-valldigna-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.22_1f30258a.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.22_1f30258a-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.22_1f30258a-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.22_3de8be92.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.22_3de8be92-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.22_3de8be92-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/instalacion-rotulo-somium-vall-residences.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/instalacion-rotulo-somium-vall-residences-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/instalacion-rotulo-somium-vall-residences-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.21_230c62d9.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.21_230c62d9-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-18%20a%20las%2017.42.21_230c62d9-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/grafica-decorativa-oficina-interior.jpg": {
+    "width": 4000,
+    "height": 3000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/grafica-decorativa-oficina-interior-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/grafica-decorativa-oficina-interior-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior.jpg": {
+    "width": 4000,
+    "height": 3000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/expositor-biomecanics-punto-venta.jpg": {
+    "width": 1080,
+    "height": 1350,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/expositor-biomecanics-punto-venta-640.webp",
+        "width": 640,
+        "height": 800
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/expositor-biomecanics-punto-venta-1280.webp",
+        "width": 1080,
+        "height": 1350
+      }
+    ]
+  },
+  "/ImagenesWebClav/Logos-Cosa-Varias/banderas-textil-exterior.jpg": {
+    "width": 1280,
+    "height": 606,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Logos-Cosa-Varias/banderas-textil-exterior-640.webp",
+        "width": 640,
+        "height": 303
+      },
+      {
+        "src": "/ImagenesWebClav/Logos-Cosa-Varias/banderas-textil-exterior-1280.webp",
+        "width": 1280,
+        "height": 606
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina.jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/images/work/instalacion-grafica-goldwell.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": [
+      {
+        "src": "/images/work/instalacion-grafica-goldwell-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/images/work/instalacion-grafica-goldwell-1280.webp",
+        "width": 1280,
+        "height": 1707
+      }
+    ]
+  },
+  "/images/work/soporte-rigido-tag-heuer.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": [
+      {
+        "src": "/images/work/soporte-rigido-tag-heuer-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/images/work/soporte-rigido-tag-heuer-1280.webp",
+        "width": 1280,
+        "height": 1707
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche.jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/senaletica-exterior-thrifty-aparcamiento.jpeg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/senaletica-exterior-thrifty-aparcamiento-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/senaletica-exterior-thrifty-aparcamiento-1280.webp",
+        "width": 1280,
+        "height": 1707
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/escaparate-pikolinos-centro-comercial.jpg": {
+    "width": 4000,
+    "height": 3000,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/escaparate-pikolinos-centro-comercial-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/escaparate-pikolinos-centro-comercial-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/images/work/valla-publicitaria-exterior.jpg": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/work/valla-publicitaria-exterior-640.webp",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "/images/work/valla-publicitaria-exterior-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.32.jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.32-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.32-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/letras-corporeas-cettu-interior.jpg": {
+    "width": 5312,
+    "height": 2988,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/letras-corporeas-cettu-interior-640.webp",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/letras-corporeas-cettu-interior-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.33%20(6).jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.33%20(6)-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.33%20(6)-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/logotipos-corporativos-onda-cero-interior.jpg": {
+    "width": 5312,
+    "height": 2988,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/logotipos-corporativos-onda-cero-interior-640.webp",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/logotipos-corporativos-onda-cero-interior-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/IMG-20171108-WA0027.jpg": {
+    "width": 1328,
+    "height": 747,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/IMG-20171108-WA0027-640.webp",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/IMG-20171108-WA0027-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.29.jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.29-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.29-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/20180309_210134.jpg": {
+    "width": 4032,
+    "height": 3024,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/20180309_210134-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/20180309_210134-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/images/banderola-comercial-fachada.jpg": {
+    "width": 1586,
+    "height": 992,
+    "variants": [
+      {
+        "src": "/images/banderola-comercial-fachada-640.webp",
+        "width": 640,
+        "height": 400
+      },
+      {
+        "src": "/images/banderola-comercial-fachada-1280.webp",
+        "width": 1280,
+        "height": 801
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.34%20(1).jpeg": {
+    "width": 1824,
+    "height": 1026,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.34%20(1)-640.webp",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.34%20(1)-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.31%20(6).jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.31%20(6)-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/WhatsApp%20Image%202026-08-04%20at%2023.06.31%20(6)-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Nuevas/grafica-heineken-pared-interior.jpeg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/grafica-heineken-pared-interior-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Nuevas/grafica-heineken-pared-interior-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/ImagenesWebClav/Fotos%20Que%20si/grafica-mural-corte-ingles-interior.jpg": {
+    "width": 5312,
+    "height": 2988,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/grafica-mural-corte-ingles-interior-640.webp",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "/ImagenesWebClav/Fotos%20Que%20si/grafica-mural-corte-ingles-interior-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/ImagenesWebClav/Imagenes%20Junio-2025/vinilo-privacidad-cristales-oficina.jpg": {
+    "width": 2016,
+    "height": 1512,
+    "variants": [
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/vinilo-privacidad-cristales-oficina-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/ImagenesWebClav/Imagenes%20Junio-2025/vinilo-privacidad-cristales-oficina-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  },
+  "/images/work/fachada-comercial-pikolinos.jpg": {
+    "width": 768,
+    "height": 556,
+    "variants": [
+      {
+        "src": "/images/work/fachada-comercial-pikolinos-640.webp",
+        "width": 640,
+        "height": 463
+      },
+      {
+        "src": "/images/work/fachada-comercial-pikolinos-1280.webp",
+        "width": 768,
+        "height": 556
+      }
+    ]
+  },
+  "/images/work/implantacion-grafica-tag-heuer.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": [
+      {
+        "src": "/images/work/implantacion-grafica-tag-heuer-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/work/implantacion-grafica-tag-heuer-1280.webp",
+        "width": 1280,
+        "height": 960
+      }
+    ]
+  }
+}

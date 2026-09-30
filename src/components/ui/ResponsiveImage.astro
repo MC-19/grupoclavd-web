@@ -1,4 +1,6 @@
 ---
+import imageVariants from "@/data/imageVariants.json";
+
 interface Props {
   src: string;
   alt: string;
@@ -17,30 +19,44 @@ const {
   loading = "lazy",
   fetchpriority,
   sizes = "(min-width: 1024px) 50vw, 100vw",
-  width = 1280,
-  height = 960,
+  width,
+  height,
 } = Astro.props;
 
-const extensionIndex = src.lastIndexOf(".");
-const canOptimize = src.startsWith("/ImagenesWebClav/") || src === "/images/banderola-comercial-fachada.jpg" || src.startsWith("/images/work/");
-const base = extensionIndex > -1 ? src.slice(0, extensionIndex) : src;
-const small = `${base}-640.webp`;
-const large = `${base}-1280.webp`;
+type ImageManifestEntry = {
+  width: number;
+  height: number;
+  variants: Array<{ src: string; width: number; height: number }>;
+};
+
+const manifest = imageVariants as Record<string, ImageManifestEntry>;
+const canonicalSrc = decodeURIComponent(src)
+  .split("/")
+  .map((segment) => encodeURIComponent(segment))
+  .join("/");
+const image = manifest[canonicalSrc];
+const srcset = image?.variants
+  .slice()
+  .sort((first, second) => first.width - second.width)
+  .map((variant) => `${variant.src} ${variant.width}w`)
+  .join(", ");
+const intrinsicWidth = image?.width ?? width;
+const intrinsicHeight = image?.height ?? height;
 ---
 
-<picture class="contents">
-  {canOptimize && (
+<picture class="contents" data-image-source={canonicalSrc}>
+  {srcset && (
     <source
       type="image/webp"
-      srcset={`${small} 640w, ${large} 1280w`}
+      srcset={srcset}
       sizes={sizes}
     />
   )}
   <img
-    src={src}
+    src={canonicalSrc}
     alt={alt}
-    width={width}
-    height={height}
+    width={intrinsicWidth}
+    height={intrinsicHeight}
     class={className}
     loading={loading}
     decoding="async"

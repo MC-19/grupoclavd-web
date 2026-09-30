@@ -13,3 +13,12 @@ Este registro documenta los recursos incorporados o renombrados durante la mejor
 | `/images/banderola-comercial-fachada.jpg` | Imagen generada específicamente para GrupoClavD | Ilustración de producto; se identifica como tal en la interfaz |
 
 Las fotografías proceden del archivo visual del proyecto y sus derechos de uso han sido confirmados por GrupoClavD. Las variantes `-640.webp` y `-1280.webp` son derivados optimizados de esos originales.
+
+Las imágenes que no utiliza el código ni la salida estática se conservan en
+`asset-archive/public/ImagenesWebClav/`. Esa carpeta no forma parte del contenido
+publicado. Antes de mover recursos, `scripts/archive-unused-public-images.mjs`
+comprueba referencias en componentes, estilos, scripts, datos y el HTML generado.
+
+`src/data/imageVariants.json` registra las dimensiones reales de cada original y
+de cada variante publicada. Se regenera con `npm run optimize:images`; los
+descriptores de `srcset` proceden de esas medidas y no del nombre del archivo.

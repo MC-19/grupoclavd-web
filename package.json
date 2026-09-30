@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "check": "astro check",
     "build": "astro build",
-    "optimize:images": "npm run build && node scripts/optimize-images.mjs",
+    "optimize:images": "npm run build && node scripts/optimize-images.mjs && npm run build",
     "validate": "npm run check && npm run build",
     "preview": "astro preview",
     "astro": "astro"

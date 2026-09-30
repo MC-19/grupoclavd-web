@@ -1,6 +1,8 @@
 ---
 import QuoteCalculator from "@/components/quote/QuoteCalculator.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
+import { paths } from "@/data/navigation";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
@@ -23,6 +25,14 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           del material, el acabado o las condiciones del proyecto se marcarán
           para valoración personalizada.
         </p>
+        <div class="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+          <p class="font-semibold text-(--color-foreground)">
+            ¿No sabes qué material necesitas? Cuéntanos tu proyecto.
+          </p>
+          <ButtonLink href={paths.contact} variant="secondary">
+            Ir al formulario de contacto
+          </ButtonLink>
+        </div>
       </div>
 
       <div class="mt-10 lg:mt-12">
