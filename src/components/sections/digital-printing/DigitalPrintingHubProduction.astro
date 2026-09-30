@@ -1,5 +1,6 @@
 ---
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import type { DigitalPrintingHubPage } from "@/data/digitalPrinting";
 
 interface Props { page: DigitalPrintingHubPage }
@@ -10,7 +11,7 @@ const { page } = Astro.props;
   <Container>
     <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
       <div class="aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
-        <img src={page.customization.image} alt={page.customization.imageAlt} class="h-full w-full object-cover" loading="lazy" decoding="async" />
+        <ResponsiveImage src={page.customization.image} alt={page.customization.imageAlt} class="h-full w-full object-cover" />
       </div>
       <div>
         <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{page.customization.eyebrow}</p>

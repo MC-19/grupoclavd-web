@@ -50,8 +50,8 @@ export const digitalPrintingPages = {
       eyebrow: "Cada proyecto es distinto",
       title: "Producción adaptada a cada proyecto",
       intro: "Una misma gráfica no funciona igual en un escaparate que en una fachada. Definimos la solución a partir de cómo se verá y dónde se usará.",
-      image: "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior.jpg",
-      imageAlt: "Gráfica publicitaria de gran formato en un soporte exterior",
+      image: "/images/work/instalacion-grafica-goldwell.jpg",
+      imageAlt: "Profesional instalando una gráfica de gran formato en una pared interior",
       points: [
         { title: "Dimensiones", description: "Ajustamos la composición al espacio y a la distancia desde la que se leerá." },
         { title: "Soporte", description: "Elegimos el tipo de solución gráfica en función de su uso previsto." },
@@ -122,8 +122,8 @@ export const digitalPrintingPages = {
     eyebrow: "Impresión digital · Soportes rígidos",
     h1: "Impresión en soportes rígidos",
     intro: "Desarrollamos piezas gráficas rígidas para comunicar, orientar y destacar productos en espacios comerciales y corporativos. Cada propuesta responde a su función dentro del espacio.",
-    image: "/ImagenesWebClav/Fotos%20Que%20si/expositor-biomecanics-punto-venta.jpg",
-    imageAlt: "Expositor gráfico de Biomecanics en un punto de venta",
+    image: "/images/work/soporte-rigido-tag-heuer.jpg",
+    imageAlt: "Panel gráfico rígido de TAG Heuer integrado en un espacio comercial",
     imageFirst: true,
     solutions: {
       eyebrow: "Piezas para cada función",

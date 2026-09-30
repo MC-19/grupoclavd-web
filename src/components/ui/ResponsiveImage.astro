@@ -1,0 +1,49 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: "eager" | "lazy";
+  fetchpriority?: "high" | "low" | "auto";
+  sizes?: string;
+  width?: number;
+  height?: number;
+}
+
+const {
+  src,
+  alt,
+  class: className = "",
+  loading = "lazy",
+  fetchpriority,
+  sizes = "(min-width: 1024px) 50vw, 100vw",
+  width = 1280,
+  height = 960,
+} = Astro.props;
+
+const extensionIndex = src.lastIndexOf(".");
+const canOptimize = src.startsWith("/ImagenesWebClav/") || src === "/images/banderola-comercial-fachada.jpg" || src.startsWith("/images/work/");
+const base = extensionIndex > -1 ? src.slice(0, extensionIndex) : src;
+const small = `${base}-640.webp`;
+const large = `${base}-1280.webp`;
+---
+
+<picture class="contents">
+  {canOptimize && (
+    <source
+      type="image/webp"
+      srcset={`${small} 640w, ${large} 1280w`}
+      sizes={sizes}
+    />
+  )}
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    decoding="async"
+    fetchpriority={fetchpriority}
+  />
+</picture>

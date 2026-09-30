@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import { featuredProjects, type Project } from "@/data/projects";
 import { paths } from "@/data/navigation";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -27,7 +28,7 @@ export function getStaticPaths() {
         <p class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)">{project.summary}</p>
       </div>
       <div class="mt-10 aspect-16/9 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
-        <img src={project.cover} alt={project.coverAlt} class="h-full w-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
+        <ResponsiveImage src={project.cover} alt={project.coverAlt} class="h-full w-full object-cover" loading="eager" fetchpriority="high" sizes="100vw" width={1600} height={900} />
       </div>
     </Container>
   </section>
@@ -41,7 +42,7 @@ export function getStaticPaths() {
       <div class="mt-10 grid gap-6 md:grid-cols-2">
         {project.gallery?.map((image) => (
           <figure class="overflow-hidden rounded-2xl border border-(--color-border) bg-white">
-            <div class="aspect-4/3 overflow-hidden"><img src={image.src} alt={image.alt} class="h-full w-full object-cover" loading="lazy" decoding="async" /></div>
+            <div class="aspect-4/3 overflow-hidden"><ResponsiveImage src={image.src} alt={image.alt} class="h-full w-full object-cover" sizes="(min-width: 768px) 50vw, 100vw" /></div>
             <figcaption class="p-5 font-medium text-(--color-foreground-muted)">{image.caption}</figcaption>
           </figure>
         ))}

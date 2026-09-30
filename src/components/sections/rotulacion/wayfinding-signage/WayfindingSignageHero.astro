@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import { paths } from "@/data/navigation";
 ---
 
@@ -19,12 +20,12 @@ import { paths } from "@/data/navigation";
         </div>
       </div>
       <div class="aspect-4/3 overflow-hidden rounded-2xl">
-        <img
+        <ResponsiveImage
           src="/ImagenesWebClav/Fotos%20Nuevas/senaletica-exterior-thrifty-aparcamiento.jpeg"
           alt="Señal exterior de identificación de plazas Thrifty"
           class="h-full w-full object-cover"
           loading="eager"
-          decoding="async"
+          fetchpriority="high"
         />
       </div>
     </div>

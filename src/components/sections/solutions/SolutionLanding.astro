@@ -1,0 +1,123 @@
+---
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
+import { paths } from "@/data/navigation";
+
+interface LinkedItem {
+  title: string;
+  text: string;
+  href?: string;
+}
+
+interface Props {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  image: string;
+  imageAlt: string;
+  imageCaption: string;
+  overviewEyebrow: string;
+  overviewHeading: string;
+  overviewText: string;
+  needs: string[];
+  elementsHeading: string;
+  elements: LinkedItem[];
+  processHeading: string;
+  processIntro: string;
+  process: LinkedItem[];
+  ctaHeading: string;
+  ctaText: string;
+}
+
+const props = Astro.props;
+---
+
+<section class="py-12 lg:py-16">
+  <Container class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{props.eyebrow}</p>
+      <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">{props.heading}</h1>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">{props.intro}</p>
+      <div class="mt-7 flex flex-wrap gap-4">
+        <ButtonLink href={paths.quote}>Solicitar presupuesto</ButtonLink>
+        <ButtonLink href="#como-trabajamos" variant="secondary">Cómo trabajamos</ButtonLink>
+      </div>
+    </div>
+    <figure>
+      <div class="aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
+        <ResponsiveImage src={props.image} alt={props.imageAlt} class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
+      </div>
+      <figcaption class="mt-3 text-sm leading-relaxed text-(--color-foreground-muted)">{props.imageCaption}</figcaption>
+    </figure>
+  </Container>
+</section>
+
+<section class="bg-(--color-surface-muted) py-16 lg:py-20" aria-labelledby="enfoque-solucion">
+  <Container class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{props.overviewEyebrow}</p>
+      <h2 id="enfoque-solucion" class="mt-3 text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl">{props.overviewHeading}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{props.overviewText}</p>
+    </div>
+    <ul class="divide-y divide-(--color-border-strong) border-y border-(--color-border-strong)">
+      {props.needs.map((need) => (
+        <li class="flex gap-4 py-5 font-semibold leading-relaxed text-(--color-foreground)">
+          <span class="text-(--color-accent-500)" aria-hidden="true">✓</span>
+          <span>{need}</span>
+        </li>
+      ))}
+    </ul>
+  </Container>
+</section>
+
+<section class="py-16 lg:py-20" aria-labelledby="elementos-solucion">
+  <Container>
+    <h2 id="elementos-solucion" class="max-w-3xl text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl">{props.elementsHeading}</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {props.elements.map((item) => (
+        item.href ? (
+          <a href={item.href} class="group flex h-full flex-col rounded-2xl border border-(--color-border-strong) p-7 transition hover:-translate-y-1 hover:border-(--color-accent-500) hover:shadow-md">
+            <h3 class="text-xl font-black text-(--color-foreground)">{item.title}</h3>
+            <p class="mt-4 flex-1 leading-relaxed text-(--color-foreground-muted)">{item.text}</p>
+            <span class="mt-6 inline-flex font-semibold text-(--color-accent-500)">Ver servicio <span class="ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></span>
+          </a>
+        ) : (
+          <article class="rounded-2xl border border-(--color-border-strong) p-7">
+            <h3 class="text-xl font-black text-(--color-foreground)">{item.title}</h3>
+            <p class="mt-4 leading-relaxed text-(--color-foreground-muted)">{item.text}</p>
+          </article>
+        )
+      ))}
+    </div>
+  </Container>
+</section>
+
+<section id="como-trabajamos" class="bg-(--color-foreground) py-16 text-white lg:py-20" aria-labelledby="proceso-solucion">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)">Cómo trabajamos</p>
+        <h2 id="proceso-solucion" class="mt-3 text-3xl font-black leading-tight sm:text-4xl">{props.processHeading}</h2>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-white/70">{props.processIntro}</p>
+      </div>
+      <ol class="divide-y divide-white/20 border-y border-white/20">
+        {props.process.map((item, index) => (
+          <li class="grid gap-3 py-6 sm:grid-cols-[3rem_1fr]">
+            <span class="text-sm font-black tracking-[0.16em] text-(--color-accent-400)">0{index + 1}</span>
+            <div><h3 class="text-lg font-bold">{item.title}</h3><p class="mt-2 leading-relaxed text-white/70">{item.text}</p></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </Container>
+</section>
+
+<section class="py-16 lg:py-20">
+  <Container>
+    <div class="flex flex-col gap-6 rounded-2xl bg-(--color-surface-muted) p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
+      <div class="max-w-2xl"><h2 class="text-2xl font-black text-(--color-foreground) sm:text-3xl">{props.ctaHeading}</h2><p class="mt-3 leading-relaxed text-(--color-foreground-muted)">{props.ctaText}</p></div>
+      <ButtonLink href={paths.quote} class="shrink-0">Solicitar presupuesto</ButtonLink>
+    </div>
+  </Container>
+</section>

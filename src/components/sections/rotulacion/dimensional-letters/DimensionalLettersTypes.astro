@@ -1,5 +1,6 @@
 ---
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 
 const letterTypes = [
   {
@@ -78,7 +79,7 @@ const letterTypes = [
         letterTypes.map((letterType) => (
           <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-border) bg-white">
             <div class="aspect-16/10 overflow-hidden">
-              <img src={letterType.image} alt={letterType.imageAlt} class="h-full w-full object-cover" loading="lazy" decoding="async" />
+              <ResponsiveImage src={letterType.image} alt={letterType.imageAlt} class="h-full w-full object-cover" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
             </div>
 
             <div class="flex flex-1 flex-col p-6">

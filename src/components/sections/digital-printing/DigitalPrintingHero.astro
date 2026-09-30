@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import { paths } from "@/data/navigation";
 import type { DigitalPrintingHubPage, DigitalPrintingDetailPage } from "@/data/digitalPrinting";
 
@@ -21,7 +22,7 @@ const { page } = Astro.props;
         </div>
       </div>
       <div class:list={["aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)", page.imageFirst && "lg:order-1"]}>
-        <img src={page.image} alt={page.imageAlt} class="h-full w-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
+        <ResponsiveImage src={page.image} alt={page.imageAlt} class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
       </div>
     </div>
   </Container>

@@ -1,5 +1,6 @@
 ---
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import { paths } from "@/data/navigation";
 
 const services = [
@@ -90,12 +91,11 @@ const services = [
           >
             <div class="aspect-16/10 overflow-hidden bg-white">
               {service.image ? (
-                <img
+                <ResponsiveImage
                   src={service.image}
                   alt={service.imageAlt}
-                  loading="lazy"
-                  decoding="async"
                   class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 />
               ) : (
                 <div class="flex h-full items-center justify-center text-sm font-semibold text-(--color-foreground-muted)">

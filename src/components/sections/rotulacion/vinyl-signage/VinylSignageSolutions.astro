@@ -1,5 +1,6 @@
 ---
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 
 const solutions = [
   {
@@ -50,7 +51,7 @@ const solutions = [
         solutions.map((solution) => (
           <article class="overflow-hidden rounded-2xl border border-(--color-border) bg-white">
             <div class="aspect-16/9 overflow-hidden">
-              <img src={solution.image} alt={solution.imageAlt} class="h-full w-full object-cover" loading="lazy" decoding="async" />
+              <ResponsiveImage src={solution.image} alt={solution.imageAlt} class="h-full w-full object-cover" sizes="(min-width: 640px) 50vw, 100vw" />
             </div>
 
             <div class="p-6 sm:p-7">

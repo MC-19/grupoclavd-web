@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import { paths } from "@/data/navigation";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -19,43 +20,64 @@ const approach = [
 
 <BaseLayout title="Soluciones de imagen para empresas | GrupoClavD" description="GrupoClavD desarrolla soluciones de rotulación, impresión digital e instalación para empresas, comercios, franquicias y cadenas en toda España.">
   <section class="py-12 lg:py-16">
-    <Container>
-      <div class="max-w-4xl">
+    <Container class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div>
         <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">GrupoClavD</p>
         <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Soluciones de imagen para empresas</h1>
         <p class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)">Trabajamos en rotulación, impresión digital e instalación para llevar la imagen de cada empresa a fachadas, interiores, vehículos y espacios comerciales.</p>
+        <div class="mt-7 flex flex-wrap gap-4">
+          <ButtonLink href={paths.projects}>Ver proyectos</ButtonLink>
+          <ButtonLink href={paths.contact} variant="secondary">Hablar con el equipo</ButtonLink>
+        </div>
       </div>
+
+      <figure>
+        <div class="aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
+          <ResponsiveImage
+            src="/images/work/produccion-rotulo-taller.jpg"
+            alt="Profesional trabajando en la producción de un rótulo en el taller"
+            class="h-full w-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+        <figcaption class="mt-3 text-sm leading-relaxed text-(--color-foreground-muted)">Producción de un rótulo en taller.</figcaption>
+      </figure>
     </Container>
   </section>
 
   <section class="bg-(--color-surface-muted) py-16 lg:py-20" aria-labelledby="que-hacemos">
     <Container>
-      <h2 id="que-hacemos" class="text-3xl font-black text-(--color-foreground) sm:text-4xl">Qué hacemos</h2>
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Áreas de trabajo</p>
+        <h2 id="que-hacemos" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">Qué hacemos</h2>
+        <p class="mt-4 text-lg leading-relaxed text-(--color-foreground-muted)">Reunimos producción gráfica, rotulación e instalación para que cada elemento responda a una misma necesidad visual.</p>
+      </div>
       <div class="mt-10 grid gap-6 md:grid-cols-3">
-        {workAreas.map((area) => <article class="rounded-2xl border border-(--color-border-strong) bg-white p-7"><h3 class="text-xl font-black text-(--color-foreground)">{area.title}</h3><p class="mt-4 leading-relaxed text-(--color-foreground-muted)">{area.text}</p></article>)}
+        {workAreas.map((area, index) => <article class="rounded-2xl border border-(--color-border-strong) bg-white p-7"><span class="text-sm font-black tracking-[0.16em] text-(--color-accent-500)">0{index + 1}</span><h3 class="mt-3 text-xl font-black text-(--color-foreground)">{area.title}</h3><p class="mt-4 leading-relaxed text-(--color-foreground-muted)">{area.text}</p></article>)}
       </div>
     </Container>
   </section>
 
   <section class="py-16 lg:py-20" aria-labelledby="como-trabajamos">
     <Container>
-      <div class="grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(300px,1fr)]">
+      <div class="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(340px,1.1fr)] lg:gap-16">
         <div>
           <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Cómo trabajamos</p>
           <h2 id="como-trabajamos" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">Del proyecto a su ubicación final</h2>
           <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">Producción, logística e instalación se coordinan para mantener una imagen coherente durante la ejecución.</p>
         </div>
         <ol class="divide-y divide-(--color-border-strong) border-y border-(--color-border-strong)">
-          {approach.map((item, index) => <li class="py-5"><p class="text-sm font-bold text-(--color-accent-500)">0{index + 1}</p><h3 class="mt-1 font-black text-(--color-foreground)">{item.title}</h3><p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{item.text}</p></li>)}
+          {approach.map((item, index) => <li class="grid gap-3 py-6 sm:grid-cols-[3rem_1fr]"><p class="text-sm font-black text-(--color-accent-500)">0{index + 1}</p><div><h3 class="font-black text-(--color-foreground)">{item.title}</h3><p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{item.text}</p></div></li>)}
         </ol>
       </div>
     </Container>
   </section>
 
   <section class="bg-(--color-foreground) py-16 text-white lg:py-20" aria-labelledby="cobertura-clientes">
-    <Container class="grid gap-10 lg:grid-cols-2 lg:items-center">
+    <Container class="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
       <div><p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)">Cobertura y proyectos</p><h2 id="cobertura-clientes" class="mt-3 text-3xl font-black sm:text-4xl">Una ubicación o múltiples establecimientos</h2></div>
-      <p class="text-lg leading-relaxed text-white/70">Trabajamos con empresas, comercios, franquicias y cadenas, coordinando proyectos puntuales y actuaciones en múltiples ubicaciones en toda España.</p>
+      <div class="border-l-2 border-(--color-accent-500) pl-6"><p class="text-lg leading-relaxed text-white/75">Trabajamos con empresas, comercios, franquicias y cadenas, coordinando proyectos puntuales y actuaciones en múltiples ubicaciones en toda España.</p><a href={paths.franchises} class="mt-5 inline-flex min-h-11 items-center font-semibold text-white underline-offset-4 hover:underline">Soluciones para franquicias y cadenas <span class="ml-2" aria-hidden="true">→</span></a></div>
     </Container>
   </section>
 

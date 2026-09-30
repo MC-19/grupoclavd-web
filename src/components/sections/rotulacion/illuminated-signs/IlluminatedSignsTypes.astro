@@ -1,7 +1,16 @@
 ---
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 
-const solutions = [
+interface Solution {
+  title: string;
+  image: string;
+  imageAlt: string;
+  imageNote?: string;
+  description: string;
+}
+
+const solutions: Solution[] = [
   {
     title: "Rótulos luminosos",
     image: "/ImagenesWebClav/Fotos%20Que%20si/IMG-20171108-WA0027.jpg",
@@ -27,6 +36,7 @@ const solutions = [
     title: "Banderolas",
     image: "/images/banderola-comercial-fachada.jpg",
     imageAlt: "Banderola luminosa de doble cara instalada perpendicularmente a una fachada comercial",
+    imageNote: "Imagen ilustrativa",
     description:
       "Rótulos perpendiculares a fachada diseñados para mejorar la visibilidad del establecimiento desde distintos puntos de paso.",
   },
@@ -78,14 +88,15 @@ const solutions = [
       {
         solutions.map((solution) => (
           <article class="flex h-full flex-col rounded-2xl border border-(--color-border) bg-white p-6">
-            <div class="mb-5 aspect-16/10 overflow-hidden rounded-xl bg-(--color-surface-muted)">
+            <div class="relative mb-5 aspect-16/10 overflow-hidden rounded-xl bg-(--color-surface-muted)">
               {solution.image ? (
-                <img src={solution.image} alt={solution.imageAlt} class="h-full w-full object-cover" loading="lazy" decoding="async" />
+                <ResponsiveImage src={solution.image} alt={solution.imageAlt} class="h-full w-full object-cover" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
               ) : (
                 <div class="flex h-full items-center justify-center px-6 text-center text-sm font-semibold text-(--color-foreground-muted)">
                   Imagen de {solution.title.toLowerCase()}
                 </div>
               )}
+              {solution.imageNote && <span class="absolute bottom-3 left-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white">{solution.imageNote}</span>}
             </div>
 
             <h3 class="text-xl font-bold text-(--color-foreground)">

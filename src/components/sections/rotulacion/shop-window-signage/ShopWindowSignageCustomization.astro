@@ -1,5 +1,6 @@
 ---
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 
 const considerations = [
   { title: "Superficie y proporción", description: "La composición se ajusta al espacio disponible y a las dimensiones visibles del escaparate." },
@@ -13,7 +14,7 @@ const considerations = [
   <Container>
     <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
       <div class="aspect-4/3 overflow-hidden rounded-2xl">
-        <img src="/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos.jpg" alt="Gráfica comercial integrada en el escaparate de Pikolinos" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+        <ResponsiveImage src="/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos.jpg" alt="Gráfica comercial integrada en el escaparate de Pikolinos" class="h-full w-full object-cover" />
       </div>
       <div>
         <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Diseño en contexto</p>

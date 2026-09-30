@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import { paths } from "@/data/navigation";
 ---
 
@@ -18,12 +19,15 @@ import { paths } from "@/data/navigation";
       </div>
     </div>
     <div class="mt-12 aspect-16/7 overflow-hidden rounded-2xl">
-      <img
+      <ResponsiveImage
         src="/ImagenesWebClav/Fotos%20Que%20si/escaparate-pikolinos-centro-comercial.jpg"
         alt="Escaparate comercial de Pikolinos con gráfica de campaña"
         class="h-full w-full object-cover"
         loading="eager"
-        decoding="async"
+        fetchpriority="high"
+        sizes="100vw"
+        width={1600}
+        height={700}
       />
     </div>
   </Container>
