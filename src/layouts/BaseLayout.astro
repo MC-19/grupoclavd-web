@@ -75,7 +75,11 @@ const organizationSchema = {
 
     <meta name="twitter:image" content={socialImageURL.toString()} />
 
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(organizationSchema)}
+    />
     <Analytics />
   </head>
 
