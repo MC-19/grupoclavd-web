@@ -1,0 +1,327 @@
+---
+import { paths } from "../../data/navigation";
+import { quoteCategories } from "../../data/quoteProducts";
+
+const fieldClass =
+  "mt-2 min-h-11 w-full rounded-xl border border-(--color-border-strong) bg-white px-4 py-3 text-(--color-foreground) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)";
+---
+
+<div id="quote-calculator" data-contact-url={paths.contact}>
+  <div class="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:items-start">
+    <section class="rounded-2xl border border-(--color-border-strong) bg-white p-6 shadow-sm sm:p-8" aria-labelledby="quote-configurator-title">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.18em] text-(--color-accent-500)">Añadir concepto</p>
+        <h2 id="quote-configurator-title" class="mt-2 text-2xl font-black text-(--color-foreground) sm:text-3xl">Configura lo que necesitas</h2>
+        <p class="mt-3 leading-relaxed text-(--color-foreground-muted)">Selecciona una categoría y un producto. Solo te pediremos los datos necesarios para calcular ese concepto.</p>
+      </div>
+
+      <form id="quote-item-form" class="mt-7 space-y-6" novalidate>
+        <div>
+          <label for="quote-category" class="font-semibold text-(--color-foreground)">Categoría</label>
+          <select id="quote-category" class={fieldClass}>
+            {quoteCategories.map((category) => <option value={category.id}>{category.name}</option>)}
+          </select>
+        </div>
+
+        <div>
+          <label for="quote-product" class="font-semibold text-(--color-foreground)">Producto o servicio</label>
+          <select id="quote-product" class={fieldClass}></select>
+        </div>
+
+        <div id="quote-fields" class="grid gap-5 sm:grid-cols-3"></div>
+
+        <div id="quote-product-note" class="rounded-xl bg-(--color-surface-muted) p-4 text-sm leading-relaxed text-(--color-foreground-muted)" aria-live="polite"></div>
+
+        <p id="quote-item-error" class="hidden text-sm font-semibold text-(--color-danger)" role="alert"></p>
+
+        <button type="submit" class="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-(--color-foreground) px-6 py-3 font-semibold text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500) sm:w-auto">
+          Añadir al presupuesto
+        </button>
+      </form>
+    </section>
+
+    <aside class="rounded-2xl bg-(--color-foreground) p-6 text-white shadow-lg sm:p-8" aria-labelledby="quote-summary-title">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-(--color-accent-300)">Tu estimación</p>
+          <h2 id="quote-summary-title" class="mt-2 text-2xl font-black sm:text-3xl">Desglose</h2>
+        </div>
+        <span id="quote-count" class="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-bold text-white/70">0 conceptos</span>
+      </div>
+
+      <div id="quote-empty" class="mt-7 rounded-xl border border-dashed border-white/20 p-6 text-center text-sm leading-relaxed text-white/60">
+        Todavía no has añadido ningún concepto.
+      </div>
+
+      <ul id="quote-items" class="mt-6 hidden divide-y divide-white/10" aria-live="polite"></ul>
+
+      <div class="mt-7 border-t border-white/15 pt-6">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold text-white/60">Total estimado calculable</p>
+            <p id="quote-consult-count" class="mt-1 hidden text-xs text-(--color-accent-300)"></p>
+          </div>
+          <p id="quote-total" class="text-3xl font-black">0,00 €</p>
+        </div>
+      </div>
+
+      <div class="mt-6 rounded-xl bg-white/8 p-4 text-sm leading-relaxed text-white/70">
+        <p class="font-semibold text-white">Precio orientativo.</p>
+        <p class="mt-1">El importe final se confirmará tras revisar las características y condiciones del proyecto.</p>
+      </div>
+
+      <p class="mt-4 text-xs leading-relaxed text-white/55">El tarifario no especifica si el IVA, el diseño, el transporte o la instalación están incluidos. Estos conceptos se confirmarán al revisar la solicitud.</p>
+
+      <button id="quote-request" type="button" disabled class="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-(--color-accent-500) px-6 py-3 text-center font-bold text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:cursor-not-allowed disabled:opacity-45">
+        Solicitar presupuesto personalizado
+      </button>
+    </aside>
+  </div>
+
+  <script id="quote-catalog" type="application/json" set:html={JSON.stringify(quoteCategories)} is:inline></script>
+</div>
+
+<script>
+  import {
+    calculateLinearMeters,
+    calculateSquareMeters,
+    calculateUnits,
+    sumCalculatedTotals,
+  } from "../../lib/quoteCalculator";
+
+  type Pricing =
+    | { type: "square-meter"; unitPrice: number }
+    | { type: "linear-meter"; unitPrice: number }
+    | { type: "unit"; unitPrice: number }
+    | { type: "consult"; tariffNote: string };
+  type Product = { id: string; name: string; pricing: Pricing };
+  type Category = { id: string; name: string; products: Product[] };
+  type QuoteItem = {
+    key: string;
+    productId: string;
+    name: string;
+    detail: string;
+    quantity?: number;
+    widthCm?: number;
+    heightCm?: number;
+    linearMeters?: number;
+    total: number | null;
+  };
+
+  const root = document.querySelector<HTMLElement>("#quote-calculator");
+  const catalogNode = document.querySelector<HTMLScriptElement>("#quote-catalog");
+  const itemForm = document.querySelector<HTMLFormElement>("#quote-item-form");
+  const categorySelect = document.querySelector<HTMLSelectElement>("#quote-category");
+  const productSelect = document.querySelector<HTMLSelectElement>("#quote-product");
+  const fields = document.querySelector<HTMLElement>("#quote-fields");
+  const productNote = document.querySelector<HTMLElement>("#quote-product-note");
+  const itemError = document.querySelector<HTMLElement>("#quote-item-error");
+  const emptyState = document.querySelector<HTMLElement>("#quote-empty");
+  const itemsList = document.querySelector<HTMLUListElement>("#quote-items");
+  const count = document.querySelector<HTMLElement>("#quote-count");
+  const consultCount = document.querySelector<HTMLElement>("#quote-consult-count");
+  const total = document.querySelector<HTMLElement>("#quote-total");
+  const requestButton = document.querySelector<HTMLButtonElement>("#quote-request");
+
+  const categories: Category[] = catalogNode ? JSON.parse(catalogNode.textContent ?? "[]") : [];
+  const quoteItems: QuoteItem[] = [];
+  const currency = new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" });
+  const decimal = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 3 });
+
+  const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-border-strong) bg-white px-4 py-3 text-(--color-foreground) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)";
+
+  function currentCategory() {
+    return categories.find((category) => category.id === categorySelect?.value);
+  }
+
+  function currentProduct() {
+    return currentCategory()?.products.find((product) => product.id === productSelect?.value);
+  }
+
+  function createNumberField(id: string, label: string, options: { min: string; step: string; value: string; suffix?: string }) {
+    const wrapper = document.createElement("div");
+    const fieldLabel = document.createElement("label");
+    fieldLabel.htmlFor = id;
+    fieldLabel.className = "font-semibold text-(--color-foreground)";
+    fieldLabel.textContent = label;
+    const input = document.createElement("input");
+    input.id = id;
+    input.name = id;
+    input.type = "number";
+    input.required = true;
+    input.min = options.min;
+    input.step = options.step;
+    input.value = options.value;
+    input.inputMode = "decimal";
+    input.className = inputClass;
+    if (options.suffix) input.setAttribute("aria-describedby", `${id}-unit`);
+    wrapper.append(fieldLabel, input);
+    if (options.suffix) {
+      const unit = document.createElement("span");
+      unit.id = `${id}-unit`;
+      unit.className = "mt-1 block text-xs text-(--color-foreground-muted)";
+      unit.textContent = options.suffix;
+      wrapper.append(unit);
+    }
+    return wrapper;
+  }
+
+  function renderProductOptions() {
+    if (!productSelect) return;
+    productSelect.replaceChildren();
+    for (const product of currentCategory()?.products ?? []) {
+      const option = document.createElement("option");
+      option.value = product.id;
+      option.textContent = `${product.name}${product.pricing.type === "consult" ? " — Consultar precio" : ""}`;
+      productSelect.append(option);
+    }
+    renderFields();
+  }
+
+  function renderFields() {
+    if (!fields || !productNote) return;
+    fields.replaceChildren();
+    const product = currentProduct();
+    if (!product) return;
+
+    if (product.pricing.type === "square-meter") {
+      fields.append(
+        createNumberField("quote-width", "Ancho", { min: "0.1", step: "0.1", value: "100", suffix: "centímetros" }),
+        createNumberField("quote-height", "Alto", { min: "0.1", step: "0.1", value: "100", suffix: "centímetros" }),
+        createNumberField("quote-quantity", "Cantidad", { min: "1", step: "1", value: "1", suffix: "unidades iguales" }),
+      );
+      productNote.textContent = `Tarifa: ${currency.format(product.pricing.unitPrice)} por m². El área se calcula con ancho × alto × cantidad.`;
+    } else if (product.pricing.type === "linear-meter") {
+      fields.append(createNumberField("quote-linear-meters", "Longitud total", { min: "0.01", step: "0.01", value: "1", suffix: "metros lineales" }));
+      productNote.textContent = `Tarifa: ${currency.format(product.pricing.unitPrice)} por metro lineal.`;
+    } else if (product.pricing.type === "unit") {
+      fields.append(createNumberField("quote-quantity", "Cantidad", { min: "1", step: "1", value: "1", suffix: "unidades" }));
+      productNote.textContent = `Tarifa: ${currency.format(product.pricing.unitPrice)} por unidad.`;
+    } else {
+      productNote.textContent = "Este concepto necesita una valoración personalizada porque el tarifario no contiene un precio fijo aplicable.";
+    }
+  }
+
+  function readPositiveNumber(id: string) {
+    const input = document.querySelector<HTMLInputElement>(`#${id}`);
+    if (!input || !input.checkValidity()) return null;
+    const value = Number(input.value);
+    return Number.isFinite(value) && value > 0 ? value : null;
+  }
+
+  function createItem(product: Product): QuoteItem | null {
+    const key = globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
+    if (product.pricing.type === "consult") {
+      return { key, productId: product.id, name: product.name, detail: "Consultar precio", total: null };
+    }
+    if (product.pricing.type === "square-meter") {
+      const widthCm = readPositiveNumber("quote-width");
+      const heightCm = readPositiveNumber("quote-height");
+      const quantity = readPositiveNumber("quote-quantity");
+      if (widthCm === null || heightCm === null || quantity === null || !Number.isInteger(quantity)) return null;
+      const result = calculateSquareMeters({ widthCm, heightCm, quantity, unitPrice: product.pricing.unitPrice });
+      if (!result) return null;
+      return { key, productId: product.id, name: product.name, widthCm, heightCm, quantity, detail: `${quantity} ud. · ${decimal.format(widthCm)} × ${decimal.format(heightCm)} cm · ${decimal.format(result.area)} m²`, total: result.total };
+    }
+    if (product.pricing.type === "linear-meter") {
+      const linearMeters = readPositiveNumber("quote-linear-meters");
+      if (linearMeters === null) return null;
+      const result = calculateLinearMeters(linearMeters, product.pricing.unitPrice);
+      if (!result) return null;
+      return { key, productId: product.id, name: product.name, linearMeters, detail: `${decimal.format(linearMeters)} m lineales`, total: result.total };
+    }
+    const quantity = readPositiveNumber("quote-quantity");
+    if (quantity === null || !Number.isInteger(quantity)) return null;
+    const result = calculateUnits(quantity, product.pricing.unitPrice);
+    if (!result) return null;
+    return { key, productId: product.id, name: product.name, quantity, detail: `${quantity} unidades`, total: result.total };
+  }
+
+  function renderSummary() {
+    if (!itemsList || !emptyState || !count || !consultCount || !total || !requestButton) return;
+    itemsList.replaceChildren();
+    const consultItems = quoteItems.filter((item) => item.total === null);
+    const calculatedTotal = sumCalculatedTotals(quoteItems.map((item) => item.total));
+
+    for (const item of quoteItems) {
+      const row = document.createElement("li");
+      row.className = "grid grid-cols-[minmax(0,1fr)_auto] gap-4 py-5";
+      const copy = document.createElement("div");
+      const name = document.createElement("p");
+      name.className = "font-bold text-white";
+      name.textContent = item.name;
+      const detail = document.createElement("p");
+      detail.className = "mt-1 text-sm leading-relaxed text-white/55";
+      detail.textContent = item.detail;
+      copy.append(name, detail);
+
+      const actions = document.createElement("div");
+      actions.className = "text-right";
+      const price = document.createElement("p");
+      price.className = item.total === null ? "text-sm font-bold text-(--color-accent-300)" : "font-black text-white";
+      price.textContent = item.total === null ? "Consultar" : currency.format(item.total);
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "mt-2 text-xs font-semibold text-white/50 underline underline-offset-4 transition hover:text-white";
+      remove.textContent = "Eliminar";
+      remove.setAttribute("aria-label", `Eliminar ${item.name}`);
+      remove.addEventListener("click", () => {
+        const index = quoteItems.findIndex((candidate) => candidate.key === item.key);
+        if (index >= 0) quoteItems.splice(index, 1);
+        renderSummary();
+      });
+      actions.append(price, remove);
+      row.append(copy, actions);
+      itemsList.append(row);
+    }
+
+    const hasItems = quoteItems.length > 0;
+    emptyState.classList.toggle("hidden", hasItems);
+    itemsList.classList.toggle("hidden", !hasItems);
+    count.textContent = `${quoteItems.length} ${quoteItems.length === 1 ? "concepto" : "conceptos"}`;
+    total.textContent = currency.format(calculatedTotal);
+    consultCount.textContent = consultItems.length ? `${consultItems.length} ${consultItems.length === 1 ? "concepto pendiente" : "conceptos pendientes"} de valoración` : "";
+    consultCount.classList.toggle("hidden", consultItems.length === 0);
+    requestButton.disabled = !hasItems;
+  }
+
+  categorySelect?.addEventListener("change", renderProductOptions);
+  productSelect?.addEventListener("change", renderFields);
+  itemForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const product = currentProduct();
+    if (!product || !itemForm.reportValidity()) return;
+    const item = createItem(product);
+    if (!item) {
+      if (itemError) {
+        itemError.textContent = "Revisa las cantidades y medidas. Deben ser valores positivos y la cantidad debe ser un número entero.";
+        itemError.classList.remove("hidden");
+      }
+      return;
+    }
+    itemError?.classList.add("hidden");
+    quoteItems.push(item);
+    renderSummary();
+  });
+
+  requestButton?.addEventListener("click", () => {
+    if (!root || quoteItems.length === 0) return;
+    const calculatedTotal = sumCalculatedTotals(quoteItems.map((item) => item.total));
+    const lines = quoteItems.map((item, index) => `${index + 1}. ${item.name}\n   ${item.detail}\n   ${item.total === null ? "Consultar precio" : currency.format(item.total)}`);
+    const payload = {
+      subject: "Solicitud de presupuesto personalizado",
+      message: `Hola, quiero solicitar un presupuesto personalizado a partir de esta estimación:\n\n${lines.join("\n\n")}\n\nTotal estimado de conceptos calculables: ${currency.format(calculatedTotal)}\n\nEntiendo que es un precio orientativo y que el importe final se confirmará tras revisar el proyecto.`,
+    };
+    let contactUrl = `${root.dataset.contactUrl}?presupuesto=1`;
+    try {
+      sessionStorage.setItem("grupoclavd-quote-request", JSON.stringify(payload));
+    } catch {
+      const fallback = new URLSearchParams({ asunto: payload.subject, mensaje: payload.message });
+      contactUrl += `&${fallback.toString()}`;
+    }
+    window.location.href = contactUrl;
+  });
+
+  renderProductOptions();
+  renderSummary();
+</script>
