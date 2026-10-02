@@ -1,5 +1,6 @@
 ---
 import Analytics from "@vercel/analytics/astro";
+import AnalyticsConsent from "../components/analytics/AnalyticsConsent.astro";
 import Footer from "../components/layout/Footer.astro";
 import Header from "../components/layout/Header.astro";
 import { company } from "../data/company";
@@ -47,14 +48,6 @@ const organizationSchema = {
   <head>
     <meta charset="utf-8" />
 
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-9JF2L5RGN9"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9JF2L5RGN9');
-    </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -117,5 +110,6 @@ const organizationSchema = {
     </main>
 
     <Footer />
+    <AnalyticsConsent />
   </body>
 </html>
