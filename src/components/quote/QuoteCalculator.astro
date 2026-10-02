@@ -67,10 +67,10 @@ const fieldClass =
 
       <div class="mt-6 rounded-xl bg-white/8 p-4 text-sm leading-relaxed text-white/70">
         <p class="font-semibold text-white">Precio orientativo.</p>
-        <p class="mt-1">El importe final se confirmará tras revisar las características y condiciones del proyecto.</p>
+        <p class="mt-1">Esta estimación te ayuda a conocer el coste aproximado de los productos seleccionados. El importe final se confirmará tras revisar las características y condiciones del proyecto.</p>
       </div>
 
-      <p class="mt-4 text-xs leading-relaxed text-white/55">El tarifario no especifica si el IVA, el diseño, el transporte o la instalación están incluidos. Estos conceptos se confirmarán al revisar la solicitud.</p>
+      <p class="mt-4 text-sm leading-relaxed text-white/70">Los precios no incluyen IVA, transporte, diseño ni instalación. Estos conceptos se presupuestarán por separado cuando corresponda.</p>
 
       <button id="quote-request" type="button" disabled class="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-(--color-accent-500) px-6 py-3 text-center font-bold text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:cursor-not-allowed disabled:opacity-45">
         Solicitar presupuesto personalizado
@@ -329,7 +329,7 @@ const fieldClass =
         : `Total estimado de conceptos calculables: ${currency.format(calculatedTotal)}`;
     const payload = {
       subject: "Solicitud de presupuesto personalizado",
-      message: `Hola, quiero solicitar un presupuesto personalizado a partir de esta estimación:\n\n${lines.join("\n\n")}\n\n${estimateSummary}\n\nEntiendo que es un precio orientativo y que el importe final se confirmará tras revisar el proyecto.`,
+      message: `Hola, quiero solicitar un presupuesto personalizado a partir de esta estimación:\n\n${lines.join("\n\n")}\n\n${estimateSummary}\n\nEntiendo que los precios son orientativos y no incluyen IVA, transporte, diseño ni instalación. El importe final se confirmará tras revisar el proyecto.`,
     };
     let contactUrl = `${root.dataset.contactUrl}?presupuesto=1`;
     try {
