@@ -111,6 +111,7 @@ const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-borde
       const result: { success?: boolean } = await response.json();
       if (!response.ok || result.success !== true) throw new Error("Submission failed");
 
+      document.dispatchEvent(new CustomEvent("gc:track", { detail: { event: "generate_lead" } }));
       form.reset();
       status.textContent = "Mensaje enviado correctamente. Gracias por escribirnos.";
       status.focus();
