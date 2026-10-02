@@ -338,7 +338,6 @@ const fieldClass =
       const fallback = new URLSearchParams({ asunto: payload.subject, mensaje: payload.message });
       contactUrl += `&${fallback.toString()}`;
     }
-    document.dispatchEvent(new CustomEvent("gc:track", { detail: { event: "begin_quote" } }));
     window.location.href = contactUrl;
   });
 
