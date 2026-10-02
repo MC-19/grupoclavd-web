@@ -47,6 +47,15 @@ const organizationSchema = {
   <head>
     <meta charset="utf-8" />
 
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-9JF2L5RGN9"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9JF2L5RGN9');
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>{title}</title>
