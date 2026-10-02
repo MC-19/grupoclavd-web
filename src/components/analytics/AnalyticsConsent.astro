@@ -1,0 +1,161 @@
+---
+const measurementId = "G-9JF2L5RGN9";
+---
+
+<div
+  id="analytics-consent-banner"
+  class="fixed inset-x-4 bottom-4 z-[100] mx-auto hidden max-w-3xl rounded-2xl border border-(--color-border-strong) bg-white p-5 shadow-2xl sm:p-6"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="analytics-consent-title"
+>
+  <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+    <div class="max-w-2xl">
+      <h2 id="analytics-consent-title" class="text-lg font-black text-(--color-foreground)">
+        Cookies analíticas
+      </h2>
+      <p class="mt-2 text-sm leading-relaxed text-(--color-foreground-muted)">
+        Usamos Google Analytics para entender cómo se utiliza la web y mejorarla. Solo lo activaremos si lo aceptas.
+        Puedes cambiar tu decisión en cualquier momento desde el pie de página.
+        <a href="/cookies/" class="font-semibold text-(--color-accent-500) underline underline-offset-4">
+          Más información
+        </a>.
+      </p>
+    </div>
+
+    <div class="flex shrink-0 flex-col gap-2 sm:flex-row">
+      <button
+        id="analytics-reject"
+        type="button"
+        class="inline-flex min-h-11 items-center justify-center rounded-xl border border-(--color-border-strong) px-5 py-2.5 font-semibold text-(--color-foreground) transition hover:bg-(--color-surface-muted) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)"
+      >
+        Solo necesarias
+      </button>
+      <button
+        id="analytics-accept"
+        type="button"
+        class="inline-flex min-h-11 items-center justify-center rounded-xl bg-(--color-foreground) px-5 py-2.5 font-semibold text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent-500)"
+      >
+        Aceptar analíticas
+      </button>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ measurementId }} is:inline>
+  (() => {
+    const consentKey = "grupoclavd-analytics-consent";
+    const banner = document.getElementById("analytics-consent-banner");
+    const acceptButton = document.getElementById("analytics-accept");
+    const rejectButton = document.getElementById("analytics-reject");
+    let analyticsLoaded = false;
+    let beginQuoteTracked = false;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+
+    function track(eventName, params = {}) {
+      if (localStorage.getItem(consentKey) !== "granted") return;
+      window.gtag("event", eventName, params);
+    }
+
+    function trackBeginQuoteIfNeeded() {
+      if (beginQuoteTracked) return;
+      const normalizedPath = window.location.pathname.endsWith("/")
+        ? window.location.pathname
+        : `${window.location.pathname}/`;
+      if (normalizedPath !== "/presupuesto/") return;
+      beginQuoteTracked = true;
+      track("begin_quote");
+    }
+
+    function loadAnalytics() {
+      if (analyticsLoaded) {
+        trackBeginQuoteIfNeeded();
+        return;
+      }
+      analyticsLoaded = true;
+
+      window.gtag("consent", "update", {
+        analytics_storage: "granted",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      document.head.appendChild(script);
+
+      window.gtag("js", new Date());
+      window.gtag("config", measurementId, {
+        send_page_view: true,
+      });
+
+      trackBeginQuoteIfNeeded();
+    }
+
+    function showBanner() {
+      banner?.classList.remove("hidden");
+    }
+
+    function hideBanner() {
+      banner?.classList.add("hidden");
+    }
+
+    function grantConsent() {
+      localStorage.setItem(consentKey, "granted");
+      hideBanner();
+      loadAnalytics();
+    }
+
+    function rejectConsent() {
+      localStorage.setItem(consentKey, "denied");
+      window.gtag("consent", "update", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+      hideBanner();
+    }
+
+    acceptButton?.addEventListener("click", grantConsent);
+    rejectButton?.addEventListener("click", rejectConsent);
+
+    document.addEventListener("click", (event) => {
+      const target = event.target instanceof Element ? event.target.closest("a") : null;
+      if (!(target instanceof HTMLAnchorElement)) return;
+
+      const href = target.getAttribute("href") || "";
+      if (href.startsWith("https://wa.me/")) track("click_whatsapp");
+      else if (href.startsWith("tel:")) track("click_phone");
+      else if (href.startsWith("mailto:")) track("click_email");
+    });
+
+    document.addEventListener("gc:track", (event) => {
+      if (!(event instanceof CustomEvent)) return;
+      const eventName = event.detail?.event;
+      if (typeof eventName !== "string" || !eventName) return;
+      track(eventName, event.detail?.params || {});
+    });
+
+    document.addEventListener("gc:manage-consent", () => {
+      showBanner();
+    });
+
+    const savedConsent = localStorage.getItem(consentKey);
+    if (savedConsent === "granted") loadAnalytics();
+    else if (savedConsent !== "denied") showBanner();
+  })();
+</script>

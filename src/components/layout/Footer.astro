@@ -123,8 +123,19 @@ const { company, services, solutions } = footerNavigation;
           Privacidad
         </a>
 
-        <a href={paths.cookies} class="transition hover:text-white"> Cookies </a>
+        <a href={paths.cookies} class="transition hover:text-white">Cookies</a>
+
+        <button id="manage-analytics-consent" type="button" class="transition hover:text-white">
+          Preferencias de analítica
+        </button>
       </div>
     </div>
   </Container>
 </footer>
+
+
+<script>
+  document.querySelector("#manage-analytics-consent")?.addEventListener("click", () => {
+    document.dispatchEvent(new CustomEvent("gc:manage-consent"));
+  });
+</script>
