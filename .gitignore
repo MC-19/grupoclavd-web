@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Local originals for the new projects; publish only the selected web assets.
+/asset-archive/public/ImagenesWebClav/Bistrea/
+/asset-archive/public/ImagenesWebClav/MiaPasteleria/
+/asset-archive/public/ImagenesWebClav/eitb/
+/asset-archive/web-ready/

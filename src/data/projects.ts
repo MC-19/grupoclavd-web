@@ -17,6 +17,10 @@ export interface Project {
   cover: string;
   coverAlt: string;
   gallery?: ProjectImage[];
+  preserveFullImage?: boolean;
+  details?: { label: string; value: string }[];
+  description?: string[];
+  video?: { src: string; poster: string; caption: string };
   services?: { label: string; href: string }[];
 }
 
@@ -26,9 +30,77 @@ const june = "/ImagenesWebClav/Imagenes%20Junio-2025/";
 const blog1 = "/ImagenesWebClav/Blog1/";
 const blog2 = "/ImagenesWebClav/Blog2/";
 
-// Las descripciones se limitan a lo que muestran las imágenes. Cliente,
-// ubicación, fecha y alcance del encargo quedan pendientes de confirmación.
+// Mila, Bistrea y EITB: alcance confirmado por GrupoClavD.
+// Los proyectos anteriores conservan sus descripciones basadas en las imágenes.
 export const featuredProjects: Project[] = [
+  {
+    slug: "stand-mila-ifa",
+    title: "Gráfica del stand de Mila en IFA",
+    category: "Stands · Impresión digital · Instalación",
+    filters: ["impresion-digital", "instalacion-montaje"],
+    summary: "Impresión, instalación y montaje de la gráfica del stand de Mila para la feria de gastronomía en IFA, a partir del diseño proporcionado por el cliente.",
+    preserveFullImage: true,
+    cover: "/images/projects/mila-stand-en-uso-1200.webp",
+    coverAlt: "Stand de Mila en uso, con gráfica de ondas y rótulo superior",
+    details: [
+      { label: "Lugar", value: "IFA" },
+      { label: "Montaje", value: "1 de octubre de 2026" },
+      { label: "Feria de gastronomía", value: "Del 2 al 5 de octubre de 2026" },
+      { label: "Diseño", value: "Proporcionado por Mila" },
+    ],
+    description: ["Mila aportó el diseño de la gráfica. GrupoClavD se encargó de la impresión, la instalación y el montaje para su presencia en la feria de gastronomía de IFA.", "El servicio incluye la retirada de los elementos gráficos. La galería reúne vistas del montaje y del stand en uso."],
+    gallery: [
+      { src: "/images/projects/mila-colocacion-grafica-1600.webp", alt: "Persona colocando la gráfica de ondas en una pared del stand de Mila", caption: "Colocación de la gráfica" },
+      { src: "/images/projects/mila-montaje-1600.webp", alt: "Trabajo de montaje de la gráfica del stand de Mila", caption: "Montaje en IFA" },
+      { src: "/images/projects/mila-vista-montaje-1600.webp", alt: "Vista general del stand de Mila durante el montaje", caption: "El espacio durante el montaje" },
+      { src: "/images/projects/mila-stand-terminado-1200.webp", alt: "Stand de Mila con su gráfica y mostrador en uso", caption: "El stand en uso" },
+    ],
+    services: [{ label: "Impresión digital", href: paths.digitalPrinting }, { label: "Instalación y montaje", href: paths.installation }],
+  },
+  {
+    slug: "grafica-fachada-eitb",
+    title: "Gráfica de campaña en la fachada de EITB",
+    category: "Gráfica exterior · Impresión digital · Instalación",
+    filters: ["impresion-digital", "instalacion-montaje"],
+    summary: "Impresión, instalación y montaje de gráfica exterior para una campaña de EITB, con diseño y elementos gráficos proporcionados por el cliente.",
+    preserveFullImage: true,
+    cover: "/images/projects/eitb-fachada-1600.webp",
+    coverAlt: "Vista de la fachada de EITB con gráfica de campaña instalada",
+    details: [{ label: "Diseño y elementos gráficos", value: "Proporcionados por EITB" }, { label: "Encargo", value: "Una campaña" }],
+    description: ["EITB proporcionó el diseño y los elementos gráficos de la campaña. GrupoClavD realizó la impresión, la instalación y el montaje de la gráfica en fachada, con la retirada incluida en el alcance del encargo.", "Las fotografías muestran distintas creatividades de una misma campaña y trabajos de colocación en altura."],
+    gallery: [
+      { src: "/images/projects/eitb-trabajo-en-altura-1600.webp", alt: "Plataforma elevadora junto a la gráfica en la fachada de EITB", caption: "Trabajo en altura" },
+      { src: "/images/projects/eitb-montaje-grafica-1600.webp", alt: "Montaje de gráfica de campaña en la fachada de EITB con plataforma elevadora", caption: "Colocación de la gráfica exterior" },
+      { src: "/images/projects/eitb-campana-etb-on-1600.webp", alt: "Gráfica de etb on en la fachada de EITB", caption: "Otra creatividad de la misma campaña" },
+    ],
+    services: [{ label: "Impresión digital", href: paths.digitalPrinting }, { label: "Instalación y montaje", href: paths.installation }],
+  },
+  {
+    slug: "stand-bistrea-ifa",
+    title: "Diseño y gráfica del stand de Bistrea en IFA",
+    category: "Stands · Diseño · Impresión digital",
+    filters: ["impresion-digital", "instalacion-montaje"],
+    summary: "Diseño de la gráfica, impresión, instalación y montaje para Bistrea en la feria de gastronomía de IFA, a partir de los logotipos proporcionados por el cliente.",
+    preserveFullImage: true,
+    cover: "/images/projects/bistrea-montaje-stand-1600.webp",
+    coverAlt: "Vista del stand de Bistrea durante el montaje de su gráfica",
+    details: [
+      { label: "Lugar", value: "IFA" },
+      { label: "Montaje", value: "1 de octubre de 2026" },
+      { label: "Feria de gastronomía", value: "Del 2 al 5 de octubre de 2026" },
+      { label: "Diseño gráfico", value: "GrupoClavD, con logotipos aportados por el cliente" },
+    ],
+    description: ["GrupoClavD desarrolló el diseño gráfico a partir de los logotipos proporcionados por el cliente y realizó la impresión, la instalación y el montaje para la feria de gastronomía de IFA.", "Las zonas de Bistrea y Gourmet Café forman parte del mismo encargo. El servicio incluye la retirada de los elementos gráficos. Las fotos documentan el montaje y el vídeo muestra el espacio en uso."],
+    gallery: [
+      { src: "/images/projects/bistrea-colocacion-grafica-1600.webp", alt: "Personas trabajando en la colocación de gráfica en el stand de Bistrea", caption: "Colocación de la gráfica" },
+      { src: "/images/projects/bistrea-pared-naranja-1600.webp", alt: "Pared con gráfica naranja del stand durante el montaje", caption: "Detalle de la gráfica durante el montaje" },
+      { src: "/images/projects/bistrea-montaje-pared-1600.webp", alt: "Persona trabajando junto a una pared gráfica del stand", caption: "Montaje de otra zona del espacio" },
+      { src: "/images/projects/bistrea-pared-verde-1600.webp", alt: "Zona del stand con gráfica verde, mobiliario y materiales de montaje", caption: "Vista del espacio durante el montaje" },
+    ],
+    video: { src: "/images/projects/bistrea-stand-ifa.mp4", poster: "/images/projects/bistrea-video-portada.webp", caption: "Recorrido por las zonas de Bistrea y Gourmet Café en el espacio en uso." },
+    services: [{ label: "Impresión digital", href: paths.digitalPrinting }, { label: "Instalación y montaje", href: paths.installation }],
+  },
+
   {
     slug: "rotulo-somium",
     title: "Rótulo de Somium en fachada",

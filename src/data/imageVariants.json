@@ -814,5 +814,289 @@
         "height": 960
       }
     ]
+  },
+  "/images/projects/mila-stand-en-uso-1200.webp": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/images/projects/mila-stand-en-uso-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/images/projects/mila-stand-en-uso-1200.webp",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/mila-colocacion-grafica-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/mila-colocacion-grafica-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/mila-colocacion-grafica-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/mila-colocacion-grafica-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/mila-montaje-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/mila-montaje-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/mila-montaje-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/mila-montaje-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/mila-vista-montaje-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/mila-vista-montaje-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/mila-vista-montaje-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/mila-vista-montaje-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/mila-stand-terminado-1200.webp": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/images/projects/mila-stand-terminado-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "src": "/images/projects/mila-stand-terminado-1200.webp",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/eitb-fachada-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/eitb-fachada-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/eitb-fachada-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/eitb-fachada-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/eitb-trabajo-en-altura-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/eitb-trabajo-en-altura-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/eitb-trabajo-en-altura-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/eitb-trabajo-en-altura-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/eitb-montaje-grafica-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/eitb-montaje-grafica-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/eitb-montaje-grafica-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/eitb-montaje-grafica-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/eitb-campana-etb-on-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/eitb-campana-etb-on-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/eitb-campana-etb-on-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/eitb-campana-etb-on-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/bistrea-montaje-stand-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/bistrea-montaje-stand-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/bistrea-montaje-stand-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/bistrea-montaje-stand-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/bistrea-colocacion-grafica-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/bistrea-colocacion-grafica-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/bistrea-colocacion-grafica-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/bistrea-colocacion-grafica-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/bistrea-pared-naranja-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/bistrea-pared-naranja-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/bistrea-pared-naranja-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/bistrea-pared-naranja-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/bistrea-montaje-pared-1600.webp": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/projects/bistrea-montaje-pared-640.webp",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "/images/projects/bistrea-montaje-pared-1280.webp",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "/images/projects/bistrea-montaje-pared-1600.webp",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+  },
+  "/images/projects/bistrea-pared-verde-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/bistrea-pared-verde-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/bistrea-pared-verde-1280.webp",
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "src": "/images/projects/bistrea-pared-verde-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
   }
 }

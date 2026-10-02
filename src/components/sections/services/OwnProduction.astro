@@ -1,5 +1,6 @@
 ---
 import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 
 const capabilities = [
   "Fabricación propia",
@@ -62,11 +63,11 @@ const capabilities = [
       </div>
 
       <div class="aspect-4/3 overflow-hidden rounded-2xl bg-white">
-        <div
-          class="flex h-full items-center justify-center text-(--color-foreground-muted)"
-        >
-          Foto de taller, maquinaria o producción
-        </div>
+        <ResponsiveImage
+          src="/images/work/produccion-rotulo-taller.jpg"
+          alt="Profesional trabajando en la producción de un rótulo en el taller"
+          class="h-full w-full object-cover"
+        />
       </div>
     </div>
   </Container>

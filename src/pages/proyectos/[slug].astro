@@ -27,8 +27,16 @@ export function getStaticPaths() {
         <h1 class="text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">{project.title}</h1>
         <p class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)">{project.summary}</p>
       </div>
+      {project.details && (
+        <dl class="mt-8 grid gap-5 sm:grid-cols-2">
+          {project.details.map((detail) => (
+            <div><dt class="font-semibold text-(--color-foreground)">{detail.label}</dt><dd class="mt-1 text-(--color-foreground-muted)">{detail.value}</dd></div>
+          ))}
+        </dl>
+      )}
+      {project.description && <div class="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-(--color-foreground-muted)">{project.description.map((paragraph) => <p>{paragraph}</p>)}</div>}
       <div class="mt-10 aspect-16/9 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
-        <ResponsiveImage src={project.cover} alt={project.coverAlt} class="h-full w-full object-cover" loading="eager" fetchpriority="high" sizes="100vw" width={1600} height={900} />
+        <ResponsiveImage src={project.cover} alt={project.coverAlt} class={project.preserveFullImage ? "h-full w-full object-contain" : "h-full w-full object-cover"} loading="eager" fetchpriority="high" sizes="100vw" width={1600} height={900} />
       </div>
     </Container>
   </section>
@@ -42,13 +50,28 @@ export function getStaticPaths() {
       <div class="mt-10 grid gap-6 md:grid-cols-2">
         {project.gallery?.map((image) => (
           <figure class="overflow-hidden rounded-2xl border border-(--color-border) bg-white">
-            <div class="aspect-4/3 overflow-hidden"><ResponsiveImage src={image.src} alt={image.alt} class="h-full w-full object-cover" sizes="(min-width: 768px) 50vw, 100vw" /></div>
+            <div class="aspect-4/3 overflow-hidden"><ResponsiveImage src={image.src} alt={image.alt} class={project.preserveFullImage ? "h-full w-full object-contain" : "h-full w-full object-cover"} sizes="(min-width: 768px) 50vw, 100vw" /></div>
             <figcaption class="p-5 font-medium text-(--color-foreground-muted)">{image.caption}</figcaption>
           </figure>
         ))}
       </div>
     </Container>
   </section>
+
+  {project.video && (
+    <section class="py-16">
+      <Container>
+        <h2 class="text-3xl font-black text-(--color-foreground)">El espacio en vídeo</h2>
+        <figure class="mt-8">
+          <video controls playsinline preload="none" poster={project.video.poster} width="576" height="1024" aria-label={project.video.caption} class="mx-auto max-h-[75vh] w-full max-w-sm rounded-2xl bg-black object-contain">
+            <source src={project.video.src} type="video/mp4" />
+            <a href={project.video.src}>Descargar el vídeo del proyecto</a>
+          </video>
+          <figcaption class="mt-4 text-center text-(--color-foreground-muted)">{project.video.caption}</figcaption>
+        </figure>
+      </Container>
+    </section>
+  )}
 
   <section class="py-16 lg:py-20">
     <Container>

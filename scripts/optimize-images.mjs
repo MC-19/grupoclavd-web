@@ -68,7 +68,13 @@ function dimensions(file) {
 }
 
 let generated = 0;
-const manifest = {};
+// Preserve prepared project variants, whose originals remain in asset-archive.
+const existingManifest = existsSync(manifestFile)
+  ? JSON.parse(readFileSync(manifestFile, "utf8"))
+  : {};
+const manifest = Object.fromEntries(
+  Object.entries(existingManifest).filter(([url]) => url.startsWith("/images/projects/")),
+);
 for (const url of sources) {
   const decodedUrl = decodeURIComponent(url);
   const input = join(publicRoot, decodedUrl);
