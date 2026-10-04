@@ -1098,5 +1098,152 @@
         "height": 1200
       }
     ]
+  },
+  "/images/projects/aeropuerto-alicante-aena-montaje-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/aeropuerto-alicante-aena-montaje-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-aena-montaje-1200.webp",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-aena-montaje-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/aeropuerto-alicante-control-seguridad-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/aeropuerto-alicante-control-seguridad-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-control-seguridad-1200.webp",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-control-seguridad-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/aeropuerto-alicante-acceso-exclusivo-vista-general-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/aeropuerto-alicante-acceso-exclusivo-vista-general-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-acceso-exclusivo-vista-general-1200.webp",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-acceso-exclusivo-vista-general-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/aeropuerto-alicante-acceso-exclusivo-instalado-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/aeropuerto-alicante-acceso-exclusivo-instalado-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-acceso-exclusivo-instalado-1200.webp",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-acceso-exclusivo-instalado-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/aeropuerto-alicante-panel-retroiluminado-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/aeropuerto-alicante-panel-retroiluminado-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-panel-retroiluminado-1200.webp",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-panel-retroiluminado-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/aeropuerto-alicante-colocacion-panel-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/aeropuerto-alicante-colocacion-panel-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-colocacion-panel-1200.webp",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-colocacion-panel-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/projects/aeropuerto-alicante-vista-terminal-1600.webp": {
+    "width": 1600,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/images/projects/aeropuerto-alicante-vista-terminal-640.webp",
+        "width": 640,
+        "height": 480
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-vista-terminal-1200.webp",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/projects/aeropuerto-alicante-vista-terminal-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
   }
 }

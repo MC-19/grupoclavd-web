@@ -11,6 +11,7 @@ Este registro documenta los recursos incorporados o renombrados durante la mejor
 | `/images/work/instalacion-grafica-goldwell.jpg` | `Blog2/1a02e50e-76d4-4ae9-b502-f02129ab1ac6.jpeg` | Producción e instalación de impresión digital |
 | `/images/work/valla-publicitaria-exterior.jpg` | `Fotos Nuevas/WhatsApp Image 2026-08-04 at 23.06.30 (3).jpeg` | Catálogo general de servicios |
 | `/images/banderola-comercial-fachada.jpg` | Imagen generada específicamente para GrupoClavD | Ilustración de producto; se identifica como tal en la interfaz |
+| `/images/projects/aeropuerto-alicante-*.webp` | Siete fotografías aportadas por el usuario desde `Escritorio/Aeropuerto/` | Proyecto de señalética en el aeropuerto de Alicante; variantes de 640, 1200 y 1600 píxeles |
 
 Las fotografías proceden del archivo visual del proyecto y sus derechos de uso han sido confirmados por GrupoClavD. Las variantes `-640.webp` y `-1280.webp` son derivados optimizados de esos originales.
 

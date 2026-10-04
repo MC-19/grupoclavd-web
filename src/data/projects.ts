@@ -34,6 +34,30 @@ const blog2 = "/ImagenesWebClav/Blog2/";
 // Los proyectos anteriores conservan sus descripciones basadas en las imágenes.
 export const featuredProjects: Project[] = [
   {
+    slug: "senaletica-aeropuerto-alicante",
+    title: "Señalética en el aeropuerto de Alicante",
+    category: "Señalética · Rotulación · Instalación",
+    filters: ["rotulacion", "instalacion-montaje"],
+    summary: "Instalación de paneles de señalética en la terminal del aeropuerto de Alicante: control de seguridad, acceso exclusivo y gráfica de Aena.",
+    preserveFullImage: true,
+    cover: "/images/projects/aeropuerto-alicante-aena-montaje-1600.webp",
+    coverAlt: "Instalación de un panel de Aena y Alicante con plataforma elevadora en la terminal del aeropuerto",
+    details: [{ label: "Lugar", value: "Aeropuerto de Alicante" }, { label: "Intervención", value: "Señalética interior" }],
+    description: [
+      "El proyecto reúne trabajos de instalación de señalética en la terminal, con paneles que identifican el control de seguridad y los accesos exclusivos, junto a elementos gráficos de Aena y Alicante.",
+      "Las fotografías documentan la colocación de los paneles mediante plataforma elevadora, el interior de un rótulo retroiluminado y distintas vistas de la señalética instalada.",
+    ],
+    gallery: [
+      { src: "/images/projects/aeropuerto-alicante-control-seguridad-1600.webp", alt: "Instalación de señalética de control de seguridad junto al acceso Fast Track", caption: "Señalética del control de seguridad" },
+      { src: "/images/projects/aeropuerto-alicante-acceso-exclusivo-vista-general-1600.webp", alt: "Vista general del montaje del panel de acceso exclusivo en la terminal", caption: "Montaje del acceso exclusivo" },
+      { src: "/images/projects/aeropuerto-alicante-acceso-exclusivo-instalado-1600.webp", alt: "Panel iluminado de acceso exclusivo con pictogramas y textos en tres idiomas", caption: "Panel de acceso exclusivo instalado" },
+      { src: "/images/projects/aeropuerto-alicante-panel-retroiluminado-1600.webp", alt: "Panel gráfico de acceso exclusivo frente al interior del rótulo con iluminación LED visible", caption: "Interior del rótulo retroiluminado" },
+      { src: "/images/projects/aeropuerto-alicante-colocacion-panel-1600.webp", alt: "Colocación del panel de acceso exclusivo desde una plataforma elevadora y una escalera", caption: "Colocación del panel gráfico" },
+      { src: "/images/projects/aeropuerto-alicante-vista-terminal-1600.webp", alt: "Vista de la terminal con paneles de Aena y Alicante sobre los accesos", caption: "Vista del conjunto en la terminal" },
+    ],
+    services: [{ label: "Señalética", href: paths.wayfinding }, { label: "Rótulos luminosos", href: paths.illuminatedSigns }, { label: "Instalación y montaje", href: paths.installation }],
+  },
+  {
     slug: "stand-mila-ifa",
     title: "Gráfica del stand de Mila en IFA",
     category: "Stands · Impresión digital · Instalación",
