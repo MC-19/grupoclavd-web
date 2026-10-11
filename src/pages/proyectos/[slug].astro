@@ -2,7 +2,7 @@
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
-import { featuredProjects, type Project } from "@/data/projects";
+import { allProjects, type Project } from "@/data/projects";
 import { paths } from "@/data/navigation";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -10,7 +10,7 @@ interface Props { project: Project }
 const { project } = Astro.props;
 
 export function getStaticPaths() {
-  return featuredProjects.flatMap((item) => item.slug ? [{ params: { slug: item.slug }, props: { project: item } }] : []);
+  return allProjects.flatMap((item) => item.slug ? [{ params: { slug: item.slug }, props: { project: item } }] : []);
 }
 ---
 
@@ -41,6 +41,24 @@ export function getStaticPaths() {
     </Container>
   </section>
 
+  {project.sections && (
+    <section class="pb-16 lg:pb-20" aria-label="Descripción del proyecto">
+      <Container>
+        <div class="max-w-3xl space-y-10">
+          {project.sections.map((section) => (
+            <section>
+              <h2 class="text-2xl font-black leading-tight text-(--color-foreground) sm:text-3xl">{section.heading}</h2>
+              <div class="mt-5 space-y-4 text-lg leading-relaxed text-(--color-foreground-muted)">
+                {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              </div>
+            </section>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )}
+
+  {project.gallery && project.gallery.length > 0 && (
   <section class="bg-(--color-surface-muted) py-16 lg:py-20">
     <Container>
       <div class="max-w-3xl">
@@ -57,6 +75,8 @@ export function getStaticPaths() {
       </div>
     </Container>
   </section>
+
+  )}
 
   {project.video && (
     <section class="py-16">
@@ -79,7 +99,7 @@ export function getStaticPaths() {
         <div>
           <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Sigue explorando</p>
           <h2 class="text-3xl font-black leading-tight text-(--color-foreground) sm:text-4xl lg:text-5xl">Servicios relacionados</h2>
-          <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Consulta las áreas de servicio relacionadas con las soluciones visibles en estas imágenes.</p>
+          <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Conoce los servicios relacionados con este proyecto y cuéntanos qué necesitas para tu espacio o tu marca.</p>
         </div>
         <div>
           {project.services?.map((service) => (
