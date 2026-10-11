@@ -1,0 +1,28 @@
+---
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Container from "@/components/ui/Container.astro";
+import ProjectCard from "@/components/sections/projects/ProjectCard.astro";
+import { relatedProjectsFor } from "@/data/projectConnections";
+import { paths } from "@/data/navigation";
+
+const related = relatedProjectsFor(Astro.url.pathname);
+---
+
+{related && related.projects.length > 0 && (
+  <section class="bg-(--color-surface-muted) py-16 lg:py-20" aria-labelledby="proyectos-relacionados">
+    <Container>
+      <div class="max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Trabajos reales</p>
+        <h2 id="proyectos-relacionados" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">{related.heading}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{related.intro}</p>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {related.projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <ButtonLink href={paths.projects} variant="secondary">Ver todos los proyectos</ButtonLink>
+        <ButtonLink href={paths.quote}>Solicitar presupuesto</ButtonLink>
+      </div>
+    </Container>
+  </section>
+)}

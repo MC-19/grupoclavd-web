@@ -1,60 +1,48 @@
 ---
+import RelatedProjects from "@/components/sections/projects/RelatedProjects.astro";
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import { paths } from "@/data/navigation";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const workAreas = [
-  { title: "Rotulación", text: "Soluciones para fachadas, interiores, vehículos, escaparates y espacios comerciales." },
-  { title: "Impresión digital", text: "Producción gráfica para lonas, soportes rígidos, textiles y otras aplicaciones visuales." },
-  { title: "Instalación y montaje", text: "Coordinación de los elementos y su colocación en el espacio previsto." },
-];
-
 const approach = [
-  { title: "Una necesidad concreta", text: "Partimos del espacio, la identidad y el objetivo de cada empresa." },
-  { title: "Producción coordinada", text: "Preparamos las piezas y elementos gráficos que forman parte del proyecto." },
-  { title: "Ejecución en el espacio", text: "Coordinamos logística e instalación para integrar el resultado en su ubicación final." },
+  { title: "Trato directo", text: "Hablamos contigo sobre el trabajo y mantenemos el contacto durante su preparación. Revisamos juntos el diseño y el montaje." },
+  { title: "Producción y montaje coordinados", text: "Organizamos la preparación de las piezas y su instalación como partes de un mismo trabajo. El diseño, la impresión y la colocación tienen que funcionar juntos." },
+  { title: "El resultado en su entorno", text: "Un rótulo se ve en la fachada y una gráfica de stand, durante la feria. Nuestros proyectos muestran las piezas instaladas y el trabajo que hay detrás." },
 ];
 ---
 
-<BaseLayout title="Soluciones de imagen para empresas | GrupoClavD" description="GrupoClavD desarrolla soluciones de rotulación, impresión digital e instalación para empresas, comercios, franquicias y cadenas en toda España.">
+<BaseLayout title="Nosotros: cómo trabajamos | GrupoClavD" description="Conoce GrupoClavD: rotulación, impresión digital e instalación con trato directo desde Elche, atención a Alicante y cobertura nacional. Desde 2019.">
   <section class="py-12 lg:py-16">
     <Container class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
       <div>
         <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">GrupoClavD</p>
-        <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Soluciones de imagen para empresas</h1>
-        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)">Trabajamos en rotulación, impresión digital e instalación para llevar la imagen de cada empresa a fachadas, interiores, vehículos y espacios comerciales.</p>
+        <h1 class="mt-3 text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">Tu proyecto, del primer contacto al montaje</h1>
+        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-(--color-foreground-muted)">Somos GrupoClavD. Nos dedicamos a la rotulación, la impresión digital y la instalación, con trato directo y coordinación de la producción y el montaje. Trabajamos desde Elche, atendemos Alicante y realizamos proyectos en toda España.</p>
         <div class="mt-7 flex flex-wrap gap-4">
-          <ButtonLink href={paths.projects}>Ver proyectos</ButtonLink>
-          <ButtonLink href={paths.contact} variant="secondary">Hablar con el equipo</ButtonLink>
+          <ButtonLink href={paths.contact}>Cuéntanos tu proyecto</ButtonLink>
+          <ButtonLink href={paths.projects} variant="secondary">Ver trabajos reales</ButtonLink>
         </div>
       </div>
-
       <figure>
         <div class="aspect-4/3 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
-          <ResponsiveImage
-            src="/images/work/produccion-rotulo-taller.jpg"
-            alt="Profesional trabajando en la producción de un rótulo en el taller"
-            class="h-full w-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-          />
+          <ResponsiveImage src="/images/work/produccion-rotulo-taller.jpg" alt="Profesional trabajando en la producción de un rótulo en el taller" class="h-full w-full object-cover" loading="eager" fetchpriority="high" />
         </div>
-        <figcaption class="mt-3 text-sm leading-relaxed text-(--color-foreground-muted)">Producción de un rótulo en taller.</figcaption>
+        <figcaption class="mt-3 text-sm leading-relaxed text-(--color-foreground-muted)">Preparación de un rótulo en taller, antes de su colocación.</figcaption>
       </figure>
     </Container>
   </section>
 
-  <section class="bg-(--color-surface-muted) py-16 lg:py-20" aria-labelledby="que-hacemos">
-    <Container>
-      <div class="max-w-3xl">
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Áreas de trabajo</p>
-        <h2 id="que-hacemos" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">Qué hacemos</h2>
-        <p class="mt-4 text-lg leading-relaxed text-(--color-foreground-muted)">Reunimos producción gráfica, rotulación e instalación para que cada elemento responda a una misma necesidad visual.</p>
+  <section class="bg-(--color-surface-muted) py-16 lg:py-20" aria-labelledby="nuestra-historia">
+    <Container class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Nuestra historia</p>
+        <h2 id="nuestra-historia" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">GrupoClavD, un proyecto propio desde 2019</h2>
       </div>
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
-        {workAreas.map((area, index) => <article class="rounded-2xl border border-(--color-border-strong) bg-white p-7"><span class="text-sm font-black tracking-[0.16em] text-(--color-accent-500)">0{index + 1}</span><h3 class="mt-3 text-xl font-black text-(--color-foreground)">{area.title}</h3><p class="mt-4 leading-relaxed text-(--color-foreground-muted)">{area.text}</p></article>)}
+      <div class="space-y-4 text-lg leading-relaxed text-(--color-foreground-muted)">
+        <p>Valentín Vasile Dascalu fundó GrupoClavD en 2019. Después de trabajar en el sector, decidió emprender por su cuenta y crear su propia empresa.</p>
+        <p>Esa trayectoria previa es el punto de partida de GrupoClavD. Hoy nuestro trabajo reúne la preparación en taller y el montaje en fachadas, interiores, vehículos y espacios expositivos.</p>
       </div>
     </Container>
   </section>
@@ -64,8 +52,8 @@ const approach = [
       <div class="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(340px,1.1fr)] lg:gap-16">
         <div>
           <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">Cómo trabajamos</p>
-          <h2 id="como-trabajamos" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">Del proyecto a su ubicación final</h2>
-          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">Producción, logística e instalación se coordinan para mantener una imagen coherente durante la ejecución.</p>
+          <h2 id="como-trabajamos" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">Una forma de trabajar que se ve en los proyectos</h2>
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-(--color-foreground-muted)">Los trabajos de Mila y Bistrea en IFA muestran cómo combinamos el contacto con el cliente, la producción y el montaje.</p>
         </div>
         <ol class="divide-y divide-(--color-border-strong) border-y border-(--color-border-strong)">
           {approach.map((item, index) => <li class="grid gap-3 py-6 sm:grid-cols-[3rem_1fr]"><p class="text-sm font-black text-(--color-accent-500)">0{index + 1}</p><div><h3 class="font-black text-(--color-foreground)">{item.title}</h3><p class="mt-2 leading-relaxed text-(--color-foreground-muted)">{item.text}</p></div></li>)}
@@ -74,12 +62,35 @@ const approach = [
     </Container>
   </section>
 
-  <section class="bg-(--color-foreground) py-16 text-white lg:py-20" aria-labelledby="cobertura-clientes">
-    <Container class="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-      <div><p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)">Cobertura y proyectos</p><h2 id="cobertura-clientes" class="mt-3 text-3xl font-black sm:text-4xl">Una ubicación o múltiples establecimientos</h2></div>
-      <div class="border-l-2 border-(--color-accent-500) pl-6"><p class="text-lg leading-relaxed text-white/75">Trabajamos con empresas, comercios, franquicias y cadenas, coordinando proyectos puntuales y actuaciones en múltiples ubicaciones en toda España.</p><a href={paths.franchises} class="mt-5 inline-flex min-h-11 items-center font-semibold text-white underline-offset-4 hover:underline">Soluciones para franquicias y cadenas <span class="ml-2" aria-hidden="true">→</span></a></div>
+  <section class="bg-(--color-surface-muted) py-16 lg:py-20" aria-labelledby="resultado-real">
+    <Container class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <figure>
+        <div class="aspect-4/3 overflow-hidden rounded-2xl bg-white">
+          <ResponsiveImage src="/images/projects/mila-stand-en-uso-1200.webp" alt="Stand de Mila en uso en IFA, con la gráfica de ondas instalada y el rótulo superior" class="h-full w-full object-contain" />
+        </div>
+        <figcaption class="mt-3 text-sm leading-relaxed text-(--color-foreground-muted)">Gráfica del stand de Mila instalada en IFA.</figcaption>
+      </figure>
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">El trabajo en su contexto</p>
+        <h2 id="resultado-real" class="mt-3 text-3xl font-black text-(--color-foreground) sm:text-4xl">Del diseño al espacio en uso</h2>
+        <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">En el stand de Mila en IFA, el cliente aportó el diseño y nos encargamos de la impresión, la instalación y el montaje. Las fotografías muestran la colocación de la gráfica y el stand durante la feria.</p>
+        <p class="mt-4 leading-relaxed text-(--color-foreground-muted)">En Bistrea, el encargo incluyó desarrollar el diseño gráfico a partir de los logotipos del cliente, además de imprimir y montar las piezas. Las fichas de ambos proyectos permiten seguir el trabajo desde la colocación de las piezas hasta el espacio terminado.</p>
+        <div class="mt-7 flex flex-wrap gap-4">
+          <ButtonLink href={`${paths.projects}stand-mila-ifa/`} variant="secondary">Ver el proyecto de Mila</ButtonLink>
+          <a href={`${paths.projects}stand-bistrea-ifa/`} class="inline-flex min-h-11 items-center font-semibold text-(--color-accent-500) underline-offset-4 hover:underline">Conocer el trabajo de Bistrea <span class="ml-2" aria-hidden="true">→</span></a>
+        </div>
+      </div>
     </Container>
   </section>
 
-  <section class="py-16 lg:py-20"><Container><div class="flex flex-col gap-6 rounded-2xl bg-(--color-surface-muted) p-8 sm:flex-row sm:items-center sm:justify-between"><div><h2 class="text-2xl font-black text-(--color-foreground)">Cuéntanos qué necesitas</h2><p class="mt-3 text-(--color-foreground-muted)">Hablemos de tu espacio, tu imagen y el alcance del proyecto.</p></div><ButtonLink href={paths.contact} class="shrink-0">Contactar</ButtonLink></div></Container></section>
+  <section class="bg-(--color-foreground) py-16 text-white lg:py-20" aria-labelledby="cobertura-clientes">
+    <Container class="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div><p class="text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-400)">Desde Elche</p><h2 id="cobertura-clientes" class="mt-3 text-3xl font-black sm:text-4xl">Atención en Alicante y cobertura nacional</h2></div>
+      <div class="border-l-2 border-(--color-accent-500) pl-6"><p class="text-lg leading-relaxed text-white/75">Trabajamos desde Elche y atendemos empresas y comercios de Alicante. También coordinamos producción y montaje en proyectos de toda España, como la gráfica exterior de EITB que puedes ver en nuestro portfolio.</p><a href={paths.contact} class="mt-5 inline-flex min-h-11 items-center font-semibold text-white underline-offset-4 hover:underline">Habla con nosotros <span class="ml-2" aria-hidden="true">→</span></a></div>
+    </Container>
+  </section>
+
+  <RelatedProjects />
+
+  <section class="py-16 lg:py-20"><Container><div class="flex flex-col gap-6 rounded-2xl bg-(--color-surface-muted) p-8 sm:flex-row sm:items-center sm:justify-between"><div><h2 class="text-2xl font-black text-(--color-foreground)">Hablemos de tu próximo proyecto</h2><p class="mt-3 text-(--color-foreground-muted)">Rotulación, impresión digital y montaje con contacto directo desde el primer día.</p></div><ButtonLink href={paths.contact} class="shrink-0">Cuéntanos tu proyecto</ButtonLink></div></Container></section>
 </BaseLayout>

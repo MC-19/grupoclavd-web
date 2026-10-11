@@ -336,7 +336,7 @@ const fieldClass =
       sessionStorage.setItem("grupoclavd-quote-request", JSON.stringify(payload));
     } catch {
       const fallback = new URLSearchParams({ asunto: payload.subject, mensaje: payload.message });
-      contactUrl += `&${fallback.toString()}`;
+      contactUrl += `#${fallback.toString()}`;
     }
     window.location.href = contactUrl;
   });

@@ -32,7 +32,7 @@ export const digitalPrintingPages = {
     description: "Impresión digital para empresas, campañas y espacios comerciales. Producimos soluciones gráficas en gran formato y distintos soportes, adaptadas a cada proyecto.",
     eyebrow: "Impresión digital",
     h1: "Impresión digital para empresas",
-    intro: "Producimos gráfica impresa para campañas, espacios comerciales, eventos y proyectos corporativos. Cada pieza se plantea según el mensaje, el lugar donde se utilizará y el resultado que necesita tu marca.",
+    intro: "Producimos gráfica impresa para campañas, espacios comerciales, eventos y proyectos corporativos. Trabajamos desde Elche para empresas de Alicante y proyectos en toda España. Cada pieza se plantea según el mensaje y el lugar donde se utilizará.",
     image: "/ImagenesWebClav/Fotos%20Que%20si/grafica-decorativa-oficina-interior.jpg",
     imageAlt: "Gráfica de marca aplicada a una pared de oficina",
     solutions: {

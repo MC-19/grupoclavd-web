@@ -1,4 +1,5 @@
 ---
+import RelatedProjects from "@/components/sections/projects/RelatedProjects.astro";
 import DigitalPrintingHero from "@/components/sections/digital-printing/DigitalPrintingHero.astro";
 import DigitalPrintingSolutions from "@/components/sections/digital-printing/DigitalPrintingSolutions.astro";
 import DigitalPrintingHubProduction from "@/components/sections/digital-printing/DigitalPrintingHubProduction.astro";
@@ -12,4 +13,5 @@ const page = digitalPrintingPages.main;
   <DigitalPrintingHero page={page} />
   <DigitalPrintingSolutions page={page} variant="hub" />
   <DigitalPrintingHubProduction page={page} />
+  <RelatedProjects />
 </BaseLayout>

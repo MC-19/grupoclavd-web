@@ -29,6 +29,13 @@ const organizationSchema = {
   "@type": "Organization",
   name: "GrupoClavD",
   legalName: company.legalName,
+  foundingDate: "2019",
+  founder: { "@type": "Person", name: "Valentín Vasile Dascalu" },
+  areaServed: [
+    { "@type": "City", name: "Elche" },
+    { "@type": "AdministrativeArea", name: "Alicante" },
+    { "@type": "Country", name: "España" },
+  ],
   url: company.domain,
   email: company.email,
   telephone: company.phoneHref,

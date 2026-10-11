@@ -61,7 +61,9 @@ const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-borde
   const button = document.querySelector<HTMLButtonElement>("#contact-submit");
   const status = document.querySelector<HTMLElement>("#contact-status");
 
+  let submitting = false;
   const searchParams = new URLSearchParams(window.location.search);
+  const quoteParams = new URLSearchParams(window.location.hash.slice(1));
   if (searchParams.get("presupuesto") === "1" && form) {
     const topic = form.querySelector<HTMLInputElement>("#contact-topic");
     const message = form.querySelector<HTMLTextAreaElement>("#contact-message");
@@ -77,12 +79,10 @@ const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-borde
     } catch {
       // Se utiliza el fallback de la URL si el navegador bloquea sessionStorage.
     }
-    if (topic && !topic.value && searchParams.get("asunto")) {
-      topic.value = searchParams.get("asunto")!.slice(0, 160);
-    }
-    if (message && !message.value && searchParams.get("mensaje")) {
-      message.value = searchParams.get("mensaje")!.slice(0, 12000);
-    }
+    const fallbackTopic = quoteParams.get("asunto") ?? searchParams.get("asunto");
+    const fallbackMessage = quoteParams.get("mensaje") ?? searchParams.get("mensaje");
+    if (topic && !topic.value && fallbackTopic) topic.value = fallbackTopic.slice(0, 160);
+    if (message && !message.value && fallbackMessage) message.value = fallbackMessage.slice(0, 12000);
     if ((topic?.value || message?.value) && status) {
       status.textContent = "Hemos incorporado el desglose de tu estimación. Completa tus datos para enviarla.";
     }
@@ -90,8 +90,9 @@ const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-borde
 
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (!button || !status || button.dataset.configured !== "true" || button.disabled || !form.reportValidity()) return;
+    if (!button || !status || button.dataset.configured !== "true" || submitting || button.disabled || !form.reportValidity()) return;
 
+    submitting = true;
     button.disabled = true;
     button.textContent = "Enviando...";
     status.textContent = "Enviando tu mensaje...";
@@ -111,14 +112,28 @@ const inputClass = "mt-2 min-h-11 w-full rounded-xl border border-(--color-borde
       const result: { success?: boolean } = await response.json();
       if (!response.ok || result.success !== true) throw new Error("Submission failed");
 
-      document.dispatchEvent(new CustomEvent("gc:track", { detail: { event: "generate_lead" } }));
       form.reset();
       status.textContent = "Mensaje enviado correctamente. Gracias por escribirnos.";
       status.focus();
+      // La medición no forma parte del envío: un fallo de Analytics no lo convierte en error.
+      try {
+        document.dispatchEvent(new CustomEvent("gc:track", {
+          detail: {
+            event: "generate_lead",
+            params: {
+              event_id: crypto.randomUUID(),
+              lead_source: searchParams.get("presupuesto") === "1" ? "quote" : "contact",
+            },
+          },
+        }));
+      } catch {
+        // El proveedor ya ha confirmado la recepción; no repetir el envío.
+      }
     } catch {
       status.textContent = "No hemos podido enviar el mensaje. Revisa tus datos e inténtalo de nuevo.";
       status.focus();
     } finally {
+      submitting = false;
       button.disabled = button.dataset.configured !== "true";
       button.textContent = "Enviar mensaje";
     }

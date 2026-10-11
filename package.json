@@ -12,7 +12,8 @@
     "optimize:images": "npm run build && node scripts/optimize-images.mjs && npm run build",
     "validate": "npm run check && npm run build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test:conversions": "node scripts/verify-conversions.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
@@ -22,5 +23,8 @@
     "astro": "^7.1.6",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.0"
   }
 }

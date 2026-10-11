@@ -44,18 +44,30 @@ const measurementId = "G-9JF2L5RGN9";
 
 <script define:vars={{ measurementId }} is:inline>
   (() => {
+    // Evita registrar de nuevo los listeners si se evalúa el componente dos veces.
+    if (window.__gcAnalyticsInitialized) return;
+    window.__gcAnalyticsInitialized = true;
     const consentKey = "grupoclavd-analytics-consent";
+    const disableKey = `ga-disable-${measurementId}`;
     const banner = document.getElementById("analytics-consent-banner");
     const acceptButton = document.getElementById("analytics-accept");
     const rejectButton = document.getElementById("analytics-reject");
+    const allowedEvents = new Set(["generate_lead", "begin_quote", "click_whatsapp", "click_phone", "click_email"]);
+    const trackedLeads = new Set();
     let analyticsLoaded = false;
     let beginQuoteTracked = false;
+    let consent = null;
+    try {
+      consent = localStorage.getItem(consentKey);
+    } catch {
+      // Si el almacenamiento está bloqueado, la decisión dura solo esta página.
+    }
 
+    window[disableKey] = consent !== "granted";
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () {
       window.dataLayer.push(arguments);
     };
-
     window.gtag("consent", "default", {
       analytics_storage: "denied",
       ad_storage: "denied",
@@ -63,99 +75,143 @@ const measurementId = "G-9JF2L5RGN9";
       ad_personalization: "denied",
     });
 
+    function safePageURL(value) {
+      const url = new URL(value, window.location.origin);
+      url.searchParams.delete("asunto");
+      url.searchParams.delete("mensaje");
+      url.hash = "";
+      return url.toString();
+    }
+
     function track(eventName, params = {}) {
-      if (localStorage.getItem(consentKey) !== "granted") return;
-      window.gtag("event", eventName, params);
+      if (consent !== "granted" || !analyticsLoaded || !allowedEvents.has(eventName)) return;
+      if (eventName === "generate_lead") {
+        // Una respuesta satisfactoria tiene un ID propio; repetirla no suma otro lead.
+        if (typeof params.event_id !== "string" || !params.event_id || trackedLeads.has(params.event_id)) return;
+        trackedLeads.add(params.event_id);
+        params = {
+          event_id: params.event_id,
+          lead_source: params.lead_source === "quote" ? "quote" : "contact",
+        };
+      } else {
+        params = {};
+      }
+      try {
+        window.gtag("event", eventName, {
+          ...params,
+          send_to: measurementId,
+          page_location: safePageURL(window.location.href),
+        });
+      } catch {
+        // Los bloqueadores o fallos de medición no afectan al contacto.
+      }
     }
 
     function trackBeginQuoteIfNeeded() {
-      if (beginQuoteTracked) return;
-      const normalizedPath = window.location.pathname.endsWith("/")
-        ? window.location.pathname
-        : `${window.location.pathname}/`;
+      if (beginQuoteTracked || consent !== "granted") return;
+      const normalizedPath = `${window.location.pathname.replace(/\/$/, "")}/`;
       if (normalizedPath !== "/presupuesto/") return;
       beginQuoteTracked = true;
       track("begin_quote");
     }
 
     function loadAnalytics() {
-      if (analyticsLoaded) {
-        trackBeginQuoteIfNeeded();
-        return;
-      }
-      analyticsLoaded = true;
-
+      window[disableKey] = false;
       window.gtag("consent", "update", {
         analytics_storage: "granted",
         ad_storage: "denied",
         ad_user_data: "denied",
         ad_personalization: "denied",
       });
-
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-      document.head.appendChild(script);
-
-      window.gtag("js", new Date());
-      window.gtag("config", measurementId, {
-        send_page_view: true,
-      });
-
+      if (!analyticsLoaded) {
+        analyticsLoaded = true;
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+        document.head.appendChild(script);
+        window.gtag("js", new Date());
+        window.gtag("config", measurementId, {
+          send_page_view: true,
+          page_location: safePageURL(window.location.href),
+          page_referrer: document.referrer ? safePageURL(document.referrer) : "",
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false,
+        });
+      }
       trackBeginQuoteIfNeeded();
     }
 
-    function showBanner() {
-      banner?.classList.remove("hidden");
+    function saveConsent(value) {
+      consent = value;
+      try {
+        localStorage.setItem(consentKey, value);
+      } catch {
+        // No impedir el uso del formulario ni de las preferencias.
+      }
     }
 
-    function hideBanner() {
-      banner?.classList.add("hidden");
+    function clearAnalyticsCookies() {
+      const hostParts = window.location.hostname.split(".");
+      const domains = ["", ...hostParts.map((_, index) => `.${hostParts.slice(index).join(".")}`)];
+      for (const cookie of document.cookie.split(";")) {
+        const name = cookie.split("=")[0].trim();
+        if (name !== "_ga" && !name.startsWith("_ga_")) continue;
+        for (const domain of domains) {
+          document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`;
+        }
+      }
     }
 
-    function grantConsent() {
-      localStorage.setItem(consentKey, "granted");
-      hideBanner();
-      loadAnalytics();
-    }
-
-    function rejectConsent() {
-      localStorage.setItem(consentKey, "denied");
+    function stopAnalytics() {
+      // Consent mode por sí solo puede permitir pings sin cookies tras una retirada.
+      window[disableKey] = true;
       window.gtag("consent", "update", {
         analytics_storage: "denied",
         ad_storage: "denied",
         ad_user_data: "denied",
         ad_personalization: "denied",
       });
-      hideBanner();
+      clearAnalyticsCookies();
     }
 
-    acceptButton?.addEventListener("click", grantConsent);
-    rejectButton?.addEventListener("click", rejectConsent);
+    acceptButton?.addEventListener("click", () => {
+      saveConsent("granted");
+      banner?.classList.add("hidden");
+      loadAnalytics();
+    });
+    rejectButton?.addEventListener("click", () => {
+      saveConsent("denied");
+      stopAnalytics();
+      banner?.classList.add("hidden");
+    });
 
     document.addEventListener("click", (event) => {
       const target = event.target instanceof Element ? event.target.closest("a") : null;
       if (!(target instanceof HTMLAnchorElement)) return;
-
       const href = target.getAttribute("href") || "";
       if (href.startsWith("https://wa.me/")) track("click_whatsapp");
       else if (href.startsWith("tel:")) track("click_phone");
       else if (href.startsWith("mailto:")) track("click_email");
     });
-
     document.addEventListener("gc:track", (event) => {
       if (!(event instanceof CustomEvent)) return;
-      const eventName = event.detail?.event;
-      if (typeof eventName !== "string" || !eventName) return;
-      track(eventName, event.detail?.params || {});
+      track(event.detail?.event, event.detail?.params || {});
+    });
+    document.addEventListener("gc:manage-consent", () => banner?.classList.remove("hidden"));
+    window.addEventListener("storage", (event) => {
+      if (event.key !== consentKey && event.key !== null) return;
+      consent = event.newValue;
+      if (consent === "granted") loadAnalytics();
+      else {
+        stopAnalytics();
+        if (consent !== "denied") banner?.classList.remove("hidden");
+      }
     });
 
-    document.addEventListener("gc:manage-consent", () => {
-      showBanner();
-    });
-
-    const savedConsent = localStorage.getItem(consentKey);
-    if (savedConsent === "granted") loadAnalytics();
-    else if (savedConsent !== "denied") showBanner();
+    if (consent === "granted") loadAnalytics();
+    else {
+      clearAnalyticsCookies();
+      if (consent !== "denied") banner?.classList.remove("hidden");
+    }
   })();
 </script>
