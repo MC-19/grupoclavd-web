@@ -325,6 +325,7 @@ export const featuredProjects: Project[] = [
       { src: `${june}Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_bf576be1.jpg`, alt: "Zona de exposición con gráfica TAG Heuer", caption: "Otra zona del espacio" },
     ],
     services: [
+      { label: "Soportes rígidos y paneles gráficos", href: paths.digitalPrintingRigidSupports },
       { label: "Impresión digital", href: paths.digitalPrinting },
     ],
   },
@@ -381,7 +382,7 @@ export const otherProjects: Project[] = [
     summary: "Montaje de letras de Alcampo sobre una fachada comercial. La imagen documenta la colocación del nombre de la marca en su ubicación exterior.",
     cover: `${newPhotos}instalacion-letras-alcampo-fachada.jpeg`,
     coverAlt: "Colocación de letras de Alcampo en una fachada",
-    services: [{ label: "Rotulación", href: paths.signage }, { label: "Instalación y montaje", href: paths.installation }],
+    services: [{ label: "Letras corpóreas", href: paths.dimensionalLetters }, { label: "Instalación y montaje", href: paths.installation }],
   },
   {
     slug: "grafica-mysoft-interior",

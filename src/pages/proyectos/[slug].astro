@@ -2,12 +2,39 @@
 import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Container from "@/components/ui/Container.astro";
 import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
+import ProjectCard from "@/components/sections/projects/ProjectCard.astro";
 import { allProjects, type Project } from "@/data/projects";
 import { paths } from "@/data/navigation";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { canonicalPath, breadcrumbSchema } from "@/lib/seo";
 
 interface Props { project: Project }
 const { project } = Astro.props;
+const projectURL = new URL(canonicalPath(Astro.url.pathname), Astro.site!);
+const location = project.details?.find((detail) => detail.label === "Lugar")?.value;
+const breadcrumbs = [
+  { name: "Inicio", href: paths.home },
+  { name: "Proyectos", href: paths.projects },
+  { name: project.title, href: projectURL.pathname },
+];
+// Primero otras aplicaciones del mismo servicio; después trabajos de la misma categoría.
+const relatedProjects = allProjects
+  .filter((candidate) => candidate.slug && candidate.slug !== project.slug)
+  .map((candidate) => ({
+    project: candidate,
+    score: candidate.services?.filter((service) => service.href !== paths.installation && project.services?.some((own) => own.href === service.href)).length ||
+      (candidate.filters.some((filter) => filter !== "instalacion-montaje" && project.filters.includes(filter)) ? 0.5 : 0),
+  }))
+  .filter((candidate) => candidate.score > 0)
+  .sort((first, second) => second.score - first.score)
+  .slice(0, 3);
+const projectSchema = {
+  "@context": "https://schema.org", "@type": "CreativeWork",
+  name: project.title, description: project.summary, url: projectURL.toString(),
+  image: new URL(project.cover, Astro.site!).toString(),
+  ...(location ? { contentLocation: { "@type": "Place", name: location } } : {}),
+  ...(project.services?.length ? { about: project.services.map((service) => ({ "@type": "Service", name: service.label, url: new URL(service.href, Astro.site!).toString() })) } : {}),
+};
 
 export function getStaticPaths() {
   return allProjects.flatMap((item) => item.slug ? [{ params: { slug: item.slug }, props: { project: item } }] : []);
@@ -18,10 +45,12 @@ export function getStaticPaths() {
   title={`${project.title} | Proyectos GrupoClavD`}
   description={project.summary}
   image={project.cover}
+  schemas={[projectSchema, breadcrumbSchema(breadcrumbs, Astro.site!)]}
 >
   <section class="py-12 lg:py-16">
     <Container>
       <a href={paths.projects} class="inline-flex font-semibold text-(--color-accent-500) underline-offset-4 hover:underline focus-visible:underline">← Volver a proyectos</a>
+      <nav aria-label="Ruta de navegación" class="mt-5 text-sm text-(--color-foreground-muted)"><ol class="flex flex-wrap gap-2">{breadcrumbs.map((item, index) => <li>{index > 0 && <span aria-hidden="true" class="mr-2">/</span>}{index === breadcrumbs.length - 1 ? <span aria-current="page">{item.name}</span> : <a href={item.href} class="underline underline-offset-4">{item.name}</a>}</li>)}</ol></nav>
       <div class="mt-8 max-w-4xl">
         <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)">{project.category}</p>
         <h1 class="text-4xl font-black leading-tight text-(--color-foreground) sm:text-5xl lg:text-6xl">{project.title}</h1>
@@ -35,6 +64,7 @@ export function getStaticPaths() {
         </dl>
       )}
       {project.description && <div class="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-(--color-foreground-muted)">{project.description.map((paragraph) => <p>{paragraph}</p>)}</div>}
+      <p class="mt-6"><a href={paths.quote} class="font-semibold text-(--color-accent-500) underline underline-offset-4">Solicitar presupuesto para un trabajo similar</a></p>
       <div class="mt-10 aspect-16/9 overflow-hidden rounded-2xl bg-(--color-surface-muted)">
         <ResponsiveImage src={project.cover} alt={project.coverAlt} class={project.preserveFullImage ? "h-full w-full object-contain" : "h-full w-full object-cover"} loading="eager" fetchpriority="high" sizes="100vw" width={1600} height={900} />
       </div>
@@ -112,4 +142,12 @@ export function getStaticPaths() {
       </div>
     </Container>
   </section>
+  {relatedProjects.length > 0 && (
+    <section class="bg-(--color-surface-muted) py-16 lg:py-20" aria-labelledby="otros-proyectos">
+      <Container>
+        <h2 id="otros-proyectos" class="text-3xl font-black text-(--color-foreground)">Otros trabajos de rotulación e impresión</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{relatedProjects.map(({ project: related }) => <ProjectCard project={related} />)}</div>
+      </Container>
+    </section>
+  )}
 </BaseLayout>

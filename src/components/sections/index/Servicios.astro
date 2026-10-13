@@ -1,5 +1,6 @@
 ---
 import Container from "../../ui/Container.astro";
+import { paths } from "@/data/navigation";
 
 const services = [
   {
@@ -66,5 +67,6 @@ const services = [
         ))
       }
     </div>
+    <p class="mt-8 max-w-3xl leading-relaxed text-(--color-foreground-muted)">Si buscas una aplicación concreta, consulta <a href={paths.digitalPrintingBanners} class="font-semibold text-(--color-accent-500) underline underline-offset-4">lonas y gráfica para vallas publicitarias</a>, <a href={paths.digitalPrintingRigidSupports} class="font-semibold text-(--color-accent-500) underline underline-offset-4">displays y soportes rígidos</a> o <a href={paths.vinyls} class="font-semibold text-(--color-accent-500) underline underline-offset-4">vinilos para cristales, escaparates e interiores</a>.</p>
   </Container>
 </section>

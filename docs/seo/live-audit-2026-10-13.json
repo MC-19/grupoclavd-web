@@ -1,0 +1,678 @@
+{
+  "sitemapURLs": [
+    "https://www.grupoclavd.com/",
+    "https://www.grupoclavd.com/aviso-legal/",
+    "https://www.grupoclavd.com/blog/",
+    "https://www.grupoclavd.com/blog/imagen-corporativa-franquicias-cadenas/",
+    "https://www.grupoclavd.com/blog/letras-corporeas-interiores-recepciones/",
+    "https://www.grupoclavd.com/blog/letras-corporeas-o-rotulos-luminosos/",
+    "https://www.grupoclavd.com/blog/lona-soporte-rigido-o-vinilo/",
+    "https://www.grupoclavd.com/blog/planificar-rotulacion-fachada/",
+    "https://www.grupoclavd.com/blog/preparar-archivos-impresion-gran-formato/",
+    "https://www.grupoclavd.com/blog/presupuesto-rotulacion-informacion-necesaria/",
+    "https://www.grupoclavd.com/blog/rotulacion-escaparates-campanas/",
+    "https://www.grupoclavd.com/blog/rotulacion-vehiculos-empresa/",
+    "https://www.grupoclavd.com/blog/senaletica-espacios-comerciales/",
+    "https://www.grupoclavd.com/contacto/",
+    "https://www.grupoclavd.com/cookies/",
+    "https://www.grupoclavd.com/nosotros/",
+    "https://www.grupoclavd.com/presupuesto/",
+    "https://www.grupoclavd.com/privacidad/",
+    "https://www.grupoclavd.com/proyectos/",
+    "https://www.grupoclavd.com/proyectos/espacio-tag-heuer/",
+    "https://www.grupoclavd.com/proyectos/fachada-labus-bar/",
+    "https://www.grupoclavd.com/proyectos/grafica-fachada-eitb/",
+    "https://www.grupoclavd.com/proyectos/grafica-goldwell-mia/",
+    "https://www.grupoclavd.com/proyectos/grafica-mysoft-interior/",
+    "https://www.grupoclavd.com/proyectos/letras-alcampo-fachada/",
+    "https://www.grupoclavd.com/proyectos/letras-mimma-gallery/",
+    "https://www.grupoclavd.com/proyectos/rotulacion-furgoneta/",
+    "https://www.grupoclavd.com/proyectos/rotulo-somium/",
+    "https://www.grupoclavd.com/proyectos/senaletica-aeropuerto-alicante/",
+    "https://www.grupoclavd.com/proyectos/stand-bistrea-ifa/",
+    "https://www.grupoclavd.com/proyectos/stand-mila-ifa/",
+    "https://www.grupoclavd.com/servicios/",
+    "https://www.grupoclavd.com/servicios/impresion-digital/",
+    "https://www.grupoclavd.com/servicios/impresion-digital/lonas-publicitarias/",
+    "https://www.grupoclavd.com/servicios/impresion-digital/soportes-rigidos/",
+    "https://www.grupoclavd.com/servicios/impresion-digital/textiles-banderas/",
+    "https://www.grupoclavd.com/servicios/instalacion-montaje/",
+    "https://www.grupoclavd.com/servicios/rotulacion/",
+    "https://www.grupoclavd.com/servicios/rotulacion/escaparates/",
+    "https://www.grupoclavd.com/servicios/rotulacion/letras-corporeas/",
+    "https://www.grupoclavd.com/servicios/rotulacion/rotulos-luminosos-fachadas/",
+    "https://www.grupoclavd.com/servicios/rotulacion/senaletica/",
+    "https://www.grupoclavd.com/servicios/rotulacion/vehiculos/",
+    "https://www.grupoclavd.com/servicios/rotulacion/vinilos/",
+    "https://www.grupoclavd.com/soluciones/franquicias-cadenas/",
+    "https://www.grupoclavd.com/soluciones/implantacion-imagen-corporativa/"
+  ],
+  "checks": [
+    {
+      "url": "https://www.grupoclavd.com/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/aviso-legal/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/aviso-legal/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/imagen-corporativa-franquicias-cadenas/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/imagen-corporativa-franquicias-cadenas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/letras-corporeas-interiores-recepciones/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/letras-corporeas-interiores-recepciones/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/letras-corporeas-o-rotulos-luminosos/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/letras-corporeas-o-rotulos-luminosos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/lona-soporte-rigido-o-vinilo/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/lona-soporte-rigido-o-vinilo/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/planificar-rotulacion-fachada/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/planificar-rotulacion-fachada/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/preparar-archivos-impresion-gran-formato/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/preparar-archivos-impresion-gran-formato/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/presupuesto-rotulacion-informacion-necesaria/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/presupuesto-rotulacion-informacion-necesaria/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/rotulacion-escaparates-campanas/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/rotulacion-escaparates-campanas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/rotulacion-vehiculos-empresa/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/rotulacion-vehiculos-empresa/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/senaletica-espacios-comerciales/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/senaletica-espacios-comerciales/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/contacto/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/contacto/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/cookies/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/cookies/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/nosotros/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/nosotros/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/presupuesto/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/presupuesto/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/privacidad/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/privacidad/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/espacio-tag-heuer/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/espacio-tag-heuer/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/fachada-labus-bar/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/fachada-labus-bar/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/grafica-fachada-eitb/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/grafica-fachada-eitb/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/grafica-goldwell-mia/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/grafica-goldwell-mia/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/grafica-mysoft-interior/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/grafica-mysoft-interior/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/letras-alcampo-fachada/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/letras-alcampo-fachada/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/letras-mimma-gallery/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/letras-mimma-gallery/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/rotulacion-furgoneta/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/rotulacion-furgoneta/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/rotulo-somium/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/rotulo-somium/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/senaletica-aeropuerto-alicante/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/senaletica-aeropuerto-alicante/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/stand-bistrea-ifa/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/stand-bistrea-ifa/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/stand-mila-ifa/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/stand-mila-ifa/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion-digital/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/impresion-digital/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion-digital/lonas-publicitarias/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/impresion-digital/lonas-publicitarias/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion-digital/soportes-rigidos/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/impresion-digital/soportes-rigidos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion-digital/textiles-banderas/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/impresion-digital/textiles-banderas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/instalacion-montaje/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/instalacion-montaje/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/escaparates/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/escaparates/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/letras-corporeas/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/letras-corporeas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/rotulos-luminosos-fachadas/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/rotulos-luminosos-fachadas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/senaletica/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/senaletica/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/vehiculos/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/vehiculos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/vinilos/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/vinilos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/soluciones/franquicias-cadenas/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/soluciones/franquicias-cadenas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/soluciones/implantacion-imagen-corporativa/",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/soluciones/implantacion-imagen-corporativa/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/aviso-legal",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/aviso-legal/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/imagen-corporativa-franquicias-cadenas",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/imagen-corporativa-franquicias-cadenas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/letras-corporeas-interiores-recepciones",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/letras-corporeas-interiores-recepciones/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/letras-corporeas-o-rotulos-luminosos",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/letras-corporeas-o-rotulos-luminosos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/lona-soporte-rigido-o-vinilo",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/lona-soporte-rigido-o-vinilo/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/planificar-rotulacion-fachada",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/planificar-rotulacion-fachada/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/preparar-archivos-impresion-gran-formato",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/preparar-archivos-impresion-gran-formato/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/presupuesto-rotulacion-informacion-necesaria",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/presupuesto-rotulacion-informacion-necesaria/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/rotulacion-escaparates-campanas",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/rotulacion-escaparates-campanas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/rotulacion-vehiculos-empresa",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/rotulacion-vehiculos-empresa/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/blog/senaletica-espacios-comerciales",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/blog/senaletica-espacios-comerciales/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/contacto",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/contacto/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/cookies",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/cookies/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/nosotros",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/nosotros/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/presupuesto",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/presupuesto/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/privacidad",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/privacidad/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/espacio-tag-heuer",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/espacio-tag-heuer/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/fachada-labus-bar",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/fachada-labus-bar/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/grafica-fachada-eitb",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/grafica-fachada-eitb/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/grafica-goldwell-mia",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/grafica-goldwell-mia/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/grafica-mysoft-interior",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/grafica-mysoft-interior/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/letras-alcampo-fachada",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/letras-alcampo-fachada/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/letras-mimma-gallery",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/letras-mimma-gallery/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/rotulacion-furgoneta",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/rotulacion-furgoneta/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/rotulo-somium",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/rotulo-somium/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/senaletica-aeropuerto-alicante",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/senaletica-aeropuerto-alicante/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/stand-bistrea-ifa",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/stand-bistrea-ifa/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/proyectos/stand-mila-ifa",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/proyectos/stand-mila-ifa/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion-digital",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/impresion-digital/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion-digital/lonas-publicitarias",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/impresion-digital/lonas-publicitarias/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion-digital/soportes-rigidos",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/impresion-digital/soportes-rigidos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion-digital/textiles-banderas",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/impresion-digital/textiles-banderas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/instalacion-montaje",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/instalacion-montaje/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/escaparates",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/escaparates/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/letras-corporeas",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/letras-corporeas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/rotulos-luminosos-fachadas",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/rotulos-luminosos-fachadas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/senaletica",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/senaletica/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/vehiculos",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/vehiculos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/rotulacion/vinilos",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/servicios/rotulacion/vinilos/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/soluciones/franquicias-cadenas",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/soluciones/franquicias-cadenas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/soluciones/implantacion-imagen-corporativa",
+      "status": 200,
+      "canonical": "https://www.grupoclavd.com/soluciones/implantacion-imagen-corporativa/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/cambios-y-dise%C3%B1os-de-escaparates",
+      "status": 308,
+      "location": "/servicios/rotulacion/escaparates/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/cambios-y-dise%C3%B1os-de-escaparates/",
+      "status": 308,
+      "location": "/servicios/rotulacion/escaparates/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/decoracion-de-interiores",
+      "status": 308,
+      "location": "/soluciones/implantacion-imagen-corporativa/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/decoracion-de-interiores/",
+      "status": 308,
+      "location": "/soluciones/implantacion-imagen-corporativa/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/expositores-y-displays",
+      "status": 308,
+      "location": "/servicios/impresion-digital/soportes-rigidos/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/expositores-y-displays/",
+      "status": 308,
+      "location": "/servicios/impresion-digital/soportes-rigidos/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/fachada-y-luminoso",
+      "status": 308,
+      "location": "/servicios/rotulacion/rotulos-luminosos-fachadas/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/fachada-y-luminoso/",
+      "status": 308,
+      "location": "/servicios/rotulacion/rotulos-luminosos-fachadas/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion",
+      "status": 308,
+      "location": "/servicios/impresion-digital/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/impresion/",
+      "status": 308,
+      "location": "/servicios/impresion-digital/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/letras-corporeas",
+      "status": 308,
+      "location": "/servicios/rotulacion/letras-corporeas/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/letras-corporeas/",
+      "status": 308,
+      "location": "/servicios/rotulacion/letras-corporeas/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/colocacion-de-vallas-y-vinilos-publicitarios",
+      "status": 308,
+      "location": "/servicios/impresion-digital/lonas-publicitarias/"
+    },
+    {
+      "url": "https://www.grupoclavd.com/servicios/colocacion-de-vallas-y-vinilos-publicitarios/",
+      "status": 308,
+      "location": "/servicios/impresion-digital/lonas-publicitarias/"
+    },
+    {
+      "url": "http://www.grupoclavd.com/servicios/",
+      "status": 308,
+      "location": "https://www.grupoclavd.com/servicios/"
+    },
+    {
+      "url": "https://grupoclavd.com/servicios/",
+      "status": 308,
+      "location": "https://www.grupoclavd.com/servicios/"
+    }
+  ]
+}

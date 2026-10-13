@@ -1,4 +1,6 @@
 ---
+import ServiceAdvice from "@/components/sections/services/ServiceAdvice.astro";
+import CommercialApplication from "@/components/sections/digital-printing/CommercialApplication.astro";
 import RelatedProjects from "@/components/sections/projects/RelatedProjects.astro";
 import DigitalPrintingHero from "@/components/sections/digital-printing/DigitalPrintingHero.astro";
 import DigitalPrintingSolutions from "@/components/sections/digital-printing/DigitalPrintingSolutions.astro";
@@ -14,10 +16,12 @@ const page = digitalPrintingPages.banners;
 
 <BaseLayout title={page.title} description={page.description}>
   <DigitalPrintingHero page={page} />
+  <CommercialApplication kind="banners" />
   <DigitalPrintingSolutions page={page} variant="list" />
   <DigitalPrintingCustomization page={page} />
   <DigitalPrintingApplications page={page} />
   <DigitalPrintingInstallation page={page} />
   <DigitalPrintingCTA page={page} />
   <RelatedProjects />
+  <ServiceAdvice />
 </BaseLayout>

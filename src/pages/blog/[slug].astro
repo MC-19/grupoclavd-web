@@ -4,6 +4,7 @@ import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
 import { blogArticles, type BlogArticle } from "@/data/blog";
 import { paths } from "@/data/navigation";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { canonicalPath } from "@/lib/seo";
 
 export function getStaticPaths() {
   return blogArticles.map((article) => ({ params: { slug: article.slug }, props: { article } }));
@@ -14,7 +15,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const articleURL = new URL(Astro.url.pathname, Astro.site).toString();
+const articleURL = new URL(canonicalPath(Astro.url.pathname), Astro.site).toString();
 const relatedArticles = (article.relatedArticleSlugs ?? [])
   .map((slug) => blogArticles.find((candidate) => candidate.slug === slug))
   .filter((candidate): candidate is BlogArticle => Boolean(candidate));
@@ -82,7 +83,7 @@ const breadcrumbSchema = {
           <p class="mt-7 text-xl leading-relaxed text-(--color-foreground-muted)">{article.introduction}</p>
         </header>
 
-        {article.image && article.imageAlt && <ResponsiveImage src={article.image} alt={article.imageAlt} class="mt-10 aspect-16/9 w-full rounded-2xl object-cover" loading="eager" fetchpriority="high" sizes="100vw" width={1600} height={900} />}
+        {article.image && article.imageAlt && <ResponsiveImage src={article.image} alt={article.imageAlt} class="mt-10 aspect-16/9 w-full rounded-2xl object-cover" loading="eager" fetchpriority="high" sizes="(min-width: 816px) 768px, calc(100vw - 40px)" width={1600} height={900} />}
 
         <div class="mt-12 space-y-12">
           {article.sections.map((section) => (
@@ -90,6 +91,7 @@ const breadcrumbSchema = {
               <h2 class="text-2xl font-black leading-tight text-(--color-foreground) sm:text-3xl">{section.heading}</h2>
               {section.paragraphs.map((paragraph) => <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">{paragraph}</p>)}
               {section.points && <ul class="mt-5 list-disc space-y-2 pl-6 text-lg leading-relaxed text-(--color-foreground-muted)">{section.points.map((point) => <li>{point}</li>)}</ul>}
+              {section.link && <p class="mt-5"><a href={section.link.href} class="font-semibold text-(--color-accent-500) underline underline-offset-4">{section.link.label}</a></p>}
             </section>
           ))}
         </div>

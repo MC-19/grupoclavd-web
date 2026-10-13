@@ -1,0 +1,291 @@
+{
+  "environment": "Chromium local, sin throttling; recursos externos interceptados; sin consentimiento analítico; no es medición de campo ni Lighthouse",
+  "results": [
+    {
+      "path": "/",
+      "viewportWidth": 390,
+      "lcp": 60,
+      "cls": 0,
+      "localResourcesBytes": 147909,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/rotulacion/vehiculos/",
+      "viewportWidth": 390,
+      "lcp": 36,
+      "cls": 0,
+      "localResourcesBytes": 213457,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Nuevas/rotulacion-furgoneta-ribera-valldigna-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/rotulacion/letras-corporeas/",
+      "viewportWidth": 390,
+      "lcp": 44,
+      "cls": 0,
+      "localResourcesBytes": 320137,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Nuevas/letras-corporeas-mimma-gallery-fachada-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/rotulacion/rotulos-luminosos-fachadas/",
+      "viewportWidth": 390,
+      "lcp": 36,
+      "cls": 0,
+      "localResourcesBytes": 292597,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/rotulacion/vinilos/",
+      "viewportWidth": 390,
+      "lcp": 36,
+      "cls": 0,
+      "localResourcesBytes": 192547,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/impresion-digital/lonas-publicitarias/",
+      "viewportWidth": 390,
+      "lcp": 36,
+      "cls": 0,
+      "localResourcesBytes": 139231,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/impresion-digital/soportes-rigidos/",
+      "viewportWidth": 390,
+      "lcp": 36,
+      "cls": 0,
+      "localResourcesBytes": 185825,
+      "eagerImages": [
+        {
+          "src": "/images/work/soporte-rigido-tag-heuer-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/blog/rotulacion-vehiculos-empresa/",
+      "viewportWidth": 390,
+      "lcp": 36,
+      "cls": 0,
+      "localResourcesBytes": 197123,
+      "eagerImages": []
+    },
+    {
+      "path": "/proyectos/espacio-tag-heuer/",
+      "viewportWidth": 390,
+      "lcp": 40,
+      "cls": 0,
+      "localResourcesBytes": 252597,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_28ac576e-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/proyectos/senaletica-aeropuerto-alicante/",
+      "viewportWidth": 390,
+      "lcp": 32,
+      "cls": 0,
+      "localResourcesBytes": 458115,
+      "eagerImages": [
+        {
+          "src": "/images/projects/aeropuerto-alicante-aena-montaje-640.webp",
+          "width": 350,
+          "naturalWidth": 390,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/",
+      "viewportWidth": 1440,
+      "lcp": 48,
+      "cls": 0,
+      "localResourcesBytes": 495726,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Que%20si/fachada-escaparate-pikolinos-1280.webp",
+          "width": 526,
+          "naturalWidth": 720,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/rotulacion/vehiculos/",
+      "viewportWidth": 1440,
+      "lcp": 48,
+      "cls": 0,
+      "localResourcesBytes": 510701,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Nuevas/rotulacion-furgoneta-ribera-valldigna-1280.webp",
+          "width": 547,
+          "naturalWidth": 720,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/rotulacion/letras-corporeas/",
+      "viewportWidth": 1440,
+      "lcp": 52,
+      "cls": 0,
+      "localResourcesBytes": 433257,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Nuevas/letras-corporeas-mimma-gallery-fachada-1280.webp",
+          "width": 547,
+          "naturalWidth": 720,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/rotulacion/rotulos-luminosos-fachadas/",
+      "viewportWidth": 1440,
+      "lcp": 44,
+      "cls": 0,
+      "localResourcesBytes": 437707,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Nuevas/rotulo-iluminado-mimma-gallery-noche-1280.webp",
+          "width": 547,
+          "naturalWidth": 720,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/rotulacion/vinilos/",
+      "viewportWidth": 1440,
+      "lcp": 44,
+      "cls": 0,
+      "localResourcesBytes": 374637,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Nuevas/vinilo-cristales-oficina-1280.webp",
+          "width": 547,
+          "naturalWidth": 720,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/impresion-digital/lonas-publicitarias/",
+      "viewportWidth": 1440,
+      "lcp": 52,
+      "cls": 0,
+      "localResourcesBytes": 241481,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Fotos%20Que%20si/valla-publicitaria-cepsa-exterior-1280.webp",
+          "width": 547,
+          "naturalWidth": 720,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/servicios/impresion-digital/soportes-rigidos/",
+      "viewportWidth": 1440,
+      "lcp": 44,
+      "cls": 0,
+      "localResourcesBytes": 293705,
+      "eagerImages": [
+        {
+          "src": "/images/work/soporte-rigido-tag-heuer-1280.webp",
+          "width": 605,
+          "naturalWidth": 720,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/blog/rotulacion-vehiculos-empresa/",
+      "viewportWidth": 1440,
+      "lcp": 40,
+      "cls": 0,
+      "localResourcesBytes": 197123,
+      "eagerImages": []
+    },
+    {
+      "path": "/proyectos/espacio-tag-heuer/",
+      "viewportWidth": 1440,
+      "lcp": 40,
+      "cls": 0,
+      "localResourcesBytes": 736619,
+      "eagerImages": [
+        {
+          "src": "/ImagenesWebClav/Imagenes%20Junio-2025/Imagen%20de%20WhatsApp%202025-06-05%20a%20las%2012.32.36_28ac576e-1280.webp",
+          "width": 1216,
+          "naturalWidth": 1440,
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "path": "/proyectos/senaletica-aeropuerto-alicante/",
+      "viewportWidth": 1440,
+      "lcp": 40,
+      "cls": 0,
+      "localResourcesBytes": 1504915,
+      "eagerImages": [
+        {
+          "src": "/images/projects/aeropuerto-alicante-aena-montaje-1600.webp",
+          "width": 1216,
+          "naturalWidth": 1440,
+          "loaded": true
+        }
+      ]
+    }
+  ]
+}

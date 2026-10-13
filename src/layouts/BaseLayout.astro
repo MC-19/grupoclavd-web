@@ -4,6 +4,10 @@ import AnalyticsConsent from "../components/analytics/AnalyticsConsent.astro";
 import Footer from "../components/layout/Footer.astro";
 import Header from "../components/layout/Header.astro";
 import { company } from "../data/company";
+import { paths } from "../data/navigation";
+import { serviceAdvice } from "../data/serviceAdvice";
+import { canonicalPath, breadcrumbSchema } from "../lib/seo";
+import Container from "../components/ui/Container.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -22,7 +26,23 @@ const {
   schemas = [],
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(canonicalPath(Astro.url.pathname), Astro.site);
+const advice = serviceAdvice[canonicalURL.pathname];
+const serviceBreadcrumbs = advice ? [
+  { name: "Inicio", href: paths.home },
+  { name: "Servicios", href: paths.services },
+  advice.parent,
+  { name: advice.name, href: canonicalURL.pathname },
+] : [];
+const serviceSchemas = advice ? [
+  {
+    "@context": "https://schema.org", "@type": "Service",
+    "@id": `${canonicalURL}#servicio`, url: canonicalURL.toString(),
+    name: advice.name, description,
+    provider: { "@type": "Organization", name: "GrupoClavD", url: company.domain },
+  },
+  breadcrumbSchema(serviceBreadcrumbs, Astro.site!),
+] : [];
 const socialImageURL = new URL(image, Astro.site);
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -97,7 +117,7 @@ const organizationSchema = {
       type="application/ld+json"
       set:html={JSON.stringify(organizationSchema)}
     />
-    {schemas.map((schema) => (
+    {[...serviceSchemas, ...schemas].map((schema) => (
       <script
         is:inline
         type="application/ld+json"
@@ -113,6 +133,7 @@ const organizationSchema = {
     <Header />
 
     <main id="contenido-principal" tabindex="-1">
+      {advice && <Container><nav aria-label="Ruta de navegación" class="pt-6 text-sm text-(--color-foreground-muted)"><ol class="flex flex-wrap gap-2">{serviceBreadcrumbs.map((item, index) => <li>{index > 0 && <span aria-hidden="true" class="mr-2">/</span>}{index === serviceBreadcrumbs.length - 1 ? <span aria-current="page">{item.name}</span> : <a href={item.href} class="underline underline-offset-4">{item.name}</a>}</li>)}</ol></nav></Container>}
       <slot />
     </main>
 

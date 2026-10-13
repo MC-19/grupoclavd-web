@@ -1,0 +1,266 @@
+{
+  "source": "Search Console vía Windsor.ai",
+  "dateFrom": "2026-09-12",
+  "dateTo": "2026-10-09",
+  "rows": [
+    {
+      "page": "https://www.grupoclavd.com/",
+      "clicks": 3,
+      "impressions": 411,
+      "ctr": 0.0073,
+      "position": 15.4891
+    },
+    {
+      "page": "https://www.grupoclavd.com/soluciones/implantacion-imagen-corporativa/",
+      "clicks": 1,
+      "impressions": 7,
+      "ctr": 0.1429,
+      "position": 14.4286
+    },
+    {
+      "page": "https://www.grupoclavd.com/aviso-legal/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 14
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog/imagen-corporativa-franquicias-cadenas/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 31
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog/letras-corporeas-interiores-recepciones/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 8.7273
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog/letras-corporeas-o-rotulos-luminosos/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 19.4706
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog/lona-soporte-rigido-o-vinilo/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 6.5
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog/planificar-rotulacion-fachada/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 10.1176
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog/preparar-archivos-impresion-gran-formato/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 16.5833
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog/presupuesto-rotulacion-informacion-necesaria/",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 9.6667
+    },
+    {
+      "page": "https://www.grupoclavd.com/blog/rotulacion-vehiculos-empresa/",
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 12.697
+    },
+    {
+      "page": "https://www.grupoclavd.com/contacto",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "page": "https://www.grupoclavd.com/nosotros/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "page": "https://www.grupoclavd.com/presupuesto",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "page": "https://www.grupoclavd.com/proyectos",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 28
+    },
+    {
+      "page": "https://www.grupoclavd.com/proyectos/",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 48.4444
+    },
+    {
+      "page": "https://www.grupoclavd.com/proyectos/espacio-tag-heuer/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 33.3846
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/cambios-y-dise%C3%B1os-de-escaparates",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/colocacion-de-vallas-y-vinilos-publicitarios",
+      "clicks": 0,
+      "impressions": 26,
+      "ctr": 0,
+      "position": 31
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/expositores-y-displays",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 26.0455
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/impresion",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/impresion-digital/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/impresion-digital/lonas-publicitarias/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 6.8
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/impresion-digital/textiles-banderas/",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 27
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/instalacion-montaje/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/letras-corporeas",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/rotulacion",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 22.8
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/rotulacion/",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 43
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/rotulacion/escaparates/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 38
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/rotulacion/letras-corporeas/",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/rotulacion/rotulos-luminosos-fachadas/",
+      "clicks": 0,
+      "impressions": 39,
+      "ctr": 0,
+      "position": 49.4103
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/rotulacion/senaletica/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 59.5385
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/rotulacion/vehiculos/",
+      "clicks": 0,
+      "impressions": 48,
+      "ctr": 0,
+      "position": 59.5625
+    },
+    {
+      "page": "https://www.grupoclavd.com/servicios/rotulacion/vinilos/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4.5
+    }
+  ]
+}

@@ -15,6 +15,7 @@ export interface BlogArticle {
     heading: string;
     paragraphs: string[];
     points?: string[];
+    link?: { label: string; href: string };
   }[];
   relatedServices: { label: string; href: string }[];
   relatedArticleSlugs?: string[];
@@ -53,14 +54,15 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "lona-soporte-rigido-o-vinilo",
     title: "Lona, soporte rígido o vinilo: qué formato encaja con tu gráfica",
-    seoTitle: "Lona, soporte rígido o vinilo: usos | GrupoClavD",
-    description: "Cómo orientar la elección entre lona, soporte rígido y vinilo según el lugar, la presentación de la gráfica y el objetivo de comunicación.",
+    seoTitle: "Lona, soporte rígido o vinilo: cómo elegir | GrupoClavD",
+    description: "Compara lona, soporte rígido y vinilo para tu campaña: dónde se coloca cada formato y qué información enviar para valorar producción e instalación.",
     category: "Impresión digital",
     featured: true,
     introduction: "Una misma creatividad puede presentarse de formas muy distintas. Para elegir entre lona, soporte rígido y vinilo, lo primero no es comparar especificaciones: es definir dónde irá la gráfica y cómo debe convivir con el espacio.",
     sections: [
       {
         heading: "Tres formas de presentar una gráfica",
+        link: { label: "Ver impresión en soportes rígidos y displays", href: paths.digitalPrintingRigidSupports },
         paragraphs: ["La lona es un formato habitual para piezas gráficas de gran presencia. Un soporte rígido presenta la gráfica como un elemento con entidad propia. El vinilo permite incorporar la comunicación visual a superficies como cristales, escaparates o interiores. Ninguno es mejor en abstracto: cambia su sentido según la aplicación."],
       },
       {
@@ -70,6 +72,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         heading: "No cierres el formato sin revisar el contexto",
+        link: { label: "Consultar lonas y gráfica para vallas publicitarias", href: paths.digitalPrintingBanners },
         paragraphs: ["Las dimensiones, el lugar y el modo de instalación condicionan la propuesta. Compartir fotografías, medidas disponibles y la creatividad ayuda a valorar el formato adecuado sin asumir por adelantado un material o un sistema de montaje concreto."],
       },
     ],
@@ -112,8 +115,8 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "planificar-rotulacion-fachada",
     title: "Cómo preparar un proyecto de rotulación de fachada",
-    seoTitle: "Cómo planificar la rotulación de una fachada | GrupoClavD",
-    description: "Qué información reunir para plantear la rotulación de una fachada y valorar la visibilidad, la identidad de marca y la integración en el edificio.",
+    seoTitle: "Rotulación de fachada: qué preparar | GrupoClavD",
+    description: "Prepara la rotulación de tu fachada: fotos, medidas y logotipo para valorar el rótulo, su visibilidad y la instalación antes de pedir presupuesto.",
     category: "Rotulación",
     featured: false,
     introduction: "Una fachada es el primer contacto visual con muchos negocios. Preparar bien la información del lugar facilita hablar de propuestas concretas sin elegir precipitadamente un tipo de rótulo o dar por supuestas condiciones de instalación.",
@@ -124,6 +127,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         heading: "Documenta el espacio real",
+        link: { label: "Ver rótulos luminosos y rotulación de fachadas", href: paths.illuminatedSigns },
         paragraphs: ["Fotografías generales y de detalle, una referencia de las medidas disponibles y los archivos de marca ayudan a entender la composición posible. También es útil señalar accesos, elementos existentes y otros mensajes que ya ocupan la fachada."],
         points: ["Vista frontal y vistas desde los recorridos de aproximación.", "Zona prevista para la identidad visual y elementos cercanos.", "Logotipo y pautas de marca disponibles."],
       },
@@ -141,8 +145,8 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "rotulacion-vehiculos-empresa",
     title: "Rotulación de vehículos de empresa: cómo planificar la gráfica",
-    seoTitle: "Rotulación de vehículos para empresas | GrupoClavD",
-    description: "Qué definir antes de rotular vehículos de empresa para conseguir una gráfica clara, reconocible y coherente entre distintas unidades.",
+    seoTitle: "Rotulación de vehículos de empresa: guía | GrupoClavD",
+    description: "Qué preparar antes de rotular una furgoneta o flota: modelos, fotografías, zonas de aplicación y logotipo para diseñar la gráfica y solicitar presupuesto.",
     category: "Rotulación",
     featured: false,
     introduction: "La rotulación de vehículos de empresa convierte cada desplazamiento en una oportunidad para reconocer la marca. Para que la gráfica funcione, conviene decidir primero qué debe comunicar y cómo se adaptará a la forma real de cada vehículo.",
@@ -154,6 +158,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         heading: "Diseña sobre el vehículo concreto",
+        link: { label: "Consultar el servicio de rotulación de vehículos y flotas", href: paths.vehicles },
         paragraphs: ["Puertas, lunas, manillas y cambios de volumen condicionan la distribución de la gráfica. Una composición preparada sobre una superficie plana debe revisarse sobre fotografías o plantillas del modelo correspondiente.", "Si se trabaja con varios modelos, conviene mantener los elementos principales en posiciones visualmente equivalentes aunque la composición exacta cambie."],
       },
       {
@@ -276,7 +281,7 @@ export const blogArticles: BlogArticle[] = [
     slug: "letras-corporeas-interiores-recepciones",
     title: "Letras corpóreas para interiores y recepciones: qué valorar",
     seoTitle: "Letras corpóreas para interiores y recepciones | GrupoClavD",
-    description: "Qué tener en cuenta al integrar letras corpóreas en recepciones, oficinas, comercios y otros espacios interiores de empresa.",
+    description: "Letras corpóreas para tu recepción: cómo valorar tamaño, pared, logotipo e iluminación. Qué enviar para preparar una propuesta y solicitar presupuesto.",
     category: "Rotulación",
     featured: false,
     introduction: "Las letras corpóreas para interiores pueden convertir una pared de recepción o un punto de atención en un elemento claro de identidad. Su resultado depende tanto de la composición de la marca como de la relación con el espacio que la rodea.",
@@ -287,6 +292,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         heading: "Valora la pared y el entorno visual",
+        link: { label: "Ver fabricación e instalación de letras corpóreas", href: paths.dimensionalLetters },
         paragraphs: ["El ancho disponible, el mobiliario, las puertas y otros elementos condicionan la escala y la posición. Una fotografía frontal y otra tomada desde el recorrido de entrada permiten entender cómo se verá el conjunto.", "También conviene observar el contraste entre la identidad y el fondo, así como la presencia de otros mensajes cercanos. La elección concreta del acabado debe realizarse cuando se conozcan el espacio y las necesidades del proyecto."],
         points: ["Vista desde la entrada y desde el punto de atención.", "Medidas disponibles en la zona prevista.", "Logotipo y pautas de identidad.", "Elementos fijos que forman parte de la composición."],
       },
@@ -308,8 +314,8 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "presupuesto-rotulacion-informacion-necesaria",
     title: "Qué información incluir al pedir un presupuesto de rotulación",
-    seoTitle: "Cómo pedir un presupuesto de rotulación | GrupoClavD",
-    description: "Qué datos, fotografías y medidas ayudan a preparar un presupuesto de rotulación más preciso para una empresa o espacio comercial.",
+    seoTitle: "Presupuesto de rotulación: qué enviar | GrupoClavD",
+    description: "Fotos, medidas, ubicación y logotipo: reúne la información necesaria para solicitar un presupuesto de rotulación de fachada, vehículo o interior.",
     category: "Consejos",
     featured: true,
     introduction: "Un presupuesto de rotulación resulta más útil cuando parte de una necesidad bien explicada. No hace falta conocer de antemano el material o la solución exacta: basta con reunir información clara sobre el espacio, el objetivo y los elementos que se quieren incorporar.",
@@ -320,6 +326,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         heading: "Aporta fotografías y medidas disponibles",
+        link: { label: "Enviar los datos de tu proyecto", href: paths.contact },
         paragraphs: ["Una vista general sitúa el proyecto en su contexto y las imágenes de detalle permiten observar puertas, cristales, divisiones u otros elementos. Si existen medidas aproximadas o planos, también ayudan a preparar una primera valoración.", "Cuando todavía no sea posible medir con precisión, conviene indicarlo en lugar de presentar una cifra como definitiva."],
         points: ["Fotografía frontal y vistas laterales del espacio.", "Medidas disponibles o plano, si existe.", "Ubicación prevista de cada elemento.", "Cantidad de piezas, vehículos o establecimientos."],
       },

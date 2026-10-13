@@ -1,0 +1,32 @@
+---
+import Container from "@/components/ui/Container.astro";
+import ResponsiveImage from "@/components/ui/ResponsiveImage.astro";
+import { paths } from "@/data/navigation";
+
+interface Props { kind: "banners" | "displays" }
+const { kind } = Astro.props;
+const isBanner = kind === "banners";
+---
+
+<section id={isBanner ? "vallas-publicitarias" : "displays-publicitarios"} class="py-16 lg:py-20">
+  <Container>
+    <div class:list={["grid items-center gap-8", !isBanner && "lg:grid-cols-2 lg:gap-16"]}>
+      <div class={isBanner ? "max-w-3xl" : ""}>
+        <h2 class="text-3xl font-black text-(--color-foreground)">{isBanner ? "Gráfica para vallas publicitarias: del diseño al soporte exterior" : "Displays publicitarios y expositores con la imagen de tu marca"}</h2>
+        {isBanner ? <>
+          <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">La referencia de Cepsa muestra una gráfica publicitaria en un soporte exterior. Para preparar una campaña en una valla, partimos de las medidas del área gráfica y de su emplazamiento: el mensaje debe reconocerse desde la distancia de paso, con el logotipo y la información principal bien jerarquizados.</p>
+          <p class="mt-4 leading-relaxed text-(--color-foreground-muted)">Cuéntanos qué soporte tienes y qué gráfica quieres colocar. Revisaremos la producción de la lona y, si el encargo lo requiere, las condiciones de colocación.</p>
+        </> : <>
+          <p class="mt-5 text-lg leading-relaxed text-(--color-foreground-muted)">Un display ayuda a presentar una marca o una campaña junto al producto. La referencia de Biomecanics muestra un expositor en el punto de venta; el panel gráfico de TAG Heuer, visible en los proyectos relacionados, ofrece otra aplicación de la gráfica en un espacio comercial.</p>
+          <p class="mt-4 leading-relaxed text-(--color-foreground-muted)">Para plantear tu pieza, necesitamos conocer el producto o mensaje, el espacio donde se utilizará y la cantidad de unidades. Con esa información valoramos el formato y cómo se integrará con el mobiliario y la gráfica del establecimiento.</p>
+        </>}
+        <p class="mt-5"><a href={paths.contact} class="font-semibold text-(--color-accent-500) underline underline-offset-4">{isBanner ? "Consultar la gráfica de tu valla" : "Consultar un display o expositor"}</a></p>
+      </div>
+      {!isBanner && <figure>
+        <ResponsiveImage src="/ImagenesWebClav/Fotos%20Que%20si/expositor-biomecanics-punto-venta.jpg" alt="Expositor de Biomecanics en un punto de venta" class="aspect-4/3 w-full rounded-2xl object-contain" />
+        <figcaption class="mt-3 text-sm text-(--color-foreground-muted)">Referencia de expositor de Biomecanics en el punto de venta.</figcaption>
+      </figure>
+      }
+    </div>
+  </Container>
+</section>

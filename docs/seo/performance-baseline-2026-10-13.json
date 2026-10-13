@@ -1,0 +1,251 @@
+{
+  "source": "Windsor.ai",
+  "site": "https://www.grupoclavd.com/",
+  "dateFrom": "2026-09-12",
+  "dateTo": "2026-10-09",
+  "daily": [
+    {
+      "date": "2026-09-12",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 16.4118
+    },
+    {
+      "date": "2026-09-13",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 37.8182
+    },
+    {
+      "date": "2026-09-14",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 12.36
+    },
+    {
+      "date": "2026-09-15",
+      "clicks": 0,
+      "impressions": 34,
+      "ctr": 0,
+      "position": 17.4412
+    },
+    {
+      "date": "2026-09-16",
+      "clicks": 1,
+      "impressions": 26,
+      "ctr": 0.0385,
+      "position": 7.5
+    },
+    {
+      "date": "2026-09-17",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 16.1
+    },
+    {
+      "date": "2026-09-18",
+      "clicks": 1,
+      "impressions": 9,
+      "ctr": 0.1111,
+      "position": 11.5556
+    },
+    {
+      "date": "2026-09-19",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 11.4
+    },
+    {
+      "date": "2026-09-20",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 24.4
+    },
+    {
+      "date": "2026-09-21",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 3.6667
+    },
+    {
+      "date": "2026-09-22",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 7.9444
+    },
+    {
+      "date": "2026-09-23",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 7.2
+    },
+    {
+      "date": "2026-09-24",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 15.5333
+    },
+    {
+      "date": "2026-09-25",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 7.3077
+    },
+    {
+      "date": "2026-09-26",
+      "clicks": 1,
+      "impressions": 13,
+      "ctr": 0.0769,
+      "position": 7.7692
+    },
+    {
+      "date": "2026-09-27",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 24.2222
+    },
+    {
+      "date": "2026-09-28",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 15.8125
+    },
+    {
+      "date": "2026-09-29",
+      "clicks": 0,
+      "impressions": 29,
+      "ctr": 0,
+      "position": 18.2759
+    },
+    {
+      "date": "2026-09-30",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 13.3478
+    },
+    {
+      "date": "2026-10-01",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 13.0625
+    },
+    {
+      "date": "2026-10-02",
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 21.75
+    },
+    {
+      "date": "2026-10-03",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 37.4688
+    },
+    {
+      "date": "2026-10-04",
+      "clicks": 0,
+      "impressions": 61,
+      "ctr": 0,
+      "position": 35.8689
+    },
+    {
+      "date": "2026-10-05",
+      "clicks": 0,
+      "impressions": 66,
+      "ctr": 0,
+      "position": 35.0152
+    },
+    {
+      "date": "2026-10-06",
+      "clicks": 1,
+      "impressions": 59,
+      "ctr": 0.0169,
+      "position": 29.1356
+    },
+    {
+      "date": "2026-10-07",
+      "clicks": 0,
+      "impressions": 62,
+      "ctr": 0,
+      "position": 33.1935
+    },
+    {
+      "date": "2026-10-08",
+      "clicks": 0,
+      "impressions": 48,
+      "ctr": 0,
+      "position": 17.7083
+    },
+    {
+      "date": "2026-10-09",
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 14.6579
+    }
+  ],
+  "previousPeriod": {
+    "dateFrom": "2026-08-15",
+    "dateTo": "2026-09-11",
+    "rows": [
+      {
+        "clicks": 5,
+        "impressions": 602,
+        "ctr": 0.0083,
+        "position": 17.5864
+      }
+    ]
+  },
+  "ga4": {
+    "property": "466683261",
+    "filteredEvents": [
+      {
+        "event_name": "ads_conversion_Contactar_1",
+        "session_source_medium": "(direct) / (none)",
+        "event_count": 1
+      },
+      {
+        "event_name": "begin_quote",
+        "session_source_medium": "(direct) / (none)",
+        "event_count": 1
+      },
+      {
+        "event_name": "click_email",
+        "session_source_medium": "(direct) / (none)",
+        "event_count": 1
+      },
+      {
+        "event_name": "click_phone",
+        "session_source_medium": "(direct) / (none)",
+        "event_count": 1
+      },
+      {
+        "event_name": "click_whatsapp",
+        "session_source_medium": "(direct) / (none)",
+        "event_count": 1
+      },
+      {
+        "event_name": "ads_conversion_Contactar_1",
+        "session_source_medium": "google / organic",
+        "event_count": 1
+      }
+    ]
+  }
+}
