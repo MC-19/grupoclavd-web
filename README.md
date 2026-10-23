@@ -6,6 +6,8 @@ Sitio corporativo de GrupoClavD construido con Astro, TypeScript y Tailwind CSS.
 
 Requiere Node.js 22.12 o posterior.
 
+TypeScript se mantiene en la versión 6: `@astrojs/check` 0.9.12 admite TypeScript 5 y 6, pero todavía no TypeScript 7.
+
 ```sh
 npm install
 npm run dev
