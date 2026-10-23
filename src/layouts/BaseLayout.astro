@@ -9,6 +9,8 @@ import { serviceAdvice } from "../data/serviceAdvice";
 import { canonicalPath, breadcrumbSchema } from "../lib/seo";
 import Container from "../components/ui/Container.astro";
 import "../styles/global.css";
+import "../styles/halloween.css";
+import { halloweenEnabled } from "../config/seasonal";
 
 interface Props {
   title: string;
@@ -71,7 +73,7 @@ const organizationSchema = {
 ---
 
 <!doctype html>
-<html lang="es" class="h-full scroll-smooth">
+<html lang="es" class="h-full scroll-smooth" data-season={halloweenEnabled ? "halloween" : undefined}>
   <head>
     <meta charset="utf-8" />
 

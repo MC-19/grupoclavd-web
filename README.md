@@ -28,6 +28,14 @@ npm run dev
 
 Las rutas compartidas deben declararse en `src/data/navigation.ts` para evitar diferencias entre el header, el footer y el contenido.
 
+## Campaña temporal de Halloween
+
+El único interruptor está en `src/config/seasonal.ts`: `halloweenEnabled = true` activa la campaña; `false` retira el contenido estacional, las decoraciones y los acentos. Recompila con `npm run build` después de cambiarlo. No depende de la fecha ni de almacenamiento del navegador.
+
+La campaña usa SVG decorativos estáticos, sin JavaScript ni dependencias adicionales. Conserva fotografías, metadatos SEO, formularios y medición. Las capturas de revisión se guardan en `docs/halloween/`.
+
+Tras compilar cada modo, `node scripts/verify-halloween.mjs on` (o `off`) verifica la campaña a 320, 390, 768, 1024 y 1440 px, incluyendo navegación, cookies, CTA y ausencia de desbordamiento. Requiere Chromium de Playwright.
+
 ## Comprobaciones
 
 Antes de entregar cambios:

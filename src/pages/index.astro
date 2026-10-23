@@ -8,6 +8,8 @@ import Proyectos from "../components/sections/index/Proyectos.astro";
 import Servicios from "../components/sections/index/Servicios.astro";
 import Ubicacion from "../components/sections/index/Ubicacion.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { halloweenEnabled } from "../config/seasonal";
+import HalloweenCampaign from "../components/seasonal/HalloweenCampaign.astro";
 ---
 
 <BaseLayout
@@ -15,6 +17,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="Rotulación, impresión digital e instalación para empresas desde Elche. Atendemos Alicante y coordinamos proyectos con cobertura nacional."
 >
   <Hero />
+  {halloweenEnabled && <HalloweenCampaign />}
   <Servicios />
   <Logistica />
   <Ubicacion />

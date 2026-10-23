@@ -3,12 +3,16 @@ import Container from "../../ui/Container.astro";
 import ButtonLink from "../../ui/ButtonLink.astro";
 import ResponsiveImage from "../../ui/ResponsiveImage.astro";
 import { paths } from "../../../data/navigation";
+import { halloweenEnabled } from "../../../config/seasonal";
+import Decoration from "../../seasonal/Decoration.astro";
 ---
 
-<section class="py-16 lg:py-20">
+<section class:list={["py-16 lg:py-20", halloweenEnabled && "halloween-hero"]}>
+  {halloweenEnabled && <Decoration kind="web" class="hero-web" />}
   <Container>
     <div class="grid items-center gap-12 min-[900px]:grid-cols-[1.1fr_0.9fr]">
       <div>
+        {halloweenEnabled && <p class="halloween-hero-note"><Decoration kind="pumpkin" class="hero-pumpkin" /> Halloween también se viste de marca</p>}
         <p
           class="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-(--color-accent-500)"
         >

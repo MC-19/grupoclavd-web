@@ -1,5 +1,7 @@
 ---
 import Container from "../ui/Container.astro";
+import { halloweenEnabled } from "../../config/seasonal";
+import Decoration from "../seasonal/Decoration.astro";
 import {
   isCurrentPath,
   mainNavigation,
@@ -20,7 +22,7 @@ const pathname = Astro.url.pathname;
       <a
         href={paths.home}
         aria-label="Ir al inicio de GrupoClavD"
-        class="inline-flex shrink-0"
+        class="inline-flex shrink-0 items-center gap-2"
       >
         <img
           src="/images/grupoclavd-logo-transparent.png"
@@ -29,6 +31,7 @@ const pathname = Astro.url.pathname;
           height="141"
           class="h-auto w-40 sm:w-44"
         />
+        {halloweenEnabled && <Decoration kind="pumpkin" class="logo-pumpkin" />}
       </a>
 
       <nav class="hidden min-[900px]:block" aria-label="Navegación principal">

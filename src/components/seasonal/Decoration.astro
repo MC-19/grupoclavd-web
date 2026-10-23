@@ -1,0 +1,21 @@
+---
+interface Props {
+  kind: "pumpkin" | "web" | "bat";
+  class?: string;
+}
+const { kind, class: className } = Astro.props;
+---
+<svg data-halloween-decoration class:list={["seasonal-decoration", className]} viewBox="0 0 100 100" width="100" height="100" aria-hidden="true" focusable="false" style="pointer-events:none;user-select:none">
+  {kind === "pumpkin" && <>
+    <path d="M50 28Q46 16 58 12" fill="none" stroke="#685694" stroke-width="7" stroke-linecap="round" />
+    <path d="M50 30C13 10 4 69 27 84Q39 93 50 86Q65 94 79 82C99 61 85 12 50 30Z" fill="#ea7c27" />
+    <ellipse cx="50" cy="58" rx="19" ry="30" fill="#f49a44" />
+    <path d="M37 38Q26 58 37 79M63 38Q74 58 63 79" fill="none" stroke="#b94d16" stroke-width="2" />
+    <path d="m34 52 9 5-11 3Zm32 0 2 8-11-3ZM40 70q10 8 20 0" fill="#392f50" />
+  </>}
+  {kind === "web" && <g fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M2 2H98M2 2V98M2 2 72 72M2 2 94 40M2 2 40 94" />
+    <path d="M24 2Q21 10 23 11Q16 16 17 17Q9 20 11 23Q4 22 2 24M48 2Q40 16 46 20Q30 30 34 34Q16 39 20 46Q6 42 2 48M72 2Q60 24 68 30Q44 44 51 51Q23 57 30 68Q9 62 2 72M96 2Q80 32 91 40Q59 59 68 68Q30 77 40 91Q12 83 2 96" />
+  </g>}
+  {kind === "bat" && <path d="M48 41 41 28 37 42Q19 30 3 22Q6 45 11 60Q23 50 28 68Q40 56 50 78Q60 56 72 68Q77 50 89 60Q94 45 97 22Q81 30 63 42L59 28 52 41Z" fill="currentColor" />}
+</svg>

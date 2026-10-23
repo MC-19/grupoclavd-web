@@ -1,0 +1,63 @@
+/* All seasonal styles are inert when the single campaign switch is off. */
+[data-season="halloween"] .logo-pumpkin { width: 25px; height: 25px; flex: none; }
+[data-season="halloween"] .halloween-hero {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(115deg, #fff8f1, #fff 52%, #f6f3fb);
+}
+[data-season="halloween"] .hero-web {
+  position: absolute; top: 0; right: 0; width: 85px; height: 85px;
+  color: #685694; opacity: .18; transform: rotate(90deg); z-index: -1;
+}
+[data-season="halloween"] .halloween-hero-note {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 20px;
+  color: #685694; font-size: .875rem; font-weight: 700;
+}
+[data-season="halloween"] .hero-pumpkin { width: 30px; height: 30px; flex: none; }
+[data-season="halloween"] .halloween-campaign {
+  position: relative; overflow: hidden; display: grid; grid-template-columns: 1.6fr 1fr;
+  align-items: center; gap: 3rem; padding: 3.5rem; border-radius: 1.5rem;
+  background: linear-gradient(120deg, #241e35, #392f50 75%, #463963);
+  color: white;
+}
+[data-season="halloween"] .halloween-copy { position: relative; min-width: 0; }
+[data-season="halloween"] .halloween-eyebrow {
+  color: #ffba80; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em;
+}
+[data-season="halloween"] .halloween-cta { background: #ffba80; color: #241e35; }
+[data-season="halloween"] .halloween-cta:hover { background: #ffd1aa; }
+[data-season="halloween"] .campaign-web {
+  position: absolute; right: 0; top: 0; width: 105px; height: 105px;
+  transform: rotate(90deg); color: #c3b2df; opacity: .25;
+}
+[data-season="halloween"] .halloween-illustration {
+  position: relative; width: 100%; max-width: 300px; height: 310px;
+  justify-self: center; pointer-events: none; user-select: none;
+}
+[data-season="halloween"] .halloween-moon {
+  position: absolute; top: 0; right: 26px; width: 100px; height: 100px;
+  border-radius: 50%; background: #c3b2df; opacity: .35;
+}
+[data-season="halloween"] .campaign-bat {
+  position: absolute; top: 22px; right: 0; width: 65px; height: 65px; color: #ffba80; transform: rotate(-12deg);
+}
+[data-season="halloween"] .halloween-window {
+  position: absolute; inset: 65px 25px 45px; display: flex; gap: 8px;
+  border: 3px solid #c3b2df; border-radius: 70px 70px 6px 6px; padding: 14px;
+  background: linear-gradient(140deg, #68569466, #7d6bad22);
+}
+[data-season="halloween"] .halloween-window span { flex: 1; border: 1px solid #c3b2df70; border-radius: 40px 40px 0 0; }
+[data-season="halloween"] .campaign-pumpkin { position: absolute; bottom: 30px; left: 0; width: 90px; height: 90px; }
+[data-season="halloween"] .halloween-illustration p { position: absolute; bottom: 0; width: 100%; text-align: center; font-size: .75rem; color: #ded4ef; }
+@media (max-width: 899px) {
+  [data-season="halloween"] .logo-pumpkin { display: none; }
+  [data-season="halloween"] .halloween-campaign { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+  [data-season="halloween"] .halloween-illustration { height: 230px; max-width: 240px; }
+  [data-season="halloween"] .halloween-window { top: 30px; }
+  [data-season="halloween"] .halloween-moon { width: 75px; height: 75px; }
+  [data-season="halloween"] .hero-web { width: 48px; height: 48px; }
+}
+@media (max-width: 400px) {
+  [data-season="halloween"] .halloween-campaign { padding: 1.5rem; }
+  [data-season="halloween"] .halloween-cta { width: 100%; padding-inline: 1rem; }
+}

@@ -1,0 +1,29 @@
+---
+import Container from "../ui/Container.astro";
+import ButtonLink from "../ui/ButtonLink.astro";
+import Decoration from "./Decoration.astro";
+import { paths } from "../../data/navigation";
+---
+<section data-halloween-campaign aria-labelledby="halloween-title" class="pb-16 lg:pb-20">
+  <Container>
+    <div class="halloween-campaign">
+      <Decoration kind="web" class="campaign-web" />
+      <div class="halloween-copy">
+        <p class="halloween-eyebrow">Ideas para tu campaña de Halloween</p>
+        <h2 id="halloween-title" class="mt-3 text-3xl font-black leading-tight sm:text-4xl">Este Halloween, haz que tu negocio destaque</h2>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/80">Dale un aire de temporada a tu negocio con vinilos para escaparates, cartelería, impresión y decoración gráfica. Cuéntanos tu idea y te ayudamos a valorar los materiales y la instalación que necesita tu espacio.</p>
+        <div class="mt-6 flex flex-wrap gap-2 text-sm text-white/85">
+          {['Vinilos para escaparates', 'Cartelería e impresión', 'Decoración gráfica'].map(label => <span class="rounded-full border border-white/20 px-3 py-1.5">{label}</span>)}
+        </div>
+        <ButtonLink href={paths.quote} class="halloween-cta mt-8">Pedir presupuesto para mi negocio</ButtonLink>
+      </div>
+      <div class="halloween-illustration" aria-hidden="true">
+        <span class="halloween-moon"></span>
+        <Decoration kind="bat" class="campaign-bat" />
+        <div class="halloween-window"><span></span><span></span><span></span></div>
+        <Decoration kind="pumpkin" class="campaign-pumpkin" />
+        <p>Tu escaparate, con otra presencia.</p>
+      </div>
+    </div>
+  </Container>
+</section>
