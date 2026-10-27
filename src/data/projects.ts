@@ -35,6 +35,50 @@ const blog2 = "/ImagenesWebClav/Blog2/";
 // Los proyectos anteriores conservan sus descripciones basadas en las imágenes.
 export const featuredProjects: Project[] = [
   {
+    slug: "vinilo-arenado-cristales-elche",
+    sections: [
+      {
+        heading: "Privacidad en cristales interiores con vinilo arenado",
+        paragraphs: [
+          "Este proyecto en Elche muestra la instalación de vinilo arenado sobre diferentes paños de vidrio interiores. La aplicación reduce la visión directa a través del cristal y mantiene el paso de luz, una solución habitual para separar espacios sin cerrar visualmente el conjunto por completo.",
+          "Las fotografías documentan tanto el proceso de colocación como el acabado final en varias mamparas. El vinilo se aplica de forma uniforme sobre la zona central del vidrio, dejando franjas transparentes en la parte superior e inferior."
+        ]
+      },
+      {
+        heading: "Instalación y acabado de las mamparas",
+        paragraphs: [
+          "La secuencia incluye una imagen del trabajo durante la instalación y distintas vistas del resultado desde ambos lados de las mamparas. Esto permite apreciar la continuidad del acabado y cómo cambia la percepción del espacio una vez colocado el vinilo.",
+          "La intervención se realizó en Elche y forma parte de los trabajos de rotulación e instalación de GrupoClavD para interiores comerciales y profesionales."
+        ]
+      }
+    ],
+    title: "Vinilo arenado en cristales interiores en Elche",
+    category: "Vinilos · Interiores · Instalación",
+    filters: ["rotulacion", "instalacion-montaje"],
+    summary: "Instalación de vinilo arenado en mamparas y cristales interiores en Elche para aportar privacidad manteniendo el paso de luz.",
+    preserveFullImage: true,
+    cover: "/images/projects/vinilo-arenado-elche-acabado-frontal.jpeg",
+    coverAlt: "Mampara interior con vinilo arenado instalado en Elche",
+    details: [
+      { label: "Lugar", value: "Elche" },
+      { label: "Intervención", value: "Vinilo arenado en cristales interiores" }
+    ],
+    description: [
+      "Aplicación de vinilo arenado sobre mamparas de vidrio interiores para mejorar la privacidad del espacio sin perder luminosidad.",
+      "La galería reúne el proceso de instalación y diferentes vistas del acabado final."
+    ],
+    gallery: [
+      { src: "/images/projects/vinilo-arenado-elche-instalacion.jpeg", alt: "Instalación de vinilo arenado sobre una mampara de cristal en Elche", caption: "Proceso de instalación del vinilo arenado" },
+      { src: "/images/projects/vinilo-arenado-elche-mampara-interior.jpeg", alt: "Vista lateral de una mampara interior con vinilo arenado", caption: "Acabado del vinilo sobre la mampara" },
+      { src: "/images/projects/vinilo-arenado-elche-privacidad-cristal.jpeg", alt: "Cristal interior con vinilo arenado para aportar privacidad", caption: "Privacidad manteniendo el paso de luz" }
+    ],
+    services: [
+      { label: "Vinilos", href: paths.vinyls },
+      { label: "Instalación y montaje", href: paths.installation }
+    ],
+  },
+
+  {
     slug: "senaletica-aeropuerto-alicante",
     sections: [
       {
