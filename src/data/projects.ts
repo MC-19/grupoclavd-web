@@ -57,7 +57,7 @@ export const featuredProjects: Project[] = [
     filters: ["rotulacion", "instalacion-montaje"],
     summary: "Instalación de vinilo arenado en mamparas y cristales interiores en Elche para aportar privacidad manteniendo el paso de luz.",
     preserveFullImage: true,
-    cover: "/images/projects/vinilo-arenado-elche-acabado-frontal.jpeg",
+    cover: "/images/projects/vinilo-arenado-elche-instalacion.webp",
     coverAlt: "Mampara interior con vinilo arenado instalado en Elche",
     details: [
       { label: "Lugar", value: "Elche" },
@@ -68,9 +68,7 @@ export const featuredProjects: Project[] = [
       "La galería reúne el proceso de instalación y diferentes vistas del acabado final."
     ],
     gallery: [
-      { src: "/images/projects/vinilo-arenado-elche-instalacion.jpeg", alt: "Instalación de vinilo arenado sobre una mampara de cristal en Elche", caption: "Proceso de instalación del vinilo arenado" },
-      { src: "/images/projects/vinilo-arenado-elche-mampara-interior.jpeg", alt: "Vista lateral de una mampara interior con vinilo arenado", caption: "Acabado del vinilo sobre la mampara" },
-      { src: "/images/projects/vinilo-arenado-elche-privacidad-cristal.jpeg", alt: "Cristal interior con vinilo arenado para aportar privacidad", caption: "Privacidad manteniendo el paso de luz" }
+      { src: "/images/projects/vinilo-arenado-elche-instalacion.webp", alt: "Instalación de vinilo arenado sobre una mampara de cristal en Elche", caption: "Proceso de instalación del vinilo arenado" }
     ],
     services: [
       { label: "Vinilos", href: paths.vinyls },
